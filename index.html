@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="app/addons/bower_components/fullcalendar/dist/fullcalendar.css">
+    <link rel="stylesheet" href="dist/css/libs.min.css">
+    <link rel="stylesheet" href="dist/css/UMaterial.min.css">
+    <link rel="stylesheet" href="app/css/demo.min.css">
+    <title>AmdUI Ultimate Material Admin Template</title>
+</head>
+<body ng-cloak data-ng-controller="UMaterialCtrl as materialCtrl"
+      data-ng-class="{ 'um-notinsettab': appCfg.openInsetTab != 1, 'um-toggled': appCfg.currentLayout == 1,  'um-footer': appCfg.footerEnabled == 1,  'um-fullscreen': appCfg.isFullScreen == 1}"
+      md-theme="{{appCfg.specialTheme || appCfg.currentTheme}}" >
+<header id="header" data-theme="{{appCfg.specialTheme || appCfg.currentTheme}}" data-ng-include="'app/template/header.html'"
+        data-ng-controller="HeaderCtrl as hctrl"></header>
+<section id="main">
+    <aside id="sidebar"  data-ng-include="'app/template/sidebar.html'"
+           data-ng-class="{ 'toggled': appCfg.sidebarToggle == true }"></aside>
+    <section id="content" data-ng-click="appCfg.closeSidebar($event)">
+      <div ng-cloak  ng-show="materialCtrl.tabManager.TABS==0 && !PAGEURL" class="welcome">
+        Welcome to {{appCfg.title}} Material Admin Template :)
+        <br>
+        <small><b>Tip</b> : click left navigation open any pages ! </small>
+      </div>
+      <div class="page-container animated fadeIn mini-scroll only-mobile" ng-cloak ng-include src="'./'+PAGEURL+'.html'" ng-if="appCfg.openInsetTab != 1 && PAGEURL"></div>
+      <div class="top-nav-content-tab" ng-if="appCfg.openInsetTab == 1">
+          <ul class="nav nav-tabs" role="tablist">
+              <li ng-repeat="tab in materialCtrl.tabManager.TABS">
+                  <a data-target="#{{tab.key}}" data-path="{{tab.url}}" data-toggle="tab">{{tab.title}}</a>
+              </li>
+          </ul>
+          <div class="tab-content">
+              <div role="tabpanel" class="tab-pane mini-scroll only-mobile" data-ng-class="{'active':materialCtrl.tabManager.SELECTEDINDEX == $index}" ng-repeat="tab in materialCtrl.tabManager.TABS"
+                   id="{{tab.key}}">
+                  <div class="tabFadeInDown" ng-cloak ng-include src="'./'+tab.path+'.html'"></div>
+              </div>
+          </div>
+      </div>
+      <aside id="sidebar-right" data-ng-include="'app/template/sidebar-right.html'"
+               data-ng-controller="SidebarRCtrl"></aside>
+    </section>
+    <footer id="footer" data-ng-include="'app/template/footer.html'"></footer>
+</section>
+<script src="dist/js/libs.min.js"></script>
+
+<!--Do not use $ocLazyLoad-->
+<script src="app/addons/bower_components/flot/jquery.flot.js"></script>
+<script src="app/addons/bower_components/flot/jquery.flot.pie.js"></script>
+<script src="app/addons/bower_components/flot/jquery.flot.resize.js"></script>
+<script src="app/addons/bower_components/moment/min/moment.min.js"></script>
+<script src="app/addons/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+
+<script src="dist/js/angular.min.js"></script>
+<script src="app/app.min.js"></script>
+
+<md-progress-circular class="md-accent " md-diameter="60" md-loading ng-show="appCfg.loading"></md-progress-circular>
+</body>
+</html>

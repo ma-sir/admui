@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="dist/css/libs.css">
+    <link rel="stylesheet" href="dist/css/UMaterial.min.css">
+    <link rel="stylesheet" href="app/css/demo.css">
+    <title>Lockscreen Template</title>
+</head>
+<body>
+<div class="container-fluid simple-page">
+    <div class="row">
+        <div class="animated fadeIn page-content " style="height: 360px"  md-whiteframe="5">
+            <div  class="animated fadeInDown user-avatar">
+                <i class="zmdi zmdi-account"></i>
+            </div>
+            <md-content md-theme="orange" layout-padding style="background: transparent" class="animated fadeInUp">
+                <div style="color: rgba(0,0,0,0.3);text-align: center;font-size: 16px;margin-top: -20px;"><i class="zmdi zmdi-face"></i> Administrator</div>
+                <div class="p-20">
+                    <md-input-container class="md-block">
+                        <label>Password</label>
+                        <md-icon>
+                            <i class="zmdi zmdi-key f-20"></i>
+                        </md-icon>
+                        <input ng-model="user.passwd" type="password">
+                    </md-input-container>
+                </div>
+            </md-content>
+        </div>
+    </div>
+</div>
+<script src="dist/js/libs.js"></script>
+<script src="dist/js/angular.js"></script>
+<script src="app/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<ul class="pagination">
+    <li ng-if="::boundaryLinks" ng-class="{disabled: noPrevious()||ngDisabled}" class="pagination-first">
+        <md-button ng-disabled="noPrevious()||ngDisabled" class="md-fab md-mini md-primary" ng-click="selectPage(1, $event)">
+            <md-icon><i class="md-icon f-20">&#xE5DC;</i></md-icon>
+            <md-tooltip>{{::getText('first')}}</md-tooltip>
+        </md-button>
+    </li>
+    <li ng-if="::directionLinks" ng-class="{disabled: noPrevious()||ngDisabled}" class="pagination-prev">
+        <md-button ng-disabled="noPrevious()||ngDisabled" class="md-fab md-mini md-primary" ng-click="selectPage(page - 1, $event)">
+            <md-icon><i class="md-icon">&#xe5cb;</i></md-icon>
+            <md-tooltip>{{::getText('previous')}}</md-tooltip>
+        </md-button>
+    </li>
+    <li ng-repeat="page in pages track by $index" ng-class="{active: page.active,disabled: ngDisabled&&!page.active}" class="pagination-page">
+        <md-button class="md-fab md-mini " ng-disabled="page.active" ng-click="selectPage(page.number, $event)">{{page.text}}</md-button>
+    </li>
+    <li ng-if="::directionLinks" ng-class="{disabled: noNext()||ngDisabled}" class="pagination-next">
+        <md-button ng-disabled="noNext()||ngDisabled" class="md-fab md-mini md-primary" ng-click="selectPage(page + 1, $event)">
+            <md-icon><i class="md-icon">&#xe5cc;</i></md-icon>
+            <md-tooltip>{{::getText('next')}}</md-tooltip>
+        </md-button>
+    </li>
+    <li ng-if="::boundaryLinks" ng-class="{disabled: noNext()||ngDisabled}" class="pagination-last">
+        <md-button ng-disabled="noNext()||ngDisabled" class="md-fab md-mini md-primary" ng-click="selectPage(totalPages, $event)">
+            <md-icon><i class="md-icon">&#xE5DD;</i></md-icon>
+            <md-tooltip>{{::getText('last')}}</md-tooltip>
+        </md-button>
+    </li>
+</ul>

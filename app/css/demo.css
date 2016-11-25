@@ -1,0 +1,410 @@
+/*
+ * Font Face
+ */
+/*
+ * Background Repeat + Position
+ */
+/*
+ * CSS Animations based on animate.css
+ */
+/*
+ * CSS Transform - Scale and Rotate
+ */
+/*
+ * User Select
+ */
+/*
+ * Background Image Cover
+ */
+/*
+.hover-pop(rgba(0, 0, 0, 0.08), 50%, 250ms, 0);
+ */
+/*
+ * Scale 3d
+ */
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak,
+.ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+}
+ng\:form {
+  display: block;
+}
+.ng-animate-shim {
+  visibility: hidden;
+}
+.ng-anchor {
+  position: absolute;
+}
+.welcome {
+  position: fixed;
+  left: 50%;
+  top: 300px;
+  margin-left: -150px;
+  color: #aaa;
+  font-size: 20px;
+  font-weight: 300;
+}
+.dashboard .status a.c {
+  display: block;
+  color: #fff;
+  padding: 20px 30px 20px 30px;
+  position: relative;
+  overflow: hidden;
+}
+.dashboard .status a.c i {
+  font-size: 40px;
+  float: left;
+}
+.dashboard .status a.c div {
+  float: left;
+  margin-top: -20px;
+  margin-left: 20px;
+}
+.dashboard .status a.c div h3 {
+  color: white;
+  font-size: 20px;
+}
+.dashboard .todo-list .tododone p {
+  text-decoration: line-through;
+  color: darkgray;
+}
+.dashboard .status2 .chart-container {
+  padding: 5px;
+}
+.dashboard .status2 .chart {
+  float: left;
+  margin: 0 50px 0 20px;
+}
+.dashboard .status2 .count {
+  float: left;
+  padding: 10px 0 0 20px;
+}
+.dashboard .status2 .count h2 {
+  margin: 0;
+}
+.dashboard [class*="flot-chart"] {
+  width: 100%;
+  display: block;
+}
+.dashboard .flot-chart {
+  height: 280px;
+}
+.dashboard .flot-chart-pie {
+  height: 300px;
+}
+.login-page .header-bg {
+  position: absolute;
+  height: 380px;
+  width: 100%;
+  background: #008FCA;
+}
+.login-page .header-bg .bg-left {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background: #FF532C;
+}
+.login-page .header-bg .bg-right {
+  background: url('../../dist/material/md-bg.jpg') center no-repeat;
+  height: 100%;
+  width: 100%;
+  max-width: 1600px;
+  position: relative;
+}
+.simple-page {
+  height: 100%;
+}
+.simple-page > .row {
+  height: 100%;
+}
+.simple-page > .row .page-content {
+  height: 500px;
+  margin: auto;
+  background: #FFF;
+  float: none;
+  margin-top: 180px;
+  width: 330px;
+  opacity: 0;
+  overflow: hidden;
+}
+.simple-page > .row .page-content .user-avatar {
+  background: #FFFFFF;
+  height: 120px;
+  overflow: hidden;
+  width: 120px;
+  margin: 30px auto 30px;
+  border-radius: 50%;
+}
+.simple-page > .row .page-content .user-avatar i {
+  font-size: 120px;
+  color: #FFA000;
+  margin: 20px;
+}
+.button-usage .bs-buttons .btn,
+.button-usage .bs-group .btn-group {
+  margin-right: 10px;
+}
+.icons-usage div.icon a {
+  padding: 10px;
+  display: block;
+  color: #666;
+  font-size: 18px;
+  font-weight: 300;
+}
+.icons-usage div.icon a:hover {
+  font-weight: 400;
+  color: #333;
+  background: #f7f7f7;
+}
+.grid-usage .boxframe {
+  padding: 15px 0;
+  text-align: center;
+}
+.grid-usage .row {
+  margin-bottom: 20px;
+}
+.box-usage .padded {
+  padding: 30px 0;
+  margin: 0 40px 40px 0;
+  text-align: center;
+  width: 300px;
+  float: left;
+}
+.colors-usage .color-palette {
+  color: #FFF;
+}
+.colors-usage .color-palette section {
+  margin-bottom: 20px;
+}
+.colors-usage .color-palette .dark {
+  color: rgba(0, 0, 0, 0.87);
+}
+.colors-usage .color-palette ul {
+  padding: 0;
+}
+.colors-usage .color-palette ul li {
+  list-style: none;
+  padding: 10px 15px;
+}
+.colors-usage .color-palette ul li.main-color {
+  margin-bottom: 4px;
+}
+.colors-usage .color-palette ul li .name {
+  display: block;
+  margin-bottom: 40px;
+}
+.colors-usage .color-palette ul li .light-strong {
+  color: #fff;
+}
+.colors-usage .color-palette ul li .hex {
+  float: right;
+}
+.colors-usage .color-palette ul li.divide {
+  margin-top: 4px;
+}
+.colors-usage .color_table {
+  width: 100%;
+}
+.colors-usage .color_table td {
+  width: 1%;
+  padding: 25px 0;
+  color: #FFF;
+  text-align: center;
+  cursor: pointer;
+}
+.class-usage code {
+  margin-top: 8px;
+  display: inline-block;
+}
+.progress-usage h4 {
+  margin: 10px 0;
+}
+.progress-usage md-progress-linear {
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+.progress-usage .loaders > p {
+  margin-right: 20px;
+  margin-bottom: 24px;
+}
+.progress-usage p.small {
+  font-size: 0.8em;
+  margin-top: -18px;
+}
+.progress-usage hr {
+  width: 100%;
+  margin-top: 20px;
+  border-color: rgba(221, 221, 177, 0.1);
+}
+.progress-usage p.small > code {
+  font-size: 0.8em;
+}
+.progress-usage .visible {
+  opacity: 0;
+  border: 2px solid white !important;
+}
+.progress-usage .pcontainer {
+  display: block;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 2px solid #aad1f9;
+  transition: opacity 0.1s linear;
+  border-top: 0px;
+}
+.progress-usage .bottom-block {
+  display: block;
+  position: relative;
+  background-color: rgba(255, 235, 169, 0.25);
+  height: 85px;
+  width: 100%;
+}
+.progress-usage .bottom-block > span {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 25px;
+  font-size: 0.9em;
+}
+.bscomponents-usage .popover-demo .popover {
+  position: relative;
+  display: block;
+  float: left;
+  width: 260px;
+  margin: 20px;
+}
+.bscomponents-usage .carousel-eg .item {
+  height: 400px;
+}
+.profile .banner {
+  height: 200px;
+  overflow: hidden;
+  background: url('../../dist/material/md-bg.jpg') left no-repeat #0090CB;
+}
+.profile .banner .avatar {
+  background: url('../../dist/material/avatar4.png') center;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 80px;
+  background-size: cover;
+  left: 50px;
+  border-radius: 50%;
+  box-shadow: 0 19px 60px rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.22);
+}
+.profile .contact ul {
+  padding: 0;
+  line-height: 2.5;
+}
+.profile .contact li {
+  list-style: none;
+}
+.profile .contact li i {
+  margin-right: 10px;
+  font-size: 16px;
+}
+.profile .friends .md-avatar {
+  background: url(../../dist/material/avatar.jpg);
+  background-size: 200px;
+}
+.profile .friends .avatar0 {
+  background-position: -20px 0;
+}
+.profile .friends .avatar1 {
+  background-position: -60px 0;
+}
+.profile .friends .avatar2 {
+  background-position: -100px 0;
+}
+.profile .friends .avatar3 {
+  background-position: -140px 0;
+}
+.profile .friends .avatar4 {
+  background-position: -20px 50px;
+}
+.profile .friends .avatar5 {
+  background-position: -60px 50px;
+}
+.profile .friends .avatar6 {
+  background-position: -100px 50px;
+}
+.profile .friends .avatar7 {
+  background-position: -140px 50px;
+}
+.profile .friends .avatar8 {
+  background-position: -20px 95px;
+}
+.profile .friends .avatar9 {
+  background-position: -60px 95px;
+}
+.profile #Messages .md-list-item {
+  max-width: 600px;
+}
+.profile #Messages .md-list-item-text {
+  background: #F7F7F7;
+  padding: 3px 20px;
+}
+.profile #Photos .img-frame {
+  position: relative;
+  float: left;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  overflow: hidden;
+  cursor: pointer;
+}
+.profile #Photos .img-frame:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.profile #Photos .img-frame:hover img {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+}
+.profile #Photos img {
+  -webkit-transition: all;
+  -o-transition: all;
+  transition: all;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+}
+.gallery-usage .img-frame {
+  position: relative;
+  float: left;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  overflow: hidden;
+  cursor: pointer;
+}
+.gallery-usage .img-frame:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.gallery-usage .img-frame:hover img {
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+}
+.gallery-usage img {
+  -webkit-transition: all;
+  -o-transition: all;
+  transition: all;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+}
+.inbox .table tr {
+  color: grey;
+}
+.inbox .table tr.unread {
+  color: #333;
+}
+.inbox .table tr.trash {
+  text-decoration: line-through;
+  color: grey;
+}

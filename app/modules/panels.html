@@ -1,0 +1,534 @@
+<div oc-lazy-load="['app/modules/panels.js']">
+
+
+    <div class="container panels-usage" data-ng-controller="PanelsCtrl as ctrl">
+
+        <div class="block-header">
+            <h2>Panel</h2>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12 m-b-20">
+                <md-card>
+                    <md-card-header data-theme="{{appCfg.currentTheme}}">
+                        <md-card-header-text>
+                            <span class="md-title c-white">Title</span>
+                            <span class="md-subhead">
+                                md-card-header, data-theme = appCfg.currentTheme
+                            </span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20 c-white"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content>
+                        <p>Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                            Froyo, Noto has been the standard typeface on Android for all languages not covered by
+                            Roboto. Noto is also the standard typeface for all languages on Chrome OS.
+                        </p>
+                        <p>
+                            Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android.
+                            Since Froyo, Noto has been the standard typeface on Android for all languages not covered by
+                            Roboto. Noto is also the standard typeface for all languages on Chrome OS
+                        </p>
+                        <p>
+                            Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android.
+                            Since Froyo, Noto has been the standard typeface on Android for all languages not covered by
+                            Roboto. Noto is also the standard typeface for all languages on Chrome OS
+                        </p>
+                    </md-card-content>
+                </md-card>
+            </div>
+
+
+            <div class="col-md-4 m-b-20">
+                <md-card>
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Title</span>
+                            <span class="md-subhead">md-fab-speed-dial, fab-right-top</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content class="fab-right-top">
+                        <md-fab-speed-dial md-direction="left" class="md-scale" md-open="false">
+                            <md-fab-trigger>
+                                <md-button aria-label="menu" class="md-fab md-warn">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-plus"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions>
+                                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-actions>
+                        </md-fab-speed-dial>
+
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS.
+                        <br><br>
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="col-md-4 m-b-20">
+                <md-card>
+                    <md-card-header class="bgc-lightgrey">
+                        <md-card-header-text>
+                            <span class="md-title">Title</span>
+                            <span class="md-subhead">md-fab-speed-dial, fab-right-top</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content class="fab-right-top">
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS.
+                        <br><br>
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS
+                        <md-fab-speed-dial md-direction="left" class="md-scale" md-open="false">
+                            <md-fab-trigger>
+                                <md-button aria-label="menu" class="md-fab md-warn">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-plus"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions>
+                                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-actions>
+                        </md-fab-speed-dial>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="col-md-4 m-b-20">
+                <md-card>
+                    <md-card-header data-theme="{{appCfg.currentTheme}}" class="">
+                        <md-card-header-text>
+                            <span class="md-title c-white">Title</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20 c-white"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content class="fab-right-bottom">
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS.
+                        <br><br>
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS
+                        <md-fab-speed-dial md-direction="left" class="md-scale" md-open="false">
+                            <md-fab-trigger>
+                                <md-button aria-label="menu" class="md-fab md-warn">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-plus"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions>
+                                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-actions>
+                        </md-fab-speed-dial>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="col-md-6 m-b-20">
+                <md-card>
+                    <md-card-header class="bgc-green ">
+                        <md-card-header-text>
+                            <span class="md-title c-white">Title</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20 c-white"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content class="fab-right-bottom">
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS.
+                        <br><br>
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS
+                        <md-fab-speed-dial md-direction="left" class="md-scale" md-open="false">
+                            <md-fab-trigger>
+                                <md-button aria-label="menu" class="md-fab md-warn">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-plus"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions>
+                                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-actions>
+                        </md-fab-speed-dial>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="col-md-6 m-b-20">
+                <md-card>
+                    <md-card-header class="bgc-blue ">
+                        <md-card-header-text>
+                            <span class="md-title c-white">Title</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20 c-white"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content class="fab-right-top">
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS.
+                        <br><br>
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS
+                        <md-fab-speed-dial md-direction="left" class="md-scale" md-open="false">
+                            <md-fab-trigger>
+                                <md-button aria-label="menu" class="md-fab md-warn">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-plus"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions>
+                                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-actions>
+                        </md-fab-speed-dial>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="col-md-6 m-b-20">
+                <md-card>
+                    <md-card-header class="bgc-purple">
+                        <md-card-header-text>
+                            <span class="md-title c-white">Title</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20 c-white"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content class="fab-right-top">
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS.
+                        <br><br>
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS
+                        <md-fab-speed-dial md-direction="left" class="md-scale" md-open="false">
+                            <md-fab-trigger>
+                                <md-button aria-label="menu" class="md-fab md-warn">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-plus"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions>
+                                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-actions>
+                        </md-fab-speed-dial>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="col-md-6 m-b-20">
+                <md-card>
+                    <md-card-header class="bgc-orange">
+                        <md-card-header-text>
+                            <span class="md-title c-white">Title</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20 c-white"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content class="fab-right-top">
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS.
+                        <br><br>
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS
+                        <md-fab-speed-dial md-direction="left" class="md-scale" md-open="false">
+                            <md-fab-trigger>
+                                <md-button aria-label="menu" class="md-fab md-warn">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-plus"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions>
+                                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-actions>
+                        </md-fab-speed-dial>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="col-md-6 m-b-20 m-t-20">
+                <md-card>
+                    <md-card-content class="fab-right-top">
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS.
+                        <br><br>
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS
+                        <md-fab-speed-dial md-direction="left" class="md-scale" md-open="false">
+                            <md-fab-trigger>
+                                <md-button aria-label="menu" class="md-fab md-warn">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-plus"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions>
+                                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-actions>
+                        </md-fab-speed-dial>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="col-md-6 m-b-20">
+                <md-card>
+                    <md-card-content class="fab-right-bottom">
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS.
+                        <br><br>
+                        Since the Ice Cream Sandwich release, Roboto has been the standard typeface on Android. Since
+                        Froyo, Noto has been the standard typeface on Android for all languages not covered by Roboto.
+                        Noto is also the standard typeface for all languages on Chrome OS
+                        <md-fab-speed-dial md-direction="left" class="md-scale" md-open="false">
+                            <md-fab-trigger>
+                                <md-button aria-label="menu" class="md-fab md-warn">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-plus"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions>
+                                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-actions>
+                        </md-fab-speed-dial>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>

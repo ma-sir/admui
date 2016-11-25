@@ -1,0 +1,367 @@
+<div oc-lazy-load="['app/modules/tabs.js']">
+    <div class="container tabs-usage" data-ng-controller="TabsCtrl as ctrl">
+
+        <div class="block-header">
+            <h2>Tabs</h2>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <md-card class="m-b-30">
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Dynamic Height</span>
+                    <span class="md-subhead">
+                        The Dynamic Height demo shows how tabs can be used to display content with varying heights.
+                    </span>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <md-card-content>
+                        <md-tabs md-dynamic-height md-border-bottom>
+                            <md-tab label="one">
+                                <md-content class="md-padding">
+                                    <h1>Tab One</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante
+                                        augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam
+                                        cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin
+                                        consectetur felis nec, feugiat ultricies mi.</p>
+                                </md-content>
+                            </md-tab>
+                            <md-tab label="two">
+                                <md-content class="md-padding">
+                                    <h1>Tab Two</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante
+                                        augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam
+                                        cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin
+                                        consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam
+                                        placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien
+                                        arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus
+                                        vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a
+                                        facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate,
+                                        euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio.
+                                        Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus
+                                        dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor
+                                        purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris
+                                        semper.</p>
+                                    <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper
+                                        massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in
+                                        condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at
+                                        convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna
+                                        libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis
+                                        convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur,
+                                        rhoncus sapien sit amet, tempus sapien.</p>
+                                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus.
+                                        Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam.
+                                        Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id
+                                        ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim
+                                        scelerisque, finibus commodo lectus.</p>
+                                </md-content>
+                            </md-tab>
+                            <md-tab label="three">
+                                <md-content class="md-padding">
+                                    <h1>Tab Three</h1>
+                                    <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus.
+                                        Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam.
+                                        Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id
+                                        ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim
+                                        scelerisque, finibus commodo lectus.</p>
+                                </md-content>
+                            </md-tab>
+                        </md-tabs>
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="col-md-12">
+                <md-card class="m-b-30">
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Dynamic Tabs</span>
+                    <span class="md-subhead">
+                        The Dynamic Tabs demo shows how internal tab views can be easily used.
+                    </span>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <md-card-content>
+                        <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect>
+                            <md-tab ng-repeat="tab in tabs"
+                                    ng-disabled="tab.disabled"
+                                    label="{{tab.title}}">
+                                <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
+                                    <div ng-bind="tab.content"></div>
+                                    <br/>
+                                    <md-button class="md-primary md-raised" ng-click="removeTab( tab )"
+                                               ng-disabled="tabs.length <= 1">Remove Tab
+                                    </md-button>
+                                </div>
+                            </md-tab>
+                        </md-tabs>
+                        <form ng-submit="addTab(tTitle,tContent)">
+                            <div class="row">
+                                <div class="col-sm-8 col-sm-push-4">
+                                    <md-input-container>
+                                        <label>Label</label>
+                                        <input type="text" ng-model="tTitle">
+                                    </md-input-container>
+                                    <md-input-container>
+                                        <label>Content</label>
+                                        <input type="text" ng-model="tContent">
+                                    </md-input-container>
+                                    <md-button class="add-tab md-primary md-raised" ng-disabled="!tTitle || !tContent"
+                                               type="submit" style="margin-right: 0;">Add Tab
+                                    </md-button>
+                                </div>
+                            </div>
+                        </form>
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="col-md-12">
+                <md-card class="m-b-30">
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Static Tabs</span>
+                    <span class="md-subhead">
+                        The Static Tabs demo shows how external content can be used with tabs.
+                    </span>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <md-card-content>
+
+                        <md-tabs class="md-accent" md-selected="data.selectedIndex"
+                                 md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}">
+                            <md-tab id="tab1">
+                                <md-tab-label>Item One</md-tab-label>
+                                <md-tab-body>
+                                    <div class="p-20">
+                                        View for Item #1 <br/>
+                                        data.selectedIndex = 0;
+                                    </div>
+                                </md-tab-body>
+                            </md-tab>
+                            <md-tab id="tab2" ng-disabled="data.secondLocked">
+                                <md-tab-label>{{data.secondLabel}}</md-tab-label>
+                                <md-tab-body>
+                                    <div class="p-20">
+                                        View for Item #2 <br/>
+                                        data.selectedIndex = 1;
+                                    </div>
+                                </md-tab-body>
+                            </md-tab>
+                            <md-tab id="tab3">
+                                <md-tab-label>Item Three</md-tab-label>
+                                <md-tab-body>
+                                    <div class="p-20">
+                                        View for Item #3 <br/>
+                                        data.selectedIndex = 2;
+                                    </div>
+                                </md-tab-body>
+                            </md-tab>
+                        </md-tabs>
+                        <div>
+                            <md-checkbox ng-model="data.secondLocked" aria-label="Disable item two?"
+                                         style="margin: 5px;">
+                                Disable item two?
+                            </md-checkbox>
+                            <md-checkbox ng-model="data.bottom" aria-label="Align tabs to bottom?" style="margin: 5px;">
+                                Align tabs to bottom?
+                            </md-checkbox>
+                        </div>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="col-md-12">
+                <md-card class="m-b-30">
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Bootstrap Tabs</span>
+                    <span class="md-subhead">
+                        Add quick, dynamic tab functionality to transition through panes of local content, even via dropdown menus. Nested tabs are not supported.
+                    </span>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <md-card-content>
+                        <div>
+                            <ul class="nav nav-tabs " role="tablist">
+                                <li role="presentation" class="active"><a href="#home" id="home-tab" role="tab"
+                                                                          data-toggle="tab" aria-controls="home"
+                                                                          aria-expanded="true" md-ink-ripple="#FF4081">Home</a>
+                                </li>
+                                <li role="presentation" class=""><a href="#profile" role="tab" id="profile-tab"
+                                                                    data-toggle="tab" aria-controls="profile"
+                                                                    aria-expanded="false" md-ink-ripple="#FF4081">Profile</a>
+                                </li>
+                                <li role="presentation" class="dropdown"><a href="#" id="myTabDrop1"
+                                                                            class="dropdown-toggle"
+                                                                            data-toggle="dropdown"
+                                                                            aria-controls="myTabDrop1-contents"
+                                                                            aria-expanded="false"
+                                                                            md-ink-ripple="#FF4081">Dropdown <span
+                                        class="caret"></span></a>
+                                    <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+                                        <li><a href="#dropdown1" role="tab" id="dropdown1-tab" data-toggle="tab"
+                                               aria-controls="dropdown1">@fat</a></li>
+                                        <li><a href="#dropdown2" role="tab" id="dropdown2-tab" data-toggle="tab"
+                                               aria-controls="dropdown2">@mdo</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade active in" id="home"
+                                     aria-labelledby="home-tab">
+                                    <p class="p-20">Raw denim you probably haven't heard of them jean shorts Austin.
+                                        Nesciunt tofu
+                                        stumptown aliqua, retro synth master cleanse. Mustache cliche tempor,
+                                        williamsburg
+                                        carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+                                        Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                                        salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher
+                                        voluptate nisi qui.</p></div>
+                                <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab"><p
+                                        class="p-20">
+                                    Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee
+                                    squid.
+                                    Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson
+                                    artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress,
+                                    commodo
+                                    enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud
+                                    organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
+                                    salvia
+                                    yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes
+                                    anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson
+                                    biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente
+                                    accusamus tattooed echo park.</p></div>
+                                <div role="tabpanel" class="tab-pane fade" id="dropdown1"
+                                     aria-labelledby="dropdown1-tab">
+                                    <p class="p-20">Etsy mixtape wayfarers, ethical wes anderson tofu before they sold
+                                        out mcsweeney's
+                                        organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag
+                                        gentrify
+                                        pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia
+                                        banksy
+                                        hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred
+                                        pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel
+                                        fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of
+                                        them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray
+                                        yr.</p></div>
+                                <div role="tabpanel" class="tab-pane fade" id="dropdown2"
+                                     aria-labelledby="dropdown2-tab">
+                                    <p class="p-20">Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art
+                                        party before they
+                                        sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny
+                                        pack portland seitan DIY, art party locavore wolf cliche high life echo park
+                                        Austin.
+                                        Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table
+                                        VHS
+                                        viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats
+                                        keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo
+                                        park
+                                        vegan.</p></div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="md-subhead">
+                            Markup: &lt;ul class=&quot;nav nav-tabs nav-justified&quot;&gt;
+                        </div>
+                        <br>
+                        <div>
+                            <ul class="nav nav-tabs nav-justified">
+                                <li role="presentation" class="active"><a href="#home2" id="home-tab2" role="tab"
+                                                                          data-toggle="tab" aria-controls="home"
+                                                                          aria-expanded="true" md-ink-ripple="#FF4081">Home</a>
+                                </li>
+                                <li role="presentation" class=""><a href="#profile2" role="tab" id="profile-tab2"
+                                                                    data-toggle="tab" aria-controls="profile"
+                                                                    aria-expanded="false" md-ink-ripple="#FF4081">Profile</a>
+                                </li>
+                                <li role="presentation" class=""><a href="#dropdown12" role="tab"
+                                                                    data-toggle="tab" aria-controls="profile"
+                                                                    aria-expanded="false" md-ink-ripple="#FF4081">Profile</a>
+                                </li>
+                                <li role="presentation" class=""><a href="#dropdown22" role="tab"
+                                                                    data-toggle="tab" aria-controls="profile"
+                                                                    aria-expanded="false" md-ink-ripple="#FF4081">Profile</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade active in" id="home2"
+                                     aria-labelledby="home-tab">
+                                    <p class="p-20">Raw denim you probably haven't heard of them jean shorts Austin.
+                                        Nesciunt tofu
+                                        stumptown aliqua, retro synth master cleanse. Mustache cliche tempor,
+                                        williamsburg
+                                        carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+                                        Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat
+                                        salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher
+                                        voluptate nisi qui.</p></div>
+                                <div role="tabpanel" class="tab-pane fade" id="profile2" aria-labelledby="profile-tab">
+                                    <p class="p-20">
+                                        Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
+                                        coffee squid.
+                                        Exercitation +1 labore velit, blog sartorial PBR leggings next level wes
+                                        anderson
+                                        artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress,
+                                        commodo
+                                        enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo
+                                        nostrud
+                                        organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
+                                        salvia
+                                        yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes
+                                        anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry
+                                        richardson
+                                        biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente
+                                        accusamus tattooed echo park.</p></div>
+                                <div role="tabpanel" class="tab-pane fade" id="dropdown12"
+                                     aria-labelledby="dropdown1-tab">
+                                    <p class="p-20">Etsy mixtape wayfarers, ethical wes anderson tofu before they sold
+                                        out mcsweeney's
+                                        organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag
+                                        gentrify
+                                        pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia
+                                        banksy
+                                        hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred
+                                        pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel
+                                        fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of
+                                        them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray
+                                        yr.</p></div>
+                                <div role="tabpanel" class="tab-pane fade" id="dropdown22"
+                                     aria-labelledby="dropdown2-tab">
+                                    <p class="p-20">Food truck fixie locavore, accusamus mcsweeney's marfa nulla
+                                        single-origin coffee squid.
+                                        Exercitation +1 labore velit, blog sartorial PBR leggings next level wes
+                                        anderson
+                                        artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress,
+                                        commodo
+                                        enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo
+                                        nostrud
+                                        organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS
+                                        salvia
+                                        yr, Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party
+                                        before they
+                                        sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny
+                                        pack portland seitan DIY, art party locavore wolf cliche high life echo park
+                                        Austin.
+                                        Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table
+                                        VHS
+                                        viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats
+                                        keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo
+                                        park
+                                        vegan.</p></div>
+                            </div>
+                        </div>
+
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

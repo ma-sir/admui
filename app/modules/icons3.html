@@ -1,0 +1,32 @@
+<div oc-lazy-load="['app/modules/icons.js']">
+    <div class="container icons-usage" data-ng-controller="IconsCtrl as ctrl">
+
+        <div class="block-header">
+            <h2>Glyphicon Icons
+            </h2>
+        </div>
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Bootstrap Glyphicon Icons</span>
+                    <span class="md-subhead">Markup: &lt;md-icon&gt;&lt;i class=&quot;glyphicon xxx&quot;&gt;&lt;/i&gt;&lt;/md-icon&gt;</span>
+
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+
+                <div class="row">
+
+                    <div data-ng-repeat="item in ctrl.icons3" bs-popover data-placement="top" data-toggle="popover"
+                         data-content="&lt;md-icon&gt;&lt;i class=&quot;glyphicon {{item}}&quot;&gt;&lt;/i&gt;&lt;/md-icon&gt;"
+                         class="icon col-sm-4 col-xs-6"><a
+                            href="javascript:void(0)">
+                        <md-icon><i class="glyphicon {{item}}"></i></md-icon>
+                        <span>{{item}}</span></a></div>
+
+                </div>
+            </md-card-content>
+        </md-card>
+    </div>
+</div>

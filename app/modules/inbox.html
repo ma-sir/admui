@@ -1,0 +1,219 @@
+<div oc-lazy-load="['app/modules/inbox.js','app/addons/bower_components/summernote/dist/summernote.min.js','app/addons/bower_components/angular-summernote/dist/angular-summernote.min.js', 'app/addons/bower_components/summernote/dist/summernote.css']">
+    <div class="container inbox" data-ng-controller="InboxCtrl as ctrl">
+
+        <div class="block-header">
+            <h2>Inbox Template
+                <small>
+                    Inbox description
+                </small>
+            </h2>
+
+            <div class="actions">
+                <md-menu md-position-mode="target-right target">
+                    <md-button aria-label="Open phone interactions menu" class="md-icon-button"
+                               ng-click="$mdOpenMenu($event)">
+                        <md-icon md-menu-origin>
+                            <i class="zmdi zmdi-check-all f-20"></i>
+                        </md-icon>
+                    </md-button>
+                    <md-menu-content width="3">
+                        <md-menu-item>
+                            <md-button>
+                                Reload
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>
+                                About
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <md-button>
+                                Settings
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-2">
+                <md-list>
+
+                  <md-list-item ng-click="navigateTo({}, 'sendmail')">
+                      <md-icon><i class="zmdi zmdi-mail-send f-20 c-red"></i></md-icon>
+                      <p>Send Mail</p>
+                  </md-list-item>
+                    <md-list-item ng-click="navigateTo()">
+                        <md-icon><i class="zmdi zmdi-email-open f-20 c-blue"></i></md-icon>
+                        <p>Inbox</p>
+                    </md-list-item>
+                    <md-list-item ng-click="navigateTo({unread:true})">
+                        <md-icon><i class="zmdi zmdi-email f-20 c-orange"></i></md-icon>
+                        <p>Unread</p>
+                    </md-list-item>
+                    <md-list-item ng-click="navigateTo({trash:true})">
+                        <md-icon><i class="zmdi zmdi-delete f-20"></i></md-icon>
+                        <p>Trash</p>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                    <md-subheader style="background: none" class="m-t-20">Labels</md-subheader>
+                    <md-list-item  ng-click="navigateTo({labels:{text:label.text}})" data-ng-repeat="label in labels">
+                        <p><i class="zmdi zmdi-circle m-r-5" style="color:{{label.color}}"></i> {{label.text}}</p>
+                    </md-list-item>
+
+                </md-list>
+            </div>
+            <div class="col-xs-9">
+                <md-card ng-if="action == 'sendmail'">
+                  <md-toolbar class="bgc-lightgrey ">
+                      <div class="md-toolbar-tools">
+                          <i class="zmdi zmdi-mail-send m-r-10"></i>
+                          <span>Send Mail</span>
+                      </div>
+                  </md-toolbar>
+                    <md-card-content>
+                        <div class="p-t-10">
+                          <md-input-container class="md-block">
+                             <label>Addressee</label>
+                             <input>
+                           </md-input-container>
+                           <md-input-container class="md-block">
+                              <label>Title</label>
+                              <input>
+                            </md-input-container>
+                            <div summernote height="300"></div>
+                        </div>
+                        <div class="">
+                          <md-button class="md-warn md-raised">
+                              Send
+                          </md-button>
+                        </div>
+                    </md-card-content>
+                </md-card>
+
+                <md-card ng-show="!action">
+                    <md-toolbar class="bgc-lightgrey ">
+                        <div class="md-toolbar-tools">
+                            <i class="zmdi zmdi-email m-r-10"></i>
+                            <span>Mail Inbox</span>
+                            <span flex></span>
+                            <md-button class="md-icon-button md-primary">
+                                <md-icon><i class="zmdi zmdi-time  f-20"></i></md-icon>
+                                <md-tooltip>Later</md-tooltip>
+                            </md-button>
+                            <md-button class="md-icon-button md-primary">
+                                <md-icon><i class="zmdi zmdi-check  f-20"></i></md-icon>
+                                <md-tooltip>Check</md-tooltip>
+                            </md-button>
+                            <md-button class="md-icon-button md-primary">
+                                <md-icon><i class="zmdi zmdi-plus  f-20"></i></md-icon>
+                                <md-tooltip>Add</md-tooltip>
+                            </md-button>
+                            <md-button class="md-icon-button md-warn">
+                                <md-icon><i class="zmdi zmdi-delete  f-20"></i></md-icon>
+                                <md-tooltip>Delete</md-tooltip>
+                            </md-button>
+                        </div>
+                    </md-toolbar>
+                    <md-card-content class="p-0">
+                        <div class="table-responsive">
+                            <table class="table   table-vmiddle table-hover">
+                                <tbody>
+                                <tr data-ng-repeat="item in inbox | limitTo:pageSize:(currentPage-1)*pageSize"
+                                    class="animate-repeat" data-ng-class="{'unread':item.unread,'trash':item.trash}">
+                                    <td width="70">
+                                        <md-checkbox class="m-0"></md-checkbox>
+                                    </td>
+                                    <td width="70">
+                                        <img ng-src="dist/material/{{item.avatar}}" class="md-avatar">
+                                    </td>
+                                    <td width="140">{{item.from}}</td>
+                                    <td width="200">{{item.title}}</td>
+                                    <td class="c-grey"
+                                        style="overflow: hidden;text-overflow: ellipsis;white-space:nowrap;max-width: 100px;">
+                                        {{item.desc}}
+                                    </td>
+                                    <td width="100" class="text-center">{{item.time}}</td>
+                                    <td width="80" class=" text-center">
+                                        <i class="zmdi zmdi-circle m-r-5" style="color:{{label.color}}"
+                                           data-ng-repeat="label in item.labels">
+                                            <md-tooltip>{{label.text}}</md-tooltip>
+                                        </i>
+                                    </td>
+                                    <td width="70">
+                                        <md-menu md-position-mode="target-right target">
+                                            <md-button aria-label="Open phone interactions menu" class="md-icon-button"
+                                                       ng-click="$mdOpenMenu($event)">
+                                                <md-icon md-menu-origin>
+                                                    <i class="zmdi zmdi-more-vert f-20"></i>
+                                                </md-icon>
+                                            </md-button>
+                                            <md-menu-content width="3">
+                                                <md-menu-item>
+                                                    <md-button>
+                                                        Reload
+                                                    </md-button>
+                                                </md-menu-item>
+                                                <md-menu-item>
+                                                    <md-button>
+                                                        About
+                                                    </md-button>
+                                                </md-menu-item>
+                                                <md-menu-divider></md-menu-divider>
+                                                <md-menu-item>
+                                                    <md-button>
+                                                        Settings
+                                                    </md-button>
+                                                </md-menu-item>
+                                            </md-menu-content>
+                                        </md-menu>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="pagination-container m-t-20 text-center">
+                                {{results.length}}
+                                <uib-pagination ng-show="inbox.length>0" total-items="inbox.length" ng-model="currentPage"
+                                                max-size="pageSize" class="pagination-sm" boundary-links="true"
+                                                force-ellipses="true" template-url="app/template/uib/pagination.html"
+                                ></uib-pagination>
+                            </div>
+                        </div>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+            <div class="col-xs-1">
+                <md-fab-speed-dial md-direction="up" class="md-scale" style="position: fixed;bottom: 30px;right: 30px;">
+                    <md-fab-trigger>
+                        <md-button aria-label="menu" class="md-fab md-warn">
+                            <md-icon>
+                                <i class="zmdi zmdi-plus f-20"></i>
+                            </md-icon>
+                        </md-button>
+                    </md-fab-trigger>
+                    <md-fab-actions>
+                        <md-button class="md-fab md-raised md-mini">
+                            <md-icon>
+                                <i class="zmdi zmdi-edit  f-20"></i>
+                            </md-icon>
+                        </md-button>
+                        <md-button class="md-fab md-raised md-mini">
+                            <md-icon>
+                                <i class="zmdi zmdi-comments  f-20"></i>
+                            </md-icon>
+                        </md-button>
+                        <md-button class="md-fab md-raised md-mini">
+                            <md-icon>
+                                <i class="zmdi zmdi-star  f-20"></i>
+                            </md-icon>
+                        </md-button>
+                    </md-fab-actions>
+                </md-fab-speed-dial>
+            </div>
+        </div>
+    </div>
+</div>

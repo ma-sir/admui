@@ -1,0 +1,20 @@
+<div class="sidebar-inner mini-scroll">
+    <ul class="main-menu">
+
+        <li data-ng-repeat="item in appCfg.mainMenu" data-ng-class="{ 'sub-menu': item.submenu }">
+            <i data-ng-if="item.divider" class="divider">{{item.title}}</i>
+            <a data-ng-if="!item.submenu && !item.divider" href="{{item.url}}"   md-ink-ripple="#FF0000"  data-ng-click="appCfg.closeSidebar($event)"><i class="{{item.icon}}"></i> {{item.title}} </a>
+            <a data-ng-if="item.submenu"  md-ink-ripple="#FF0000" href="javascript:void(0)" toggle-submenu ><i class="{{item.icon}}"></i> {{item.title}} </a>
+            <ul data-ng-if="item.submenu">
+                <li data-ng-repeat="sub in item.submenu" data-ng-class="{ 'sub-menu': sub.submenu }">
+                    <a data-ng-if="!sub.submenu" href="{{sub.url}}"   data-ng-click="appCfg.closeSidebar($event)"><i class="{{sub.icon}}"></i> {{sub.title}} </a>
+                    <a data-ng-if="sub.submenu"  md-ink-ripple="#FF0000" href="javascript:void(0)" toggle-submenu ><i class="{{sub.icon}}"></i> {{sub.title}} </a>
+                    <ul data-ng-if="sub.submenu">
+                        <li data-ng-repeat="sub2 in sub.submenu"><a  href="{{sub2.url}}"  data-ng-click="appCfg.closeSidebar($event)">{{sub2.title}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+</div>

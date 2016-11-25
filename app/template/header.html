@@ -1,0 +1,190 @@
+
+<ul class="header-inner clearfix">
+    <li id="menu-trigger" data-target="mainmenu" data-toggle-sidebar data-model-left="appCfg.sidebarToggle"
+        data-ng-class="{ 'open': appCfg.sidebarToggle === true }">
+        <div class="line-wrap">
+            <div class="line top"></div>
+            <div class="line center"></div>
+            <div class="line bottom"></div>
+        </div>
+    </li>
+
+    <li class="logo hidden-xs">
+        <a><i class="zmdi zmdi-widgets f-20"></i> {{appCfg.title}} Material Admin Template</a>
+    </li>
+    <li class="pull-right">
+        <ul class="top-menu ">
+            <li class="hidden-xs">
+                <div class="search-widget"  data-ng-class="{ 'search-open': header_search_open==true}">
+                    <md-button class="md-icon-button" ng-click="openHeaderSearch($event)">
+                        <i class="zmdi zmdi-search"></i>
+                        <md-tooltip>Search</md-tooltip>
+                    </md-button>
+                    <input type="text" ng-blur="closeHeaderSearch()">
+                </div>
+            </li>
+            {{header_search_text}}
+            <li class="m-r-10 ">
+                <md-menu md-position-mode="target-right target">
+                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                        <i class="zmdi zmdi-face"></i>
+                        <md-tooltip>Welcome, Administrator</md-tooltip>
+                    </md-button>
+                    <md-menu-content width="4">
+                        <md-menu-item>
+                            <md-button ng-click="gotoUrl('/#/?url=app%2Fmodules%2Fprofile&theme=red&title=profile')">
+                                <div layout="row"><p flex>Profile</p>
+                                    <md-icon md-menu-align-target style="margin: auto 3px auto 0;"><i
+                                            class="zmdi zmdi-face"></i></md-icon>
+                                </div>
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button data-ng-click="toggleRight()">
+                                <div layout="row"><p flex>Settings</p>
+                                    <md-icon md-menu-align-target style="margin: auto 3px auto 0;"><i
+                                            class="zmdi zmdi-settings"></i></md-icon>
+                                </div>
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="gotoUrl('/login.html')">
+                                <div layout="row"><p flex>Logout</p>
+                                    <md-icon md-menu-align-target style="margin: auto 3px auto 0;"><i
+                                            class="zmdi zmdi-lock"></i></md-icon>
+                                </div>
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="gotoUrl('/lockscreen.html')">
+                                <div layout="row"><p flex>LockScreen</p>
+                                    <md-icon md-menu-align-target style="margin: auto 3px auto 0;"><i
+                                            class="zmdi zmdi-time-restore"></i></md-icon>
+                                </div>
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <i class="badge">5</i>
+            </li>
+            <li>
+                <md-button class="md-icon-button" data-ng-click="toggleRight()">
+                    <i class="zmdi zmdi-menu"></i>
+                    <md-tooltip>Settings</md-tooltip>
+                </md-button>
+            </li>
+
+        </ul>
+
+    </li>
+</ul>
+
+<nav class="top-tab-menu" ng-if="appCfg.openInsetTab == 1">
+
+    <div class="menubar" ng-show="appCfg.isFullScreen == 1">
+        <md-menu-bar class="top-menu-bar">
+            <md-menu>
+                <button ng-click="$mdOpenMenu()">
+                    <i class="zmdi zmdi-menu"></i> Menu
+                </button>
+                <md-menu-content class="top-tab-menu-content">
+
+                    <md-menu-item data-ng-repeat="item in appCfg.mainMenu" ng-class="{'divider':item.divider}">
+
+                        <md-button data-ng-if="!item.submenu && !item.divider" ng-href="{{item.url}}"><i
+                                class="{{item.icon}}"></i>
+                            {{item.title}}
+                        </md-button>
+                        <md-menu-divider data-ng-if="item.divider"></md-menu-divider>
+                        <md-menu data-ng-if="item.submenu">
+                            <md-button ng-click="$mdOpenMenu()">
+                                <span>
+                                    <i class="{{item.icon}}"></i> {{item.title}}
+                                </span>
+                            </md-button>
+                            <md-menu-content>
+
+                                <md-menu-item data-ng-repeat="sub in item.submenu">
+
+                                    <md-button data-ng-if="!sub.submenu" ng-href="{{sub.url}}"><i
+                                            class="{{sub.icon}}"></i> {{sub.title}}
+                                    </md-button>
+
+                                    <md-menu data-ng-if="sub.submenu">
+                                        <md-button ng-click="$mdOpenMenu()"><i class="{{sub.icon}}"></i> {{sub.title}}
+                                        </md-button>
+                                        <md-menu-content>
+                                            <md-menu-item data-ng-repeat="sub2 in sub.submenu">
+                                                <md-button data-ng-if="!sub2.submenu" ng-href="{{sub2.url}}"><i
+                                                        class="{{sub2.icon}}"></i> {{sub2.title}}
+                                                </md-button>
+                                            </md-menu-item>
+                                        </md-menu-content>
+                                    </md-menu>
+                                </md-menu-item>
+
+                            </md-menu-content>
+                        </md-menu>
+                    </md-menu-item>
+                    <md-menu-divider></md-menu-divider>
+                    <md-menu-item>
+                        <md-button data-ng-click="toggleRight()">
+                            <span>
+                            <i class="zmdi zmdi-more-vert"></i>Toggle Right Sidebar
+                                </span>
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </md-menu-bar>
+    </div>
+
+    <md-tabs md-selected="materialCtrl.tabManager.SELECTEDINDEX" md-autoselect
+             ng-show="materialCtrl.tabManager.TABS.length>0">
+        <md-tab ng-repeat="tab in materialCtrl.tabManager.TABS">
+            <md-tab-label>
+                {{tab.title}}
+                <md-menu>
+                    <i class="zmdi zmdi-close" ng-click="$mdOpenMenu($event)" data-hash="{{tab.hash}}"></i>
+                    <md-menu-content width="3">
+                        <md-menu-item>
+                            <md-button ng-click="materialCtrl.tabManager.removeTab(tab)">
+                                <i class="zmdi zmdi-close"></i>
+                                Close
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <md-button ng-click="materialCtrl.tabManager.removeOtherTab(tab)">
+                                <i class="zmdi zmdi-arrow-split"></i>
+                                Close Others
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="materialCtrl.tabManager.removeAllTab(tab)">
+                                <i class="zmdi zmdi-arrow-missed"></i>
+                                Close All
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </md-tab-label>
+        </md-tab>
+    </md-tabs>
+
+
+    <div class="menubar-actions">
+        <md-button class="md-icon-button" data-ng-click="appCfg.fullScreen()" ng-show="appCfg.isFullScreen == 1">
+            <i class="zmdi zmdi-fullscreen-exit"></i>
+            <md-tooltip md-direction="left">
+                Exit Full Screen
+            </md-tooltip>
+        </md-button>
+        <md-button class="md-icon-button" data-ng-click="appCfg.fullScreen()" ng-show="appCfg.isFullScreen == 0">
+            <i class="zmdi zmdi-fullscreen"></i>
+            <md-tooltip md-direction="left">
+                Enter Full Screen
+            </md-tooltip>
+        </md-button>
+    </div>
+</nav>

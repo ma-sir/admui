@@ -1,0 +1,267 @@
+<div oc-lazy-load="['app/modules/profile.js','app/addons/bower_components/magnific-popup/dist/jquery.magnific-popup.min.js','app/addons/bower_components/magnific-popup/dist/magnific-popup.css']">
+    <div class="container profile" data-ng-controller="ProfileCtrl as ctrl">
+
+        <div class="m-b-15 m-t-15">
+            <md-card>
+                <md-card-title-media>
+                    <div class="md-media-md card-media banner">
+                        <div class="avatar"></div>
+                        <div class="" style="position: absolute;top: 70px;left: 170px;">
+                            <h3 class="c-white">Administrator</h3>
+                            <small class="p-r-20 c-white">
+                                <i class="zmdi zmdi-twitter"></i> 3k followers, 200 following
+                            </small>
+                        </div>
+                    </div>
+                </md-card-title-media>
+                <md-card-actions style="text-align: right;padding-right: 50px;">
+                    <div class="pull-left c-grey" style="padding: 10px 0 0 30px;">
+                        <i class="zmdi zmdi-home"></i> http://adminstrator.github.io/index.html
+                    </div>
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                        <md-icon><i class="zmdi zmdi-layers f-20"></i></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Settings">
+                        <md-icon><i class="zmdi zmdi-star f-20"></i></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Share">
+                        <md-icon><i class="zmdi zmdi-menu f-20"></i></md-icon>
+                    </md-button>
+                </md-card-actions>
+                <md-fab-speed-dial md-direction="up" class="md-scale" md-open="false"
+                                   style="position: absolute;right: 10px;bottom:28px;">
+                    <md-fab-trigger>
+                        <md-button aria-label="menu" class="md-fab md-warn">
+                            <md-icon>
+                                <i class="zmdi zmdi-plus"></i>
+                            </md-icon>
+                        </md-button>
+                    </md-fab-trigger>
+                    <md-fab-actions>
+                        <md-button class="md-fab md-raised md-mini">
+                            <i class="zmdi zmdi-share f-22"></i>
+                        </md-button>
+                        <md-button class="md-fab md-raised md-mini">
+                            <i class="zmdi zmdi-edit f-22"></i>
+                        </md-button>
+                        <md-button class="md-fab md-raised md-mini">
+                            <i class="zmdi zmdi-star f-22"></i>
+                        </md-button>
+                    </md-fab-actions>
+                </md-fab-speed-dial>
+            </md-card>
+        </div>
+        <div class=" m-b-30">
+            <div style="width: 240px;float: left;" class="">
+                <md-card class="m-b-15">
+                    <div class="p-15">
+                        <h4>Administrator
+                        </h4>
+                        <small class="c-grey">http://adminstrator.github.io/index.html</small>
+                        <br>
+                        <p class="p-t-10 ">
+                            The titles of Washed Out's breakthrough song and the first single from Paracosm
+                        </p>
+                    </div>
+
+                </md-card>
+                <md-card class="m-b-15 p-15 contact">
+                    <h4>Contact Me</h4>
+                    <ul>
+                        <li><i class="zmdi zmdi-phone"></i> 00086 11023478 999</li>
+                        <li><i class="zmdi zmdi-email"></i> Administrator@gmail.com</li>
+                        <li><i class="zmdi zmdi-skype"></i> Administrator</li>
+                        <li><i class="zmdi zmdi-github"></i> Administrator.io</li>
+                        <li><i class="zmdi zmdi-twitter"></i> @Administrator</li>
+                    </ul>
+                </md-card>
+                <md-card>
+                    <md-list>
+                        <md-subheader class="md-no-sticky">Sub Menu</md-subheader>
+                        <md-list-item ng-click="gotoMenu($event)">
+                            <p>About me </p>
+                        </md-list-item>
+                        <md-list-item ng-click="gotoMenu($event)">
+                            <p>Courses</p>
+                        </md-list-item>
+                        <md-list-item ng-click="gotoMenu($event)">
+                            <p>Friends</p>
+                        </md-list-item>
+                        <md-divider></md-divider>
+                        <md-list-item ng-click="gotoMenu($event)">
+                            <p>Contact me</p>
+                        </md-list-item>
+                    </md-list>
+                </md-card>
+            </div>
+            <div style="width: 240px;float: right;" class="friends">
+                <md-card>
+                    <md-list>
+                        <md-subheader class="md-no-sticky">Recent Contacts</md-subheader>
+                        <md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)">
+                            <div class="md-avatar avatar{{$index}}"></div>
+                            <p>{{ person.name }}</p>
+                            <md-icon ng-class="{'md-accent': person.newMessage}">
+                                <i class="zmdi zmdi-circle f-20"></i>
+                            </md-icon>
+                        </md-list-item>
+                    </md-list>
+                </md-card>
+            </div>
+            <div style="margin-right: 255px;margin-left: 255px;" class="">
+                <md-card>
+                    <ul class="nav nav-tabs nav-justified" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#About" role="tab" md-ink-ripple="#ff0000" data-toggle="tab" aria-expanded="true">About
+                                Me</a>
+                        </li>
+                        <li role="presentation"><a href="#Messages" md-ink-ripple="#ff0000" role="tab"
+                                                   data-toggle="tab">Messages</a></li>
+                        <li role="presentation"><a href="#Works" md-ink-ripple="#ff0000" role="tab" data-toggle="tab">My
+                            Works</a></li>
+                        <li role="presentation" class="dropdown"><a md-ink-ripple="#ff0000" href="#" id="myTabDrop1"
+                                                                    class="dropdown-toggle"
+                                                                    data-toggle="dropdown"
+                                                                    aria-controls="myTabDrop1-contents"
+                                                                    aria-expanded="false"
+                                                                    md-ink-ripple="#FF4081">Photos <span
+                                class="caret"></span></a>
+                            <ul class="dropdown-menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+                                <li><a href="#Photos" role="tab" id="dropdown0-tab" data-toggle="tab"
+                                       aria-controls="dropdown1" data-ng-click="photoQ=''">@ALL PHOTOS</a></li>
+                                <li><a href="#Photos" role="tab" id="dropdown1-tab" data-toggle="tab"
+                                       aria-controls="dropdown1" data-ng-click="photoQ='grils'">@GRILS PHOTOS</a></li>
+                                <li><a href="#Photos" role="tab" id="dropdown2-tab" data-toggle="tab"
+                                       aria-controls="dropdown2" data-ng-click="photoQ='baby'">@BABY PHOTOTS</a></li>
+                                <li><a href="#Photos" role="tab" id="dropdown3-tab" data-toggle="tab"
+                                       aria-controls="dropdown2" data-ng-click="photoQ='things'">@THINGS PHOTOTS</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div style="height:auto" class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active p-20" id="About">
+                            <div class="">
+                                <h3><i class="zmdi zmdi-info-outline m-r-5"></i> About</h3>
+                            </div>
+                            <div class=" p-l-30">
+                                <p>
+                                    The titles of Washed Out's breakthrough song and the first single from Paracosm
+                                    share the
+                                    two most important words in Ernest Greene's musical language: feel it. It's a simple
+                                    request, as well
+                                    The titles of Washed Out's breakthrough song and the first single from Paracosm
+                                    share the
+                                    two most important words in Ernest Greene's musical language: feel it. It's a simple
+                                    request, as well...
+                                </p>
+                                <p>
+                                    The titles of Washed Out's breakthrough song and the first single from Paracosm
+                                    share the
+                                    two most important words in Ernest Greene's musical language: feel it. It's a simple
+                                    request, as well
+                                    The titles of Washed Out's breakthrough song and the first single from Paracosm
+                                    share the
+                                    two most important words in Ernest Greene's musical language: feel it. It's a simple
+                                    request, as well...
+                                </p>
+                            </div>
+                            <div class="m-t-30">
+                                <h3><i class="zmdi zmdi-twitter m-r-5"></i> Social contact</h3>
+                            </div>
+                            <div class=" p-l-30 p-t-10">
+                                <div>
+                                    <dl class="">
+                                        <dt>Twitter</dt>
+                                        <dd class=""> @Administrator (twitter.com/administrator)</dd>
+                                    </dl>
+                                    <dl class="">
+                                        <dt>Facebook</dt>
+                                        <dd class="">administrator@gmail.com</dd>
+                                    </dl>
+                                    <dl class="">
+                                        <dt>Google+</dt>
+                                        <dd class="">administrator@gmail.com</dd>
+                                    </dl>
+                                    <dl class="">
+                                        <dt>Github</dt>
+                                        <dd class="">administrator (administrator.github.io)</dd>
+                                    </dl>
+                                    <dl class="">
+                                        <dt>Homepage</dt>
+                                        <dd class="">http://www.administrator.com/index.html</dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade p-15 friends" id="Messages">
+                            <md-list>
+                                <md-list-item class="md-3-line m-b-20" ng-repeat="item in msgs">
+                                    <div class="md-avatar avatar{{$index}}">
+                                        <md-tooltip>{{ item.who }}</md-tooltip>
+                                    </div>
+                                    <div class="md-list-item-text">
+                                        <small class="c-grey">{{ item.who }}</small>
+                                        <div>{{ item.notes }}</div>
+                                        <small class="c-grey"><i class="zmdi zmdi-time"></i> {{ item.when }}</small>
+                                    </div>
+                                </md-list-item>
+                            </md-list>
+                            <div class="clearfix"></div>
+                            <div class="text-center p-20">
+                                <md-button class=" md-accent" style="width: 100%">Load More</md-button>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade p-20" id="Works">
+                            <div class="row">
+                                <div class="col-xs-12 m-b-20 m-t-15">
+                                    <div class="btn-group" data-toggle="buttons">
+                                        <label class="btn btn-default active" data-ng-click="worksq=''"
+                                               md-ink-ripple="#333">
+                                            <input type="radio" checked>ALL</label>
+                                        <label class="btn btn-default" data-ng-click="worksq='web'"
+                                               md-ink-ripple="#333">
+                                            <input type="radio">WEB DESIGN
+                                        </label>
+                                        <label class="btn btn-default" data-ng-click="worksq='card'"
+                                               md-ink-ripple="#333">
+                                            <input type="radio">CARD DESIGN
+                                        </label>
+                                        <label class="btn btn-default" data-ng-click="worksq='graphic'"
+                                               md-ink-ripple="#333">
+                                            <input type="radio">Graphic Design
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-4 animate-repeat"
+                                     data-ng-repeat="w in works | filter:worksq as results">
+                                    <div class="thumbnail">
+                                        <div style="position: relative" md-ink-ripple="#ff0000">
+                                         <img ng-src="dist/works/{{w.img}}.jpg">
+                                        </div>
+                                        <div class="caption">
+                                            <h4 class="text-center">Thumbnail label</h4>
+                                            <small class=" text-center d-block c-grey">{{w.type}}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade p-20" id="Photos">
+                            <div class="m-t-15">
+                                <div class="img-frame animate-repeat" md-ink-ripple="#ff0000"
+                                     data-ng-repeat="p in photos | filter:photoQ">
+                                    <a ng-href="dist/photos/{{p.img}}.jpg"><img style="height: 200px;width:auto" ng-src="dist/photos/{{p.img}}.jpg"></a>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="text-center p-20">
+                                    <md-button class=" md-accent" style="width: 100%">Load More</md-button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </md-card>
+            </div>
+        </div>
+    </div>
+</div>

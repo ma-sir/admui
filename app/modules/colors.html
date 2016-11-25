@@ -1,0 +1,883 @@
+<div oc-lazy-load="['app/modules/colors.js']">
+    <div class="container colors-usage" data-ng-controller="ColorsCtrl as ctrl">
+
+        <div class="block-header">
+            <h2>Material Color Palette
+                <small>http://www.google.com/design/spec/style/color.html#color-color-palette</small>
+            </h2>
+
+        </div>
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Material Color Palette</span>
+                    <span class="md-subhead">
+                        Markup: &lt;any class=&quot;bgc-red c-white&quot;&gt;Material Color Palette&lt;/any&gt;
+                    </span>
+
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                <table class="color_table">
+                    <tbody>
+                    <tr>
+                        <td title="Red" ng-click="colorCode($event)" style="background: #f44336" data-hex="f44336"
+                            data-hashhex="#f44336" data-rgb="rgb(244,67,54)" data-rgba="rgba(244,67,54 ,1)"> Red
+                        </td>
+                        <td title="Pink" ng-click="colorCode($event)" style="background: #E91E63" data-hex="E91E63"
+                            data-hashhex="#E91E63" data-rgb="rgb(233,30,99)" data-rgba="rgba(233,30,99 ,1)"> Pink
+                        </td>
+                        <td title="Purple" ng-click="colorCode($event)" style="background: #9C27B0" data-hex="9C27B0"
+                            data-hashhex="#9C27B0" data-rgb="rgb(156,39,176)" data-rgba="rgba(156,39,176 ,1)"> Purple
+                        </td>
+                        <td title="Deep Purple" ng-click="colorCode($event)" style="background: #673AB7"
+                            data-hex="673AB7" data-hashhex="#673AB7" data-rgb="rgb(103,58,183)"
+                            data-rgba="rgba(103,58,183 ,1)"> Deep Purple
+                        </td>
+                        <td title="Indigo" ng-click="colorCode($event)" style="background: #3F51B5" data-hex="3F51B5"
+                            data-hashhex="#3F51B5" data-rgb="rgb(63,81,181)" data-rgba="rgba(63,81,181 ,1)"> Indigo
+                        </td>
+                        <td title="Blue" ng-click="colorCode($event)" style="background: #2196F3" data-hex="2196F3"
+                            data-hashhex="#2196F3" data-rgb="rgb(33,150,243)" data-rgba="rgba(33,150,243 ,1)"> Blue
+                        </td>
+                        <td title="Light Blue" ng-click="colorCode($event)" style="background: #03A9F4"
+                            data-hex="03A9F4" data-hashhex="#03A9F4" data-rgb="rgb(3,169,244)"
+                            data-rgba="rgba(3,169,244 ,1)"> Light Blue
+                        </td>
+                        <td title="Cyan" ng-click="colorCode($event)" style="background: #00BCD4" data-hex="00BCD4"
+                            data-hashhex="#00BCD4" data-rgb="rgb(0,188,212)" data-rgba="rgba(0,188,212 ,1)"> Cyan
+                        </td>
+                        <td title="Teal" ng-click="colorCode($event)" style="background: #009688" data-hex="009688"
+                            data-hashhex="#009688" data-rgb="rgb(0,150,136)" data-rgba="rgba(0,150,136 ,1)"> Teal
+                        </td>
+                        <td title="Green" ng-click="colorCode($event)" style="background: #4CAF50" data-hex="4CAF50"
+                            data-hashhex="#4CAF50" data-rgb="rgb(76,175,80)" data-rgba="rgba(76,175,80 ,1)"> Green
+                        </td>
+                        <td title="Light Green" ng-click="colorCode($event)" style="background: #8BC34A"
+                            data-hex="8BC34A" data-hashhex="#8BC34A" data-rgb="rgb(139,195,74)"
+                            data-rgba="rgba(139,195,74 ,1)"> Light Green
+                        </td>
+                        <td title="Lime" ng-click="colorCode($event)" style="background: #CDDC39" data-hex="CDDC39"
+                            data-hashhex="#CDDC39" data-rgb="rgb(205,220,57)" data-rgba="rgba(205,220,57 ,1)"> Lime
+                        </td>
+                        <td title="Yellow" ng-click="colorCode($event)" style="background: #FFEB3B" data-hex="FFEB3B"
+                            data-hashhex="#FFEB3B" data-rgb="rgb(255,235,59)" data-rgba="rgba(255,235,59 ,1)"> Yellow
+                        </td>
+                        <td title="Amber" ng-click="colorCode($event)" style="background: #FFC107" data-hex="FFC107"
+                            data-hashhex="#FFC107" data-rgb="rgb(255,193,7)" data-rgba="rgba(255,193,7 ,1)"> Amber
+                        </td>
+                        <td title="Orange" ng-click="colorCode($event)" style="background: #FF9800" data-hex="FF9800"
+                            data-hashhex="#FF9800" data-rgb="rgb(255,152,0)" data-rgba="rgba(255,152,0 ,1)"> Orange
+                        </td>
+                        <td title="Deep Orange" ng-click="colorCode($event)" style="background: #FF5722"
+                            data-hex="FF5722" data-hashhex="#FF5722" data-rgb="rgb(255,87,34)"
+                            data-rgba="rgba(255,87,34 ,1)"> Deep Orange
+                        </td>
+                        <td title="Brown" ng-click="colorCode($event)" style="background: #795548" data-hex="795548"
+                            data-hashhex="#795548" data-rgb="rgb(121,85,72)" data-rgba="rgba(121,85,72 ,1)"> Brown
+                        </td>
+                        <td title="Grey" ng-click="colorCode($event)" style="background: #9E9E9E" data-hex="9E9E9E"
+                            data-hashhex="#9E9E9E" data-rgb="rgb(158,158,158)" data-rgba="rgba(158,158,158 ,1)"> Grey
+                        </td>
+                        <td title="Blue Grey" ng-click="colorCode($event)" style="background: #607D8B" data-hex="607D8B"
+                            data-hashhex="#607D8B" data-rgb="rgb(96,125,139)" data-rgba="rgba(96,125,139 ,1)"> Blue Grey
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#ffebee" data-hex="ffebee"
+                            data-hashhex="#ffebee" data-rgb="rgb(255,235,238)" data-rgba="rgba(255,235,238 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FCE4EC" data-hex="FCE4EC"
+                            data-hashhex="#FCE4EC" data-rgb="rgb(252,228,236)" data-rgba="rgba(252,228,236 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F3E5F5" data-hex="F3E5F5"
+                            data-hashhex="#F3E5F5" data-rgb="rgb(243,229,245)" data-rgba="rgba(243,229,245 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#EDE7F6" data-hex="EDE7F6"
+                            data-hashhex="#EDE7F6" data-rgb="rgb(237,231,246)" data-rgba="rgba(237,231,246 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E8EAF6" data-hex="E8EAF6"
+                            data-hashhex="#E8EAF6" data-rgb="rgb(232,234,246)" data-rgba="rgba(232,234,246 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E3F2FD" data-hex="E3F2FD"
+                            data-hashhex="#E3F2FD" data-rgb="rgb(227,242,253)" data-rgba="rgba(227,242,253 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E1F5FE" data-hex="E1F5FE"
+                            data-hashhex="#E1F5FE" data-rgb="rgb(225,245,254)" data-rgba="rgba(225,245,254 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E0F7FA" data-hex="E0F7FA"
+                            data-hashhex="#E0F7FA" data-rgb="rgb(224,247,250)" data-rgba="rgba(224,247,250 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E0F2F1" data-hex="E0F2F1"
+                            data-hashhex="#E0F2F1" data-rgb="rgb(224,242,241)" data-rgba="rgba(224,242,241 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E8F5E9" data-hex="E8F5E9"
+                            data-hashhex="#E8F5E9" data-rgb="rgb(232,245,233)" data-rgba="rgba(232,245,233 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F1F8E9" data-hex="F1F8E9"
+                            data-hashhex="#F1F8E9" data-rgb="rgb(241,248,233)" data-rgba="rgba(241,248,233 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F9FBE7" data-hex="F9FBE7"
+                            data-hashhex="#F9FBE7" data-rgb="rgb(249,251,231)" data-rgba="rgba(249,251,231 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFFDE7" data-hex="FFFDE7"
+                            data-hashhex="#FFFDE7" data-rgb="rgb(255,253,231)" data-rgba="rgba(255,253,231 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFF8E1" data-hex="FFF8E1"
+                            data-hashhex="#FFF8E1" data-rgb="rgb(255,248,225)" data-rgba="rgba(255,248,225 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFF3E0" data-hex="FFF3E0"
+                            data-hashhex="#FFF3E0" data-rgb="rgb(255,243,224)" data-rgba="rgba(255,243,224 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FBE9E7" data-hex="FBE9E7"
+                            data-hashhex="#FBE9E7" data-rgb="rgb(251,233,231)" data-rgba="rgba(251,233,231 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#EFEBE9" data-hex="EFEBE9"
+                            data-hashhex="#EFEBE9" data-rgb="rgb(239,235,233)" data-rgba="rgba(239,235,233 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FAFAFA" data-hex="FAFAFA"
+                            data-hashhex="#FAFAFA" data-rgb="rgb(250,250,250)" data-rgba="rgba(250,250,250 ,1)"> 50
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#ECEFF1" data-hex="ECEFF1"
+                            data-hashhex="#ECEFF1" data-rgb="rgb(236,239,241)" data-rgba="rgba(236,239,241 ,1)"> 50
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#ffcdd2" data-hex="ffcdd2"
+                            data-hashhex="#ffcdd2" data-rgb="rgb(255,205,210)" data-rgba="rgba(255,205,210 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F8BBD0" data-hex="F8BBD0"
+                            data-hashhex="#F8BBD0" data-rgb="rgb(248,187,208)" data-rgba="rgba(248,187,208 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E1BEE7" data-hex="E1BEE7"
+                            data-hashhex="#E1BEE7" data-rgb="rgb(225,190,231)" data-rgba="rgba(225,190,231 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#D1C4E9" data-hex="D1C4E9"
+                            data-hashhex="#D1C4E9" data-rgb="rgb(209,196,233)" data-rgba="rgba(209,196,233 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#C5CAE9" data-hex="C5CAE9"
+                            data-hashhex="#C5CAE9" data-rgb="rgb(197,202,233)" data-rgba="rgba(197,202,233 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#BBDEFB" data-hex="BBDEFB"
+                            data-hashhex="#BBDEFB" data-rgb="rgb(187,222,251)" data-rgba="rgba(187,222,251 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#B3E5FC" data-hex="B3E5FC"
+                            data-hashhex="#B3E5FC" data-rgb="rgb(179,229,252)" data-rgba="rgba(179,229,252 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#B2EBF2" data-hex="B2EBF2"
+                            data-hashhex="#B2EBF2" data-rgb="rgb(178,235,242)" data-rgba="rgba(178,235,242 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#B2DFDB" data-hex="B2DFDB"
+                            data-hashhex="#B2DFDB" data-rgb="rgb(178,223,219)" data-rgba="rgba(178,223,219 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#C8E6C9" data-hex="C8E6C9"
+                            data-hashhex="#C8E6C9" data-rgb="rgb(200,230,201)" data-rgba="rgba(200,230,201 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#DCEDC8" data-hex="DCEDC8"
+                            data-hashhex="#DCEDC8" data-rgb="rgb(220,237,200)" data-rgba="rgba(220,237,200 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F0F4C3" data-hex="F0F4C3"
+                            data-hashhex="#F0F4C3" data-rgb="rgb(240,244,195)" data-rgba="rgba(240,244,195 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFF9C4" data-hex="FFF9C4"
+                            data-hashhex="#FFF9C4" data-rgb="rgb(255,249,196)" data-rgba="rgba(255,249,196 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFECB3" data-hex="FFECB3"
+                            data-hashhex="#FFECB3" data-rgb="rgb(255,236,179)" data-rgba="rgba(255,236,179 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFE0B2" data-hex="FFE0B2"
+                            data-hashhex="#FFE0B2" data-rgb="rgb(255,224,178)" data-rgba="rgba(255,224,178 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFCCBC" data-hex="FFCCBC"
+                            data-hashhex="#FFCCBC" data-rgb="rgb(255,204,188)" data-rgba="rgba(255,204,188 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#D7CCC8" data-hex="D7CCC8"
+                            data-hashhex="#D7CCC8" data-rgb="rgb(215,204,200)" data-rgba="rgba(215,204,200 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F5F5F5" data-hex="F5F5F5"
+                            data-hashhex="#F5F5F5" data-rgb="rgb(245,245,245)" data-rgba="rgba(245,245,245 ,1)"> 100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#CFD8DC" data-hex="CFD8DC"
+                            data-hashhex="#CFD8DC" data-rgb="rgb(207,216,220)" data-rgba="rgba(207,216,220 ,1)"> 100
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#ef9a9a" data-hex="ef9a9a"
+                            data-hashhex="#ef9a9a" data-rgb="rgb(239,154,154)" data-rgba="rgba(239,154,154 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F48FB1" data-hex="F48FB1"
+                            data-hashhex="#F48FB1" data-rgb="rgb(244,143,177)" data-rgba="rgba(244,143,177 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#CE93D8" data-hex="CE93D8"
+                            data-hashhex="#CE93D8" data-rgb="rgb(206,147,216)" data-rgba="rgba(206,147,216 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#B39DDB" data-hex="B39DDB"
+                            data-hashhex="#B39DDB" data-rgb="rgb(179,157,219)" data-rgba="rgba(179,157,219 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#9FA8DA" data-hex="9FA8DA"
+                            data-hashhex="#9FA8DA" data-rgb="rgb(159,168,218)" data-rgba="rgba(159,168,218 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#90CAF9" data-hex="90CAF9"
+                            data-hashhex="#90CAF9" data-rgb="rgb(144,202,249)" data-rgba="rgba(144,202,249 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#81D4FA" data-hex="81D4FA"
+                            data-hashhex="#81D4FA" data-rgb="rgb(129,212,250)" data-rgba="rgba(129,212,250 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#80DEEA" data-hex="80DEEA"
+                            data-hashhex="#80DEEA" data-rgb="rgb(128,222,234)" data-rgba="rgba(128,222,234 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#80CBC4" data-hex="80CBC4"
+                            data-hashhex="#80CBC4" data-rgb="rgb(128,203,196)" data-rgba="rgba(128,203,196 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#A5D6A7" data-hex="A5D6A7"
+                            data-hashhex="#A5D6A7" data-rgb="rgb(165,214,167)" data-rgba="rgba(165,214,167 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#C5E1A5" data-hex="C5E1A5"
+                            data-hashhex="#C5E1A5" data-rgb="rgb(197,225,165)" data-rgba="rgba(197,225,165 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E6EE9C" data-hex="E6EE9C"
+                            data-hashhex="#E6EE9C" data-rgb="rgb(230,238,156)" data-rgba="rgba(230,238,156 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFF59D" data-hex="FFF59D"
+                            data-hashhex="#FFF59D" data-rgb="rgb(255,245,157)" data-rgba="rgba(255,245,157 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFE082" data-hex="FFE082"
+                            data-hashhex="#FFE082" data-rgb="rgb(255,224,130)" data-rgba="rgba(255,224,130 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFCC80" data-hex="FFCC80"
+                            data-hashhex="#FFCC80" data-rgb="rgb(255,204,128)" data-rgba="rgba(255,204,128 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFAB91" data-hex="FFAB91"
+                            data-hashhex="#FFAB91" data-rgb="rgb(255,171,145)" data-rgba="rgba(255,171,145 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#BCAAA4" data-hex="BCAAA4"
+                            data-hashhex="#BCAAA4" data-rgb="rgb(188,170,164)" data-rgba="rgba(188,170,164 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#EEEEEE" data-hex="EEEEEE"
+                            data-hashhex="#EEEEEE" data-rgb="rgb(238,238,238)" data-rgba="rgba(238,238,238 ,1)"> 200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#B0BEC5" data-hex="B0BEC5"
+                            data-hashhex="#B0BEC5" data-rgb="rgb(176,190,197)" data-rgba="rgba(176,190,197 ,1)"> 200
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#e57373" data-hex="e57373"
+                            data-hashhex="#e57373" data-rgb="rgb(229,115,115)" data-rgba="rgba(229,115,115 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F06292" data-hex="F06292"
+                            data-hashhex="#F06292" data-rgb="rgb(240,98,146)" data-rgba="rgba(240,98,146 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#BA68C8" data-hex="BA68C8"
+                            data-hashhex="#BA68C8" data-rgb="rgb(186,104,200)" data-rgba="rgba(186,104,200 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#9575CD" data-hex="9575CD"
+                            data-hashhex="#9575CD" data-rgb="rgb(149,117,205)" data-rgba="rgba(149,117,205 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#7986CB" data-hex="7986CB"
+                            data-hashhex="#7986CB" data-rgb="rgb(121,134,203)" data-rgba="rgba(121,134,203 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#64B5F6" data-hex="64B5F6"
+                            data-hashhex="#64B5F6" data-rgb="rgb(100,181,246)" data-rgba="rgba(100,181,246 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#4FC3F7" data-hex="4FC3F7"
+                            data-hashhex="#4FC3F7" data-rgb="rgb(79,195,247)" data-rgba="rgba(79,195,247 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#4DD0E1" data-hex="4DD0E1"
+                            data-hashhex="#4DD0E1" data-rgb="rgb(77,208,225)" data-rgba="rgba(77,208,225 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#4DB6AC" data-hex="4DB6AC"
+                            data-hashhex="#4DB6AC" data-rgb="rgb(77,182,172)" data-rgba="rgba(77,182,172 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#81C784" data-hex="81C784"
+                            data-hashhex="#81C784" data-rgb="rgb(129,199,132)" data-rgba="rgba(129,199,132 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#AED581" data-hex="AED581"
+                            data-hashhex="#AED581" data-rgb="rgb(174,213,129)" data-rgba="rgba(174,213,129 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#DCE775" data-hex="DCE775"
+                            data-hashhex="#DCE775" data-rgb="rgb(220,231,117)" data-rgba="rgba(220,231,117 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFF176" data-hex="FFF176"
+                            data-hashhex="#FFF176" data-rgb="rgb(255,241,118)" data-rgba="rgba(255,241,118 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFD54F" data-hex="FFD54F"
+                            data-hashhex="#FFD54F" data-rgb="rgb(255,213,79)" data-rgba="rgba(255,213,79 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFB74D" data-hex="FFB74D"
+                            data-hashhex="#FFB74D" data-rgb="rgb(255,183,77)" data-rgba="rgba(255,183,77 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF8A65" data-hex="FF8A65"
+                            data-hashhex="#FF8A65" data-rgb="rgb(255,138,101)" data-rgba="rgba(255,138,101 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#A1887F" data-hex="A1887F"
+                            data-hashhex="#A1887F" data-rgb="rgb(161,136,127)" data-rgba="rgba(161,136,127 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E0E0E0" data-hex="E0E0E0"
+                            data-hashhex="#E0E0E0" data-rgb="rgb(224,224,224)" data-rgba="rgba(224,224,224 ,1)"> 300
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#90A4AE" data-hex="90A4AE"
+                            data-hashhex="#90A4AE" data-rgb="rgb(144,164,174)" data-rgba="rgba(144,164,174 ,1)"> 300
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#ef5350" data-hex="ef5350"
+                            data-hashhex="#ef5350" data-rgb="rgb(239,83,80)" data-rgba="rgba(239,83,80 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#EC407A" data-hex="EC407A"
+                            data-hashhex="#EC407A" data-rgb="rgb(236,64,122)" data-rgba="rgba(236,64,122 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#AB47BC" data-hex="AB47BC"
+                            data-hashhex="#AB47BC" data-rgb="rgb(171,71,188)" data-rgba="rgba(171,71,188 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#7E57C2" data-hex="7E57C2"
+                            data-hashhex="#7E57C2" data-rgb="rgb(126,87,194)" data-rgba="rgba(126,87,194 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#5C6BC0" data-hex="5C6BC0"
+                            data-hashhex="#5C6BC0" data-rgb="rgb(92,107,192)" data-rgba="rgba(92,107,192 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#42A5F5" data-hex="42A5F5"
+                            data-hashhex="#42A5F5" data-rgb="rgb(66,165,245)" data-rgba="rgba(66,165,245 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#29B6F6" data-hex="29B6F6"
+                            data-hashhex="#29B6F6" data-rgb="rgb(41,182,246)" data-rgba="rgba(41,182,246 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#26C6DA" data-hex="26C6DA"
+                            data-hashhex="#26C6DA" data-rgb="rgb(38,198,218)" data-rgba="rgba(38,198,218 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#26A69A" data-hex="26A69A"
+                            data-hashhex="#26A69A" data-rgb="rgb(38,166,154)" data-rgba="rgba(38,166,154 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#66BB6A" data-hex="66BB6A"
+                            data-hashhex="#66BB6A" data-rgb="rgb(102,187,106)" data-rgba="rgba(102,187,106 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#9CCC65" data-hex="9CCC65"
+                            data-hashhex="#9CCC65" data-rgb="rgb(156,204,101)" data-rgba="rgba(156,204,101 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#D4E157" data-hex="D4E157"
+                            data-hashhex="#D4E157" data-rgb="rgb(212,225,87)" data-rgba="rgba(212,225,87 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFEE58" data-hex="FFEE58"
+                            data-hashhex="#FFEE58" data-rgb="rgb(255,238,88)" data-rgba="rgba(255,238,88 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFCA28" data-hex="FFCA28"
+                            data-hashhex="#FFCA28" data-rgb="rgb(255,202,40)" data-rgba="rgba(255,202,40 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFA726" data-hex="FFA726"
+                            data-hashhex="#FFA726" data-rgb="rgb(255,167,38)" data-rgba="rgba(255,167,38 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF7043" data-hex="FF7043"
+                            data-hashhex="#FF7043" data-rgb="rgb(255,112,67)" data-rgba="rgba(255,112,67 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#8D6E63" data-hex="8D6E63"
+                            data-hashhex="#8D6E63" data-rgb="rgb(141,110,99)" data-rgba="rgba(141,110,99 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#BDBDBD" data-hex="BDBDBD"
+                            data-hashhex="#BDBDBD" data-rgb="rgb(189,189,189)" data-rgba="rgba(189,189,189 ,1)"> 400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#78909C" data-hex="78909C"
+                            data-hashhex="#78909C" data-rgb="rgb(120,144,156)" data-rgba="rgba(120,144,156 ,1)"> 400
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#f44336" data-hex="f44336"
+                            data-hashhex="#f44336" data-rgb="rgb(244,67,54)" data-rgba="rgba(244,67,54 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E91E63" data-hex="E91E63"
+                            data-hashhex="#E91E63" data-rgb="rgb(233,30,99)" data-rgba="rgba(233,30,99 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#9C27B0" data-hex="9C27B0"
+                            data-hashhex="#9C27B0" data-rgb="rgb(156,39,176)" data-rgba="rgba(156,39,176 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#673AB7" data-hex="673AB7"
+                            data-hashhex="#673AB7" data-rgb="rgb(103,58,183)" data-rgba="rgba(103,58,183 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#3F51B5" data-hex="3F51B5"
+                            data-hashhex="#3F51B5" data-rgb="rgb(63,81,181)" data-rgba="rgba(63,81,181 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#2196F3" data-hex="2196F3"
+                            data-hashhex="#2196F3" data-rgb="rgb(33,150,243)" data-rgba="rgba(33,150,243 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#03A9F4" data-hex="03A9F4"
+                            data-hashhex="#03A9F4" data-rgb="rgb(3,169,244)" data-rgba="rgba(3,169,244 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#00BCD4" data-hex="00BCD4"
+                            data-hashhex="#00BCD4" data-rgb="rgb(0,188,212)" data-rgba="rgba(0,188,212 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#009688" data-hex="009688"
+                            data-hashhex="#009688" data-rgb="rgb(0,150,136)" data-rgba="rgba(0,150,136 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#4CAF50" data-hex="4CAF50"
+                            data-hashhex="#4CAF50" data-rgb="rgb(76,175,80)" data-rgba="rgba(76,175,80 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#8BC34A" data-hex="8BC34A"
+                            data-hashhex="#8BC34A" data-rgb="rgb(139,195,74)" data-rgba="rgba(139,195,74 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#CDDC39" data-hex="CDDC39"
+                            data-hashhex="#CDDC39" data-rgb="rgb(205,220,57)" data-rgba="rgba(205,220,57 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFEB3B" data-hex="FFEB3B"
+                            data-hashhex="#FFEB3B" data-rgb="rgb(255,235,59)" data-rgba="rgba(255,235,59 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFC107" data-hex="FFC107"
+                            data-hashhex="#FFC107" data-rgb="rgb(255,193,7)" data-rgba="rgba(255,193,7 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF9800" data-hex="FF9800"
+                            data-hashhex="#FF9800" data-rgb="rgb(255,152,0)" data-rgba="rgba(255,152,0 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF5722" data-hex="FF5722"
+                            data-hashhex="#FF5722" data-rgb="rgb(255,87,34)" data-rgba="rgba(255,87,34 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#795548" data-hex="795548"
+                            data-hashhex="#795548" data-rgb="rgb(121,85,72)" data-rgba="rgba(121,85,72 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#9E9E9E" data-hex="9E9E9E"
+                            data-hashhex="#9E9E9E" data-rgb="rgb(158,158,158)" data-rgba="rgba(158,158,158 ,1)"> 500
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#607D8B" data-hex="607D8B"
+                            data-hashhex="#607D8B" data-rgb="rgb(96,125,139)" data-rgba="rgba(96,125,139 ,1)"> 500
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#e53935" data-hex="e53935"
+                            data-hashhex="#e53935" data-rgb="rgb(229,57,53)" data-rgba="rgba(229,57,53 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#D81B60" data-hex="D81B60"
+                            data-hashhex="#D81B60" data-rgb="rgb(216,27,96)" data-rgba="rgba(216,27,96 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#8E24AA" data-hex="8E24AA"
+                            data-hashhex="#8E24AA" data-rgb="rgb(142,36,170)" data-rgba="rgba(142,36,170 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#5E35B1" data-hex="5E35B1"
+                            data-hashhex="#5E35B1" data-rgb="rgb(94,53,177)" data-rgba="rgba(94,53,177 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#3949AB" data-hex="3949AB"
+                            data-hashhex="#3949AB" data-rgb="rgb(57,73,171)" data-rgba="rgba(57,73,171 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#1E88E5" data-hex="1E88E5"
+                            data-hashhex="#1E88E5" data-rgb="rgb(30,136,229)" data-rgba="rgba(30,136,229 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#039BE5" data-hex="039BE5"
+                            data-hashhex="#039BE5" data-rgb="rgb(3,155,229)" data-rgba="rgba(3,155,229 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#00ACC1" data-hex="00ACC1"
+                            data-hashhex="#00ACC1" data-rgb="rgb(0,172,193)" data-rgba="rgba(0,172,193 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#00897B" data-hex="00897B"
+                            data-hashhex="#00897B" data-rgb="rgb(0,137,123)" data-rgba="rgba(0,137,123 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#43A047" data-hex="43A047"
+                            data-hashhex="#43A047" data-rgb="rgb(67,160,71)" data-rgba="rgba(67,160,71 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#7CB342" data-hex="7CB342"
+                            data-hashhex="#7CB342" data-rgb="rgb(124,179,66)" data-rgba="rgba(124,179,66 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#C0CA33" data-hex="C0CA33"
+                            data-hashhex="#C0CA33" data-rgb="rgb(192,202,51)" data-rgba="rgba(192,202,51 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FDD835" data-hex="FDD835"
+                            data-hashhex="#FDD835" data-rgb="rgb(253,216,53)" data-rgba="rgba(253,216,53 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFB300" data-hex="FFB300"
+                            data-hashhex="#FFB300" data-rgb="rgb(255,179,0)" data-rgba="rgba(255,179,0 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FB8C00" data-hex="FB8C00"
+                            data-hashhex="#FB8C00" data-rgb="rgb(251,140,0)" data-rgba="rgba(251,140,0 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F4511E" data-hex="F4511E"
+                            data-hashhex="#F4511E" data-rgb="rgb(244,81,30)" data-rgba="rgba(244,81,30 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#6D4C41" data-hex="6D4C41"
+                            data-hashhex="#6D4C41" data-rgb="rgb(109,76,65)" data-rgba="rgba(109,76,65 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#757575" data-hex="757575"
+                            data-hashhex="#757575" data-rgb="rgb(117,117,117)" data-rgba="rgba(117,117,117 ,1)"> 600
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#546E7A" data-hex="546E7A"
+                            data-hashhex="#546E7A" data-rgb="rgb(84,110,122)" data-rgba="rgba(84,110,122 ,1)"> 600
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#d32f2f" data-hex="d32f2f"
+                            data-hashhex="#d32f2f" data-rgb="rgb(211,47,47)" data-rgba="rgba(211,47,47 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#C2185B" data-hex="C2185B"
+                            data-hashhex="#C2185B" data-rgb="rgb(194,24,91)" data-rgba="rgba(194,24,91 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#7B1FA2" data-hex="7B1FA2"
+                            data-hashhex="#7B1FA2" data-rgb="rgb(123,31,162)" data-rgba="rgba(123,31,162 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#512DA8" data-hex="512DA8"
+                            data-hashhex="#512DA8" data-rgb="rgb(81,45,168)" data-rgba="rgba(81,45,168 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#303F9F" data-hex="303F9F"
+                            data-hashhex="#303F9F" data-rgb="rgb(48,63,159)" data-rgba="rgba(48,63,159 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#1976D2" data-hex="1976D2"
+                            data-hashhex="#1976D2" data-rgb="rgb(25,118,210)" data-rgba="rgba(25,118,210 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#0288D1" data-hex="0288D1"
+                            data-hashhex="#0288D1" data-rgb="rgb(2,136,209)" data-rgba="rgba(2,136,209 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#0097A7" data-hex="0097A7"
+                            data-hashhex="#0097A7" data-rgb="rgb(0,151,167)" data-rgba="rgba(0,151,167 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#00796B" data-hex="00796B"
+                            data-hashhex="#00796B" data-rgb="rgb(0,121,107)" data-rgba="rgba(0,121,107 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#388E3C" data-hex="388E3C"
+                            data-hashhex="#388E3C" data-rgb="rgb(56,142,60)" data-rgba="rgba(56,142,60 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#689F38" data-hex="689F38"
+                            data-hashhex="#689F38" data-rgb="rgb(104,159,56)" data-rgba="rgba(104,159,56 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#AFB42B" data-hex="AFB42B"
+                            data-hashhex="#AFB42B" data-rgb="rgb(175,180,43)" data-rgba="rgba(175,180,43 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FBC02D" data-hex="FBC02D"
+                            data-hashhex="#FBC02D" data-rgb="rgb(251,192,45)" data-rgba="rgba(251,192,45 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFA000" data-hex="FFA000"
+                            data-hashhex="#FFA000" data-rgb="rgb(255,160,0)" data-rgba="rgba(255,160,0 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F57C00" data-hex="F57C00"
+                            data-hashhex="#F57C00" data-rgb="rgb(245,124,0)" data-rgba="rgba(245,124,0 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E64A19" data-hex="E64A19"
+                            data-hashhex="#E64A19" data-rgb="rgb(230,74,25)" data-rgba="rgba(230,74,25 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#5D4037" data-hex="5D4037"
+                            data-hashhex="#5D4037" data-rgb="rgb(93,64,55)" data-rgba="rgba(93,64,55 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#616161" data-hex="616161"
+                            data-hashhex="#616161" data-rgb="rgb(97,97,97)" data-rgba="rgba(97,97,97 ,1)"> 700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#455A64" data-hex="455A64"
+                            data-hashhex="#455A64" data-rgb="rgb(69,90,100)" data-rgba="rgba(69,90,100 ,1)"> 700
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#c62828" data-hex="c62828"
+                            data-hashhex="#c62828" data-rgb="rgb(198,40,40)" data-rgba="rgba(198,40,40 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#AD1457" data-hex="AD1457"
+                            data-hashhex="#AD1457" data-rgb="rgb(173,20,87)" data-rgba="rgba(173,20,87 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#6A1B9A" data-hex="6A1B9A"
+                            data-hashhex="#6A1B9A" data-rgb="rgb(106,27,154)" data-rgba="rgba(106,27,154 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#4527A0" data-hex="4527A0"
+                            data-hashhex="#4527A0" data-rgb="rgb(69,39,160)" data-rgba="rgba(69,39,160 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#283593" data-hex="283593"
+                            data-hashhex="#283593" data-rgb="rgb(40,53,147)" data-rgba="rgba(40,53,147 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#1565C0" data-hex="1565C0"
+                            data-hashhex="#1565C0" data-rgb="rgb(21,101,192)" data-rgba="rgba(21,101,192 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#0277BD" data-hex="0277BD"
+                            data-hashhex="#0277BD" data-rgb="rgb(2,119,189)" data-rgba="rgba(2,119,189 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#00838F" data-hex="00838F"
+                            data-hashhex="#00838F" data-rgb="rgb(0,131,143)" data-rgba="rgba(0,131,143 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#00695C" data-hex="00695C"
+                            data-hashhex="#00695C" data-rgb="rgb(0,105,92)" data-rgba="rgba(0,105,92 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#2E7D32" data-hex="2E7D32"
+                            data-hashhex="#2E7D32" data-rgb="rgb(46,125,50)" data-rgba="rgba(46,125,50 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#558B2F" data-hex="558B2F"
+                            data-hashhex="#558B2F" data-rgb="rgb(85,139,47)" data-rgba="rgba(85,139,47 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#9E9D24" data-hex="9E9D24"
+                            data-hashhex="#9E9D24" data-rgb="rgb(158,157,36)" data-rgba="rgba(158,157,36 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F9A825" data-hex="F9A825"
+                            data-hashhex="#F9A825" data-rgb="rgb(249,168,37)" data-rgba="rgba(249,168,37 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF8F00" data-hex="FF8F00"
+                            data-hashhex="#FF8F00" data-rgb="rgb(255,143,0)" data-rgba="rgba(255,143,0 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#EF6C00" data-hex="EF6C00"
+                            data-hashhex="#EF6C00" data-rgb="rgb(239,108,0)" data-rgba="rgba(239,108,0 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#D84315" data-hex="D84315"
+                            data-hashhex="#D84315" data-rgb="rgb(216,67,21)" data-rgba="rgba(216,67,21 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#4E342E" data-hex="4E342E"
+                            data-hashhex="#4E342E" data-rgb="rgb(78,52,46)" data-rgba="rgba(78,52,46 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#424242" data-hex="424242"
+                            data-hashhex="#424242" data-rgb="rgb(66,66,66)" data-rgba="rgba(66,66,66 ,1)"> 800
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#37474F" data-hex="37474F"
+                            data-hashhex="#37474F" data-rgb="rgb(55,71,79)" data-rgba="rgba(55,71,79 ,1)"> 800
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#b71c1c" data-hex="b71c1c"
+                            data-hashhex="#b71c1c" data-rgb="rgb(183,28,28)" data-rgba="rgba(183,28,28 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#880E4F" data-hex="880E4F"
+                            data-hashhex="#880E4F" data-rgb="rgb(136,14,79)" data-rgba="rgba(136,14,79 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#4A148C" data-hex="4A148C"
+                            data-hashhex="#4A148C" data-rgb="rgb(74,20,140)" data-rgba="rgba(74,20,140 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#311B92" data-hex="311B92"
+                            data-hashhex="#311B92" data-rgb="rgb(49,27,146)" data-rgba="rgba(49,27,146 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#1A237E" data-hex="1A237E"
+                            data-hashhex="#1A237E" data-rgb="rgb(26,35,126)" data-rgba="rgba(26,35,126 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#0D47A1" data-hex="0D47A1"
+                            data-hashhex="#0D47A1" data-rgb="rgb(13,71,161)" data-rgba="rgba(13,71,161 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#01579B" data-hex="01579B"
+                            data-hashhex="#01579B" data-rgb="rgb(1,87,155)" data-rgba="rgba(1,87,155 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#006064" data-hex="006064"
+                            data-hashhex="#006064" data-rgb="rgb(0,96,100)" data-rgba="rgba(0,96,100 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#004D40" data-hex="004D40"
+                            data-hashhex="#004D40" data-rgb="rgb(0,77,64)" data-rgba="rgba(0,77,64 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#1B5E20" data-hex="1B5E20"
+                            data-hashhex="#1B5E20" data-rgb="rgb(27,94,32)" data-rgba="rgba(27,94,32 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#33691E" data-hex="33691E"
+                            data-hashhex="#33691E" data-rgb="rgb(51,105,30)" data-rgba="rgba(51,105,30 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#827717" data-hex="827717"
+                            data-hashhex="#827717" data-rgb="rgb(130,119,23)" data-rgba="rgba(130,119,23 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F57F17" data-hex="F57F17"
+                            data-hashhex="#F57F17" data-rgb="rgb(245,127,23)" data-rgba="rgba(245,127,23 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF6F00" data-hex="FF6F00"
+                            data-hashhex="#FF6F00" data-rgb="rgb(255,111,0)" data-rgba="rgba(255,111,0 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E65100" data-hex="E65100"
+                            data-hashhex="#E65100" data-rgb="rgb(230,81,0)" data-rgba="rgba(230,81,0 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#BF360C" data-hex="BF360C"
+                            data-hashhex="#BF360C" data-rgb="rgb(191,54,12)" data-rgba="rgba(191,54,12 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#3E2723" data-hex="3E2723"
+                            data-hashhex="#3E2723" data-rgb="rgb(62,39,35)" data-rgba="rgba(62,39,35 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#212121" data-hex="212121"
+                            data-hashhex="#212121" data-rgb="rgb(33,33,33)" data-rgba="rgba(33,33,33 ,1)"> 900
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#263238" data-hex="263238"
+                            data-hashhex="#263238" data-rgb="rgb(38,50,56)" data-rgba="rgba(38,50,56 ,1)"> 900
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#ff8a80" data-hex="ff8a80"
+                            data-hashhex="#ff8a80" data-rgb="rgb(255,138,128)" data-rgba="rgba(255,138,128 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF80AB" data-hex="FF80AB"
+                            data-hashhex="#FF80AB" data-rgb="rgb(255,128,171)" data-rgba="rgba(255,128,171 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#EA80FC" data-hex="EA80FC"
+                            data-hashhex="#EA80FC" data-rgb="rgb(234,128,252)" data-rgba="rgba(234,128,252 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#B388FF" data-hex="B388FF"
+                            data-hashhex="#B388FF" data-rgb="rgb(179,136,255)" data-rgba="rgba(179,136,255 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#8C9EFF" data-hex="8C9EFF"
+                            data-hashhex="#8C9EFF" data-rgb="rgb(140,158,255)" data-rgba="rgba(140,158,255 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#82B1FF" data-hex="82B1FF"
+                            data-hashhex="#82B1FF" data-rgb="rgb(130,177,255)" data-rgba="rgba(130,177,255 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#80D8FF" data-hex="80D8FF"
+                            data-hashhex="#80D8FF" data-rgb="rgb(128,216,255)" data-rgba="rgba(128,216,255 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#84FFFF" data-hex="84FFFF"
+                            data-hashhex="#84FFFF" data-rgb="rgb(132,255,255)" data-rgba="rgba(132,255,255 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#A7FFEB" data-hex="A7FFEB"
+                            data-hashhex="#A7FFEB" data-rgb="rgb(167,255,235)" data-rgba="rgba(167,255,235 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#B9F6CA" data-hex="B9F6CA"
+                            data-hashhex="#B9F6CA" data-rgb="rgb(185,246,202)" data-rgba="rgba(185,246,202 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#CCFF90" data-hex="CCFF90"
+                            data-hashhex="#CCFF90" data-rgb="rgb(204,255,144)" data-rgba="rgba(204,255,144 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F4FF81" data-hex="F4FF81"
+                            data-hashhex="#F4FF81" data-rgb="rgb(244,255,129)" data-rgba="rgba(244,255,129 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFFF8D" data-hex="FFFF8D"
+                            data-hashhex="#FFFF8D" data-rgb="rgb(255,255,141)" data-rgba="rgba(255,255,141 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFE57F" data-hex="FFE57F"
+                            data-hashhex="#FFE57F" data-rgb="rgb(255,229,127)" data-rgba="rgba(255,229,127 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFD180" data-hex="FFD180"
+                            data-hashhex="#FFD180" data-rgb="rgb(255,209,128)" data-rgba="rgba(255,209,128 ,1)"> A100
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF9E80" data-hex="FF9E80"
+                            data-hashhex="#FF9E80" data-rgb="rgb(255,158,128)" data-rgba="rgba(255,158,128 ,1)"> A100
+                        </td>
+                        <td colspan="3" rowspan="4" class="blank_box"></td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#ff5252" data-hex="ff5252"
+                            data-hashhex="#ff5252" data-rgb="rgb(255,82,82)" data-rgba="rgba(255,82,82 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF4081" data-hex="FF4081"
+                            data-hashhex="#FF4081" data-rgb="rgb(255,64,129)" data-rgba="rgba(255,64,129 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#E040FB" data-hex="E040FB"
+                            data-hashhex="#E040FB" data-rgb="rgb(224,64,251)" data-rgba="rgba(224,64,251 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#7C4DFF" data-hex="7C4DFF"
+                            data-hashhex="#7C4DFF" data-rgb="rgb(124,77,255)" data-rgba="rgba(124,77,255 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#536DFE" data-hex="536DFE"
+                            data-hashhex="#536DFE" data-rgb="rgb(83,109,254)" data-rgba="rgba(83,109,254 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#448AFF" data-hex="448AFF"
+                            data-hashhex="#448AFF" data-rgb="rgb(68,138,255)" data-rgba="rgba(68,138,255 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#40C4FF" data-hex="40C4FF"
+                            data-hashhex="#40C4FF" data-rgb="rgb(64,196,255)" data-rgba="rgba(64,196,255 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#18FFFF" data-hex="18FFFF"
+                            data-hashhex="#18FFFF" data-rgb="rgb(24,255,255)" data-rgba="rgba(24,255,255 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#64FFDA" data-hex="64FFDA"
+                            data-hashhex="#64FFDA" data-rgb="rgb(100,255,218)" data-rgba="rgba(100,255,218 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#69F0AE" data-hex="69F0AE"
+                            data-hashhex="#69F0AE" data-rgb="rgb(105,240,174)" data-rgba="rgba(105,240,174 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#B2FF59" data-hex="B2FF59"
+                            data-hashhex="#B2FF59" data-rgb="rgb(178,255,89)" data-rgba="rgba(178,255,89 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#EEFF41" data-hex="EEFF41"
+                            data-hashhex="#EEFF41" data-rgb="rgb(238,255,65)" data-rgba="rgba(238,255,65 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFFF00" data-hex="FFFF00"
+                            data-hashhex="#FFFF00" data-rgb="rgb(255,255,0)" data-rgba="rgba(255,255,0 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFD740" data-hex="FFD740"
+                            data-hashhex="#FFD740" data-rgb="rgb(255,215,64)" data-rgba="rgba(255,215,64 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFAB40" data-hex="FFAB40"
+                            data-hashhex="#FFAB40" data-rgb="rgb(255,171,64)" data-rgba="rgba(255,171,64 ,1)"> A200
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF6E40" data-hex="FF6E40"
+                            data-hashhex="#FF6E40" data-rgb="rgb(255,110,64)" data-rgba="rgba(255,110,64 ,1)"> A200
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#ff1744" data-hex="ff1744"
+                            data-hashhex="#ff1744" data-rgb="rgb(255,23,68)" data-rgba="rgba(255,23,68 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#F50057" data-hex="F50057"
+                            data-hashhex="#F50057" data-rgb="rgb(245,0,87)" data-rgba="rgba(245,0,87 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#D500F9" data-hex="D500F9"
+                            data-hashhex="#D500F9" data-rgb="rgb(213,0,249)" data-rgba="rgba(213,0,249 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#651FFF" data-hex="651FFF"
+                            data-hashhex="#651FFF" data-rgb="rgb(101,31,255)" data-rgba="rgba(101,31,255 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#3D5AFE" data-hex="3D5AFE"
+                            data-hashhex="#3D5AFE" data-rgb="rgb(61,90,254)" data-rgba="rgba(61,90,254 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#2979FF" data-hex="2979FF"
+                            data-hashhex="#2979FF" data-rgb="rgb(41,121,255)" data-rgba="rgba(41,121,255 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#00B0FF" data-hex="00B0FF"
+                            data-hashhex="#00B0FF" data-rgb="rgb(0,176,255)" data-rgba="rgba(0,176,255 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#00E5FF" data-hex="00E5FF"
+                            data-hashhex="#00E5FF" data-rgb="rgb(0,229,255)" data-rgba="rgba(0,229,255 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#1DE9B6" data-hex="1DE9B6"
+                            data-hashhex="#1DE9B6" data-rgb="rgb(29,233,182)" data-rgba="rgba(29,233,182 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#00E676" data-hex="00E676"
+                            data-hashhex="#00E676" data-rgb="rgb(0,230,118)" data-rgba="rgba(0,230,118 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#76FF03" data-hex="76FF03"
+                            data-hashhex="#76FF03" data-rgb="rgb(118,255,3)" data-rgba="rgba(118,255,3 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#C6FF00" data-hex="C6FF00"
+                            data-hashhex="#C6FF00" data-rgb="rgb(198,255,0)" data-rgba="rgba(198,255,0 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFEA00" data-hex="FFEA00"
+                            data-hashhex="#FFEA00" data-rgb="rgb(255,234,0)" data-rgba="rgba(255,234,0 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFC400" data-hex="FFC400"
+                            data-hashhex="#FFC400" data-rgb="rgb(255,196,0)" data-rgba="rgba(255,196,0 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF9100" data-hex="FF9100"
+                            data-hashhex="#FF9100" data-rgb="rgb(255,145,0)" data-rgba="rgba(255,145,0 ,1)"> A400
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF3D00" data-hex="FF3D00"
+                            data-hashhex="#FF3D00" data-rgb="rgb(255,61,0)" data-rgba="rgba(255,61,0 ,1)"> A400
+                        </td>
+                    </tr>
+                    <tr>
+                        <td ng-click="colorCode($event)" style="background:#d50000" data-hex="d50000"
+                            data-hashhex="#d50000" data-rgb="rgb(213,0,0)" data-rgba="rgba(213,0,0 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#C51162" data-hex="C51162"
+                            data-hashhex="#C51162" data-rgb="rgb(197,17,98)" data-rgba="rgba(197,17,98 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#AA00FF" data-hex="AA00FF"
+                            data-hashhex="#AA00FF" data-rgb="rgb(170,0,255)" data-rgba="rgba(170,0,255 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#6200EA" data-hex="6200EA"
+                            data-hashhex="#6200EA" data-rgb="rgb(98,0,234)" data-rgba="rgba(98,0,234 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#304FFE" data-hex="304FFE"
+                            data-hashhex="#304FFE" data-rgb="rgb(48,79,254)" data-rgba="rgba(48,79,254 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#2962FF" data-hex="2962FF"
+                            data-hashhex="#2962FF" data-rgb="rgb(41,98,255)" data-rgba="rgba(41,98,255 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#0091EA" data-hex="0091EA"
+                            data-hashhex="#0091EA" data-rgb="rgb(0,145,234)" data-rgba="rgba(0,145,234 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#00B8D4" data-hex="00B8D4"
+                            data-hashhex="#00B8D4" data-rgb="rgb(0,184,212)" data-rgba="rgba(0,184,212 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#00BFA5" data-hex="00BFA5"
+                            data-hashhex="#00BFA5" data-rgb="rgb(0,191,165)" data-rgba="rgba(0,191,165 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#00C853" data-hex="00C853"
+                            data-hashhex="#00C853" data-rgb="rgb(0,200,83)" data-rgba="rgba(0,200,83 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#64DD17" data-hex="64DD17"
+                            data-hashhex="#64DD17" data-rgb="rgb(100,221,23)" data-rgba="rgba(100,221,23 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#AEEA00" data-hex="AEEA00"
+                            data-hashhex="#AEEA00" data-rgb="rgb(174,234,0)" data-rgba="rgba(174,234,0 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFD600" data-hex="FFD600"
+                            data-hashhex="#FFD600" data-rgb="rgb(255,214,0)" data-rgba="rgba(255,214,0 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FFAB00" data-hex="FFAB00"
+                            data-hashhex="#FFAB00" data-rgb="rgb(255,171,0)" data-rgba="rgba(255,171,0 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#FF6D00" data-hex="FF6D00"
+                            data-hashhex="#FF6D00" data-rgb="rgb(255,109,0)" data-rgba="rgba(255,109,0 ,1)"> A700
+                        </td>
+                        <td ng-click="colorCode($event)" style="background:#DD2C00" data-hex="DD2C00"
+                            data-hashhex="#DD2C00" data-rgb="rgb(221,44,0)" data-rgba="rgba(221,44,0 ,1)"> A700
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </md-card-content>
+        </md-card>
+    </div>
+</div>

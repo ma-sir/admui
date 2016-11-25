@@ -1,0 +1,155 @@
+<div oc-lazy-load="['app/modules/progress.js']">
+    <div class="container progress-usage">
+
+        <div class="block-header">
+            <h2>Progress</h2>
+        </div>
+
+
+        <div class="row" data-ng-controller="ProgressCtrl as vm">
+            <div class="col-md-12">
+                <md-card class="m-b-30">
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Material Color Palette</span>
+                    <span class="md-subhead">
+                        Markup: &lt;any class=&quot;bgc-red c-white&quot;&gt;Material Color Palette&lt;/any&gt;
+                    </span>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <md-card-content>
+                        <h4 style="margin-top:10px">Determinate</h4>
+                        <p>For operations where the percentage of the operation completed can be determined, use a
+                            determinate indicator. They
+                            give users a quick sense of how long an operation will take.</p>
+                        <div layout="row" layout-sm="column" layout-align="space-around">
+                            <md-progress-circular md-mode="determinate"
+                                                  value="{{vm.determinateValue}}"></md-progress-circular>
+                        </div>
+                        <h4>Indeterminate</h4>
+                        <p>For operations where the user is asked to wait a moment while something finishes up, and it's
+                            not necessary to
+                            expose what's happening behind the scenes and how long it will take, use an indeterminate
+                            indicator.</p>
+                        <div layout="row" layout-sm="column" layout-align="space-around">
+                            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                        </div>
+                        <h4>Theming </h4>
+                        <p>
+                            Your current theme colors can be used to easily colorize your progress indicator with
+                            `md-warn` or `md-accent`
+                            colors.
+                            To easily hide a <b>&lt;md-progress-circular&gt;</b> component, simply set the
+                            <b>md-mode</b> to "" or null.
+                        </p>
+                        <div layout="row" layout-sm="column" layout-align="space-around">
+                            <md-progress-circular class="md-hue-2" md-mode="{{vm.modes[0]}}"
+                                                  md-diameter="20px"></md-progress-circular>
+                            <md-progress-circular class="md-accent" md-mode="{{vm.modes[1]}}"
+                                                  md-diameter="40"></md-progress-circular>
+                            <md-progress-circular class="md-accent md-hue-1" md-mode="{{vm.modes[2]}}"
+                                                  md-diameter="60"></md-progress-circular>
+                            <md-progress-circular class="md-warn md-hue-3" md-mode="{{vm.modes[3]}}"
+                                                  md-diameter="70"></md-progress-circular>
+                            <md-progress-circular md-mode="{{vm.modes[4]}}" md-diameter="96"></md-progress-circular>
+                        </div>
+                        <hr ng-class="{'visible' : vm.activated}">
+                        <br>
+                        <div class="loaders">
+                            <p>Progress Circular Indicators: </p>
+                            <md-switch
+                                    ng-model="vm.activated"
+                                    ng-change="vm.toggleActivation()"
+                                    aria-label="Toggle Progress Circular Indicators">
+                                {{vm.activated}}
+                            </md-switch>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="small">
+                            Note: With above switch -- that simply clears the md-mode in each <code>&lt;md-progress-linear
+                            md-mode=""&gt;</code>
+                            element --
+                            developers can easily disable the animations and hide their progress indicators.
+                        </div>
+                    </md-card-content>
+                </md-card>
+            </div>
+
+
+        </div>
+
+        <div class="row" data-ng-controller="ProgressCtrl2 as vm">
+            <div class="col-md-12">
+                <md-card class="m-b-30">
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Material Color Palette</span>
+                    <span class="md-subhead">
+                        Markup: &lt;any class=&quot;bgc-red c-white&quot;&gt;Material Color Palette&lt;/any&gt;
+                    </span>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <md-card-content>
+                        <h2 class="md-title">Determinate</h2>
+                        <p>
+                            For operations where the percentage of the operation completed can be determined, use a <b>determinate</b>
+                            indicator.
+                            They give users a quick sense of how long an operation will take.
+                        </p>
+                        <md-progress-linear md-mode="determinate" value="{{vm.determinateValue}}"></md-progress-linear>
+                        <h4 class="md-title">Indeterminate</h4>
+                        <p>
+                            For operations where the user is asked to wait a moment while something finishes up, and
+                            it's not
+                            necessary to expose what's happening behind the scenes and how long it will take, use an
+                            <b>indeterminate</b> indicator:
+                        </p>
+                        <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+                        <h4 class="md-title">Buffer</h4>
+                        <p>
+                            For operations where the user wants to indicate some activity or loading from the server,
+                            use the <b>buffer</b> indicator:
+                        </p>
+                        <md-progress-linear class="md-warn" md-mode="{{vm.modes[0]}}" value="{{vm.determinateValue}}"
+                                            md-buffer-value="{{vm.determinateValue2}}"></md-progress-linear>
+                        <h4 class="md-title">Query</h4>
+                        <p>
+                            For situations where the user wants to indicate pre-loading (until the loading can actually
+                            be made),
+                            use the <b>query</b> indicator:
+                        </p>
+                        <div class="pcontainer" ng-class="{'visible' : !vm.activated}">
+                            <md-progress-linear md-mode="{{vm.modes[1]}}"></md-progress-linear>
+                            <div class="bottom-block">
+                                <span>Loading application libraries...</span>
+                            </div>
+                        </div>
+                        <hr ng-class="{'visible' : vm.activated}">
+                        <br>
+                        <div class="loaders ">
+                            <p>Query and Buffer progress linear indicators: </p>
+                            <md-switch
+                                    ng-model="vm.activated"
+                                    ng-change="vm.toggleActivation()"
+                                    aria-label="Enable Indicators">
+                                {{vm.activated}}
+                            </md-switch>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="small">
+                            Note: With the above switch -- which simply clears the md-mode in each <code>&lt;md-progress-linear
+                            md-mode=""&gt;</code> element --
+                            developers now easily disable the animations and hide their progress indicators.
+                        </div>
+                    </md-card-content>
+                </md-card>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>

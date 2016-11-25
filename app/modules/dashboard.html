@@ -1,0 +1,301 @@
+<div oc-lazy-load="['app/modules/dashboard.js']">
+    <div class="container dashboard" data-ng-controller="DashboardCtrl">
+        <div class="block-header">
+            <h2>Dashboard
+                <small>
+                    Welcome Administrator !
+                </small>
+            </h2>
+        </div>
+        <div class="row ">
+            <div class="col-md-6 status">
+                <div class="row">
+                    <div class="col-md-6">
+                        <md-card class="bgc-red m-b-20">
+                            <a href="#" title="#" class="c">
+                                <i class="icon zmdi zmdi-globe"></i>
+                                <div>
+                                    <h3 class="title">Data Traffic</h3>
+                                    <span class="num">256,521</span>
+                                </div>
+                            </a>
+                        </md-card>
+                    </div>
+                    <div class="col-md-6">
+                        <md-card class="bgc-orange m-b-20">
+                            <a href="#" title="#" class="c">
+                                <i class="icon zmdi zmdi-square-down"></i>
+                                <div>
+                                    <h3 class="title">Downloaded</h3>
+                                    <span class="num">5,478,123</span>
+                                </div>
+                            </a>
+                        </md-card>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <md-card class="bgc-green m-b-20">
+                            <a href="#" title="#" class="c">
+                                <i class="icon zmdi zmdi-comment"></i>
+                                <div>
+                                    <h3 class="title">Comments</h3>
+                                    <span class="num">14,789</span>
+                                </div>
+                            </a>
+                        </md-card>
+                    </div>
+                    <div class="col-md-6">
+                        <md-card class="bgc-blue m-b-20">
+                            <a href="#" title="#" class="c">
+                                <i class="icon zmdi zmdi-card"></i>
+                                <div>
+                                    <h3 class="title">Total Sales</h3>
+                                    <span class="num">14,789</span>
+                                </div>
+                            </a>
+                        </md-card>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 status2">
+                <div class="row m-b-20">
+                    <div class="col-md-12">
+                        <md-card class="c-white" data-theme={{appCfg.currentTheme}}>
+                            <div class="chart-container">
+                                <div class="chart stats-line" data-sparkline-line></div>
+                                <div class="count">
+                                    <small>Support Tickets</small>
+                                    <h2 class=" c-white">23,856</h2>
+                                </div>
+                            </div>
+                        </md-card>
+                    </div>
+                </div>
+                <div class="row m-b-20">
+                    <div class="col-md-12">
+                        <md-card class="bgc-deeppurple c-white">
+                            <div class="chart-container">
+                                <div class="chart stats-line-2" data-sparkline-line></div>
+                                <div class="count">
+                                    <small>Support Tickets</small>
+                                    <h2 class=" c-white">23,856</h2>
+                                </div>
+                            </div>
+                        </md-card>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--flot-chart-->
+        <div class="row m-b-20">
+            <div class="col-sm-8">
+                <md-card>
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Sales Statistics</span>
+                            <span class="md-subhead">Vestibulum purus quam scelerisque, mollis nonummy metus</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content>
+                        <div class="plot-chart" data-plot-chart style="height:280px;width:100%"></div>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <div class="col-sm-4">
+                <md-card>
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Browser Statistics</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content>
+                        <div class="pie-chart" data-pie-chart style="height: 290px;width: 100%"></div>
+                    </md-card-content>
+                </md-card>
+            </div>
+        </div>
+
+        <div class="row m-b-20">
+            <div class="col-sm-6">
+                <md-card class="todo-list">
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Todo Lists</span>
+                            <span class="md-subhead">Add, edit and manage your Todo Lists</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content class="p-t-0">
+                        <md-list ng-cloak>
+                            <md-list-item
+                                    ng-repeat="topping in ['Brunch this weekend?', 'I will be in your neighborhood doing errands', 'Secondary line text Lorem ipsum dolor ','Quisque volutpat condimentum velit','Class aptent taciti sociosqu', 'Secondary line text', 'Secondary line text Lorem ipsum dolor2 ']"
+                                    data-ng-class="{'tododone':todolist[$index]==true}">
+                                <p> {{ topping }} </p>
+                                <md-checkbox ng-init="todolist[3]=true;todolist[1]=true" class="md-secondary md-primary"
+                                             ng-model="todolist[$index]"></md-checkbox>
+                            </md-list-item>
+                        </md-list>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <div class="col-sm-6">
+                <md-card>
+                    <div id="calendar-widget" data-full-calendar></div>
+                </md-card>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-6  m-b-20">
+                <md-card>
+                    <md-card-header data-theme={{appCfg.currentTheme}} class="">
+                        <md-card-header-text>
+                            <span class="md-title c-white">Recent Items</span>
+                            <span class="md-subhead">Phasellus condimentum ipsum id auctor imperdie</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20 c-white"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content class="p-0">
+                        <div class="table-responsive" style="max-height: 350px">
+                            <table class="table  text-center ">
+                                <thead>
+                                <tr>
+                                    <th class="text-center">Code</th>
+                                    <th class="text-center">Files</th>
+                                    <th class="text-center">Trans</th>
+                                    <th class="text-center">Req</th>
+                                    <th class="text-center">Income</th>
+                                    <th class="text-center">Outcome</th>
+                                    <th class="text-center">Total</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr data-ng-repeat="item in tableData">
+                                    <td>#{{$index}}</td>
+                                    <td>{{item.FILES}}</td>
+                                    <td>{{item.TRANSACTIONS}}</td>
+                                    <td>{{item.REQUEST}}</td>
+                                    <td>
+                                        <div class="label label-success">
+                                            +{{item.INCOME}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="label label-danger">
+                                            -{{item.OUTCOME}}
+                                        </div>
+                                    </td>
+                                    <td>$ {{item.TOTAL}}</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <div class="col-md-6  m-b-20">
+                <md-card>
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Contacts List</span>
+                            <span class="md-subhead">Contacts List, Tab</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content class="p-0">
+                        <md-tabs md-dynamic-height md-border-bottom>
+                            <md-tab label="Contacts List ">
+                                <md-content class="md-padding p-t-0" style="height: 300px">
+                                    <md-list>
+                                        <md-list-item class="md-3-line" ng-repeat="item in todos"
+                                                      ng-click="goToPerson(person.name, $event)">
+                                            <img ng-src="{{item.face}}?{{$index}}" class="md-avatar"/>
+                                            <div class="md-list-item-text" layout="column">
+                                                <h3>{{ item.who }}</h3>
+                                                <h4>{{ item.what }}</h4>
+                                                <p>{{ item.notes }}</p>
+                                            </div>
+                                        </md-list-item>
+                                    </md-list>
+                                </md-content>
+                            </md-tab>
+                            <md-tab label="Lorem ipsum dolor">
+                                <md-content class="md-padding" style="height: 300px">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante
+                                        augue.
+                                        Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam
+                                        cursus. In
+                                        sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis
+                                        nec,
+                                        feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices
+                                        porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus
+                                        convallis
+                                        sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a
+                                        nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna
+                                        dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus,
+                                        pulvinar
+                                        at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor
+                                        eu,
+                                        bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur
+                                        faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci
+                                        posuere, nec luctus mauris semper.</p>
+                                </md-content>
+                            </md-tab>
+                        </md-tabs>
+                    </md-card-content>
+                </md-card>
+            </div>
+        </div>
+    </div>
+</div>

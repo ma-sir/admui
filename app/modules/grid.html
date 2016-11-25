@@ -1,0 +1,501 @@
+<div class="container grid-usage">
+
+    <div class="block-header">
+        <h2>Grid system
+            <small>http://getbootstrap.com/css/#grid</small>
+        </h2>
+
+    </div>
+
+
+    <md-card class="m-b-30">
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-title">Grid options</span>
+                    <span class="md-subhead">
+                        See how aspects of the Bootstrap grid system work across multiple devices with a handy table.
+                    </span>
+
+            </md-card-header-text>
+            <md-button class="md-icon-button" data-view-code>
+                <i class="zmdi zmdi-code f-20"></i>
+                <md-tooltip>view source code</md-tooltip>
+            </md-button>
+        </md-card-header>
+        <md-card-content>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th> Extra small devices
+                        <small>Phones (&lt;768px)</small>
+                    </th>
+                    <th> Small devices
+                        <small>Tablets (≥768px)</small>
+                    </th>
+                    <th> Medium devices
+                        <small>Desktops (≥992px)</small>
+                    </th>
+                    <th> Large devices
+                        <small>Desktops (≥1200px)</small>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th class="text-nowrap" scope="row">Grid behavior</th>
+                    <td>Horizontal at all times</td>
+                    <td colspan="3">Collapsed to start, horizontal above breakpoints</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">Container width</th>
+                    <td>None (auto)</td>
+                    <td>750px</td>
+                    <td>970px</td>
+                    <td>1170px</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">Class prefix</th>
+                    <td><code>.col-xs-</code></td>
+                    <td><code>.col-sm-</code></td>
+                    <td><code>.col-md-</code></td>
+                    <td><code>.col-lg-</code></td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row"># of columns</th>
+                    <td colspan="4">12</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">Column width</th>
+                    <td class="text-muted">Auto</td>
+                    <td>~62px</td>
+                    <td>~81px</td>
+                    <td>~97px</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">Gutter width</th>
+                    <td colspan="4">30px (15px on each side of a column)</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">Nestable</th>
+                    <td colspan="4">Yes</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">Offsets</th>
+                    <td colspan="4">Yes</td>
+                </tr>
+                <tr>
+                    <th class="text-nowrap" scope="row">Column ordering</th>
+                    <td colspan="4">Yes</td>
+                </tr>
+                </tbody>
+            </table>
+
+        </md-card-content>
+    </md-card>
+
+
+    <md-card class="m-b-30">
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-title">Example: Stacked-to-horizontal</span>
+                    <span class="md-subhead">
+                        Using a single set of .col-md-* grid classes, you can create a basic grid system that starts out stacked on mobile devices and tablet devices (the extra small to small range) before becoming horizontal on desktop (medium) devices. Place grid columns in any .row.
+                    </span>
+
+            </md-card-header-text>
+            <md-button class="md-icon-button" data-view-code>
+                <i class="zmdi zmdi-code f-20"></i>
+                <md-tooltip>view source code</md-tooltip>
+            </md-button>
+        </md-card-header>
+        <md-card-content>
+
+            <div class="row ">
+                <div class="col-md-1">
+                    <div class="boxframe" md-whiteframe="1">.col-md-1</div>
+                </div>
+                <div class="col-md-1">
+                    <div class="boxframe" md-whiteframe="1">.col-md-1</div>
+                </div>
+                <div class="col-md-1">
+                    <div class="boxframe" md-whiteframe="1">.col-md-1</div>
+                </div>
+                <div class="col-md-1">
+                    <div class="boxframe" md-whiteframe="1">.col-md-1</div>
+                </div>
+                <div class="col-md-1">
+                    <div class="boxframe" md-whiteframe="1">.col-md-1</div>
+                </div>
+                <div class="col-md-1">
+                    <div class="boxframe" md-whiteframe="1">.col-md-1</div>
+                </div>
+                <div class="col-md-1">
+                    <div class="boxframe" md-whiteframe="1">.col-md-1</div>
+                </div>
+                <div class="col-md-1">
+                    <div class="boxframe" md-whiteframe="1">.col-md-1</div>
+                </div>
+                <div class="col-md-1">
+                    <div class="boxframe" md-whiteframe="1">.col-md-1</div>
+                </div>
+                <div class="col-md-1">
+                    <div class="boxframe" md-whiteframe="1">.col-md-1</div>
+                </div>
+                <div class="col-md-1">
+                    <div class="boxframe" md-whiteframe="1">.col-md-1</div>
+                </div>
+                <div class="col-md-1">
+                    <div class="boxframe" md-whiteframe="1">.col-md-1</div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="boxframe" md-whiteframe="1">.col-md-8</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="boxframe" md-whiteframe="1">.col-md-4</div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="boxframe" md-whiteframe="1">.col-md-4</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="boxframe" md-whiteframe="1">.col-md-4</div>
+                </div>
+                <div class="col-md-4">
+                    <div class="boxframe" md-whiteframe="1">.col-md-4</div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="boxframe" md-whiteframe="1">.col-md-6</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="boxframe" md-whiteframe="1">.col-md-6</div>
+                </div>
+            </div>
+
+        </md-card-content>
+    </md-card>
+
+
+    <md-card class="m-b-30">
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-title">Mobile and desktop</span>
+                        <span class="md-subhead">
+                            Don't want your columns to simply stack in smaller devices? Use the extra small and medium device grid classes by adding .col-xs-* .col-md-* to your columns. See the example below for a better idea of how it all works.
+                        </span>
+
+            </md-card-header-text>
+            <md-button class="md-icon-button" data-view-code>
+                <i class="zmdi zmdi-code f-20"></i>
+                <md-tooltip>view source code</md-tooltip>
+            </md-button>
+        </md-card-header>
+        <md-card-content>
+
+            <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+            <div class="row">
+                <div class="col-xs-12 col-md-8">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-12 .col-md-8</div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-6 .col-md-4</div>
+                </div>
+            </div>
+
+            <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+            <div class="row">
+                <div class="col-xs-6 col-md-4">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-6 .col-md-4</div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-6 .col-md-4</div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <div class="boxframe" md-whiteframe="1">
+                        .col-xs-6 .col-md-4
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columns are always 50% wide, on mobile and desktop -->
+            <div class="row">
+                <div class="col-xs-6">
+                    <div class="boxframe" md-whiteframe="1">
+                        .col-xs-6
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="boxframe" md-whiteframe="1">
+                        .col-xs-6
+                    </div>
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
+
+
+    <md-card class="m-b-30">
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-title">Mobile, tablet, desktop</span>
+                                <span class="md-subhead">
+                                    Build on the previous example by creating even more dynamic and powerful layouts with tablet .col-sm-* classes.
+                                </span>
+
+            </md-card-header-text>
+            <md-button class="md-icon-button" data-view-code>
+                <i class="zmdi zmdi-code f-20"></i>
+                <md-tooltip>view source code</md-tooltip>
+            </md-button>
+        </md-card-header>
+        <md-card-content>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-8">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-12 .col-sm-6 .col-md-8</div>
+                </div>
+                <div class="col-xs-6 col-md-4">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-6 .col-md-4</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 col-sm-4">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-6 .col-sm-4</div>
+                </div>
+                <div class="col-xs-6 col-sm-4">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-6 .col-sm-4</div>
+                </div>
+                <!-- Optional: clear the XS cols if their content doesn't match in height -->
+                <div class="clearfix visible-xs-block"></div>
+                <div class="col-xs-6 col-sm-4">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-6 .col-sm-4</div>
+                </div>
+            </div>
+
+        </md-card-content>
+    </md-card>
+
+
+    <md-card class="m-b-30">
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-title">Column wrapping</span>
+                                        <span class="md-subhead">
+                                          If more than 12 columns are placed within a single row, each group of extra columns will, as one unit, wrap onto a new line.
+                                        </span>
+
+            </md-card-header-text>
+            <md-button class="md-icon-button" data-view-code>
+                <i class="zmdi zmdi-code f-20"></i>
+                <md-tooltip>view source code</md-tooltip>
+            </md-button>
+        </md-card-header>
+        <md-card-content>
+            <div class="row">
+                <div class="col-xs-9">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-9</div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-4<br>Since 9 + 4 = 13 &gt; 12, this 4-column-wide
+                        div gets wrapped onto a new line as one contiguous unit.
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-6<br>Subsequent columns continue along the new line.
+                    </div>
+                </div>
+            </div>
+
+        </md-card-content>
+    </md-card>
+
+
+    <md-card class="m-b-30">
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-title">Two columns with two nested columns</span>
+                                                <span class="md-subhead">
+                                                  Per the documentation, nesting is easy—just put a row of columns within an existing column. This gives you two columns starting at desktops and scaling to large desktops, with another two (equal widths) within the larger column.
+                                                  <br>At mobile device sizes, tablets and down, these columns and their nested columns will stack.
+                                                </span>
+
+            </md-card-header-text>
+            <md-button class="md-icon-button" data-view-code>
+                <i class="zmdi zmdi-code f-20"></i>
+                <md-tooltip>view source code</md-tooltip>
+            </md-button>
+        </md-card-header>
+        <md-card-content>
+
+            <div class="row">
+                <div class="col-md-8">
+                    .col-md-8
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="boxframe" md-whiteframe="1">.col-md-6</div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="boxframe" md-whiteframe="1">.col-md-6</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="boxframe" md-whiteframe="1">.col-md-4</div>
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
+
+
+    <md-card class="m-b-30">
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-title">Column clearing</span>
+                                                        <span class="md-subhead">
+                                                            Clear floats at specific breakpoints to prevent awkward wrapping with uneven content.
+                                                        </span>
+
+            </md-card-header-text>
+            <md-button class="md-icon-button" data-view-code>
+                <i class="zmdi zmdi-code f-20"></i>
+                <md-tooltip>view source code</md-tooltip>
+            </md-button>
+        </md-card-header>
+        <md-card-content>
+
+            <div class="row">
+                <div class="col-xs-6 col-sm-3">
+                    <div class="boxframe" md-whiteframe="1">
+                        .col-xs-6 .col-sm-3
+                        <br>
+                        Resize your viewport or check it out on your phone for an example.
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-6 .col-sm-3</div>
+                </div>
+
+                <!-- Add the extra clearfix for only the required viewport -->
+                <div class="clearfix visible-xs"></div>
+
+                <div class="col-xs-6 col-sm-3">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-6 .col-sm-3</div>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="boxframe" md-whiteframe="1">.col-xs-6 .col-sm-3</div>
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
+
+
+    <md-card class="m-b-30">
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-title">Offset, push, and pull resets</span>
+                                                                <span class="md-subhead">
+                                                                    Reset offsets, pushes, and pulls at specific breakpoints.
+                                                                </span>
+
+            </md-card-header-text>
+            <md-button class="md-icon-button" data-view-code>
+                <i class="zmdi zmdi-code f-20"></i>
+                <md-tooltip>view source code</md-tooltip>
+            </md-button>
+        </md-card-header>
+        <md-card-content>
+
+            <div class="row">
+                <div class="col-sm-5 col-md-6">
+                    <div class="boxframe" md-whiteframe="1">.col-sm-5 .col-md-6</div>
+                </div>
+                <div class="col-sm-5 col-sm-offset-2 col-md-6 col-md-offset-0">
+                    <div class="boxframe" md-whiteframe="1">.col-sm-5 .col-sm-offset-2 .col-md-6 .col-md-offset-0</div>
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
+
+
+    <md-card class="m-b-30">
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-title">Offsetting columns</span>
+                                                                        <span class="md-subhead">
+                                                                            Move columns to the right using .col-md-offset-* classes. These classes increase the left margin of a column by * columns. For example, .col-md-offset-4 moves .col-md-4 over four columns.
+                                                                        </span>
+
+            </md-card-header-text>
+            <md-button class="md-icon-button" data-view-code>
+                <i class="zmdi zmdi-code f-20"></i>
+                <md-tooltip>view source code</md-tooltip>
+            </md-button>
+        </md-card-header>
+        <md-card-content>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="boxframe" md-whiteframe="1">.col-md-4</div>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="boxframe" md-whiteframe="1">.col-md-4 .col-md-offset-4</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3 col-md-offset-3">
+                    <div class="boxframe" md-whiteframe="1">.col-md-3 .col-md-offset-3</div>
+                </div>
+                <div class="col-md-3 col-md-offset-3">
+                    <div class="boxframe" md-whiteframe="1">.col-md-3 .col-md-offset-3</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="boxframe" md-whiteframe="1">.col-md-6 .col-md-offset-3</div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-0">
+                <div class="boxframe" md-whiteframe="1">.col-xs-6 .col-xs-offset-3 .col-sm-4 .col-sm-offset-0
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
+
+
+    <md-card class="m-b-30">
+        <md-card-header>
+            <md-card-header-text>
+                <span class="md-title">Column ordering</span>
+                                                                        <span class="md-subhead">
+                                                                            Easily change the order of our built-in grid columns with .col-md-push-* and .col-md-pull-* modifier classes.
+                                                                        </span>
+
+            </md-card-header-text>
+            <md-button class="md-icon-button" data-view-code>
+                <i class="zmdi zmdi-code f-20"></i>
+                <md-tooltip>view source code</md-tooltip>
+            </md-button>
+        </md-card-header>
+        <md-card-content>
+            <div class="row">
+                <div class="col-md-9 col-md-push-3">
+                    <div class="boxframe" md-whiteframe="1">.col-md-9 .col-md-push-3</div>
+                </div>
+                <div class="col-md-3 col-md-pull-9">
+                    <div class="boxframe" md-whiteframe="1">.col-md-3 .col-md-pull-9</div>
+                </div>
+            </div>
+        </md-card-content>
+    </md-card>
+
+</div>

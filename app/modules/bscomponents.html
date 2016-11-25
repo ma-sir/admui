@@ -1,0 +1,716 @@
+<div oc-lazy-load="['app/modules/bscomponents.js']">
+    <div class="container bscomponents-usage" data-ng-controller="BSComponentsCtrl as ctrl">
+
+        <div class="block-header">
+            <h2>Bootstrap Components</h2>
+
+            <div class="actions">
+
+                <md-menu>
+                    <md-button aria-label="Open phone interactions menu" class="md-icon-button"
+                               ng-click="$mdOpenMenu($event)">
+                        <md-icon md-menu-origin>
+                            <i class="zmdi zmdi-more f-20"></i>
+                        </md-icon>
+                    </md-button>
+                    <md-menu-content>
+                        <md-menu-item>
+                            <md-button>
+                                Reload
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>
+                                About
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <md-button>
+                                Settings
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+        </div>
+
+        <md-card>
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">BOOTSTRAP COMPONENTS Examples</span>
+                            <span class="md-subhead">
+                                Over a dozen reusable components built to provide iconography, dropdowns, input groups, navigation, alerts, and much more.
+                            </span>
+                </md-card-header-text>
+                <md-menu>
+                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                        <i class="zmdi zmdi-more-vert f-20"></i>
+                    </md-button>
+                    <md-menu-content width="3">
+                        <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                            <md-button>{{item}}</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </md-card-header>
+            <md-card-content>
+                <div class="md-title">Carousel</div>
+                <p class="small">
+                    A slideshow component for cycling through elements, like a carousel. Nested carousels are not
+                    supported.
+                </p>
+                <div class="carousel-eg">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item"><img width="100%" src="dist/material/img-1.jpg"></div>
+                            <div class="item active"><img width="100%" src="dist/material/img-2.jpg">
+                                <div class="carousel-caption"><h3>First slide label</h3>
+                                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p></div>
+                            </div>
+                            <div class="item"><img width="100%" src="dist/material/img-3.jpg"></div>
+                        </div>
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button"
+                           data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span> </a> <a class="right carousel-control"
+                                                                          href="#carousel-example-generic" role="button"
+                                                                          data-slide="next"> <span
+                            class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span>
+                    </a></div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="md-title">Alerts</div>
+                <p class="small">
+                    Provide contextual feedback messages for typical user actions with the handful of available and
+                    flexible alert messages.
+                </p>
+                <div>
+                    <div class="alert alert-success" role="alert"><strong>Well done!</strong> You successfully read this
+                        important alert message.
+                    </div>
+                    <div class="alert alert-info" role="alert"><strong>Heads up!</strong> This alert needs your
+                        attention, but it's not super important.
+                    </div>
+                    <div class="alert alert-warning" role="alert"><strong>Warning!</strong> Better check yourself,
+                        you're not looking too good.
+                    </div>
+                    <div class="alert alert-danger" role="alert"><strong>Oh snap!</strong> Change a few things up and
+                        try submitting again.
+                    </div>
+
+                    <div class="alert alert-info" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>
+                        <strong>Heads up!</strong> This alert needs your
+                        attention, but it's not super important.
+                    </div>
+                    <div class="alert alert-warning" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>
+                        <strong>Warning!</strong> Better check yourself,
+                        you're not looking too good.
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="md-title">Collapse</div>
+                <p class="small">You can use a link with the <code>href</code> attribute, or a button with the <code>data-target</code>
+                    attribute. In both cases, the <code>data-toggle="collapse"</code> is required.</p>
+                <div>
+                    <p>
+                        <a class="btn btn-primary collapsed" role="button" data-toggle="collapse"
+                           href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Link with href
+                        </a>
+                        <button class="btn btn-primary collapsed" type="button" data-toggle="collapse"
+                                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Button with data-target
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample" aria-expanded="false" style="height: 0px;">
+                        <div class="p-20">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                            ea proident.<br>
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                            ea proident.
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="md-title">Accordion example</div>
+                <p class="small">
+                    Extend the default collapse behavior to create an accordion with the panel component.
+                </p>
+                <div>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        <div class="panel ">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                       aria-expanded="true" aria-controls="collapseOne" class="">
+                                        Collapsible Group Item #1
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                 aria-labelledby="headingOne" aria-expanded="true">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                                    ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                    accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel ">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Collapsible Group Item #2
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingTwo" aria-expanded="false" style="height: 0px;">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                                    ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                    accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel ">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                                       href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Collapsible Group Item #3
+                                    </a>
+                                </h4>
+                            </div>
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                 aria-labelledby="headingThree" aria-expanded="false" style="height: 0px;">
+                                <div class="panel-body">
+                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
+                                    richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor
+                                    brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                                    aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+                                    Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente
+                                    ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+                                    farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+                                    accusamus labore sustainable VHS.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="md-title">Labels</div>
+                <br>
+                <br>
+                <div>
+                    <span class="label label-default">Default</span>
+                    <span class="label label-primary">Primary</span>
+                    <span class="label label-success">Success</span>
+                    <span class="label label-info">Info</span>
+                    <span class="label label-warning">Warning</span>
+                    <span class="label label-danger">Danger</span>
+                    <h1>Example heading <span class="label label-primary">New</span></h1>
+                    <h2>Example heading <span class="label label-success">New</span></h2>
+                    <h3>Example heading <span class="label label-info">New</span></h3>
+                    <h3>Example heading <span class="label label-warning">New</span></h3>
+                    <h4>Example heading <span class="label label-danger">New</span></h4>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="md-title">Popovers</div>
+                <p class="small">
+                    Add small overlays of content, like those on the iPad, to any element for housing secondary
+                    information.
+                    Popovers whose both title and content are zero-length are never displayed.
+                </p>
+                <br>
+                <b>Static popover</b>
+                <p class="small">
+                    Four options are available: top, right, bottom, and left aligned.
+                </p>
+                <div class="popover-demo">
+                    <div class="popover top">
+                        <div class="arrow"></div>
+                        <h3 class="popover-title">Popover top</h3>
+                        <div class="popover-content"><p>Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                            Pellentesque ornare sem lacinia quam venenatis vestibulum.</p></div>
+                    </div>
+                    <div class="popover right">
+                        <div class="arrow"></div>
+                        <h3 class="popover-title">Popover right</h3>
+                        <div class="popover-content"><p>Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                            Pellentesque ornare sem lacinia quam venenatis vestibulum.</p></div>
+                    </div>
+                    <div class="popover bottom">
+                        <div class="arrow"></div>
+                        <h3 class="popover-title">Popover bottom</h3>
+                        <div class="popover-content"><p>Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                            Pellentesque ornare sem lacinia quam venenatis vestibulum.</p></div>
+                    </div>
+                    <div class="popover left">
+                        <div class="arrow"></div>
+                        <h3 class="popover-title">Popover left</h3>
+                        <div class="popover-content"><p>Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                            Pellentesque ornare sem lacinia quam venenatis vestibulum.</p></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <b>Four directions</b>
+                <p class="small">
+                    &lt;md-button class=&quot;md-raised md-primary&quot; bs-popover data-container=&quot;body&quot;
+                    data-toggle=&quot;popover&quot;
+                    data-placement=&quot;top&quot;
+                    data-content=&quot;Vivamus sagittis lacus vel augue laoreet rutrum faucibus.&quot;&gt;Popover on top&lt;/md-button&gt;
+                </p>
+                <br>
+                <br>
+                <div>
+                    <md-button class="md-raised md-primary" bs-popover data-container="body" data-toggle="popover"
+                               data-placement="top"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top
+                    </md-button>
+                    <md-button class="md-raised " bs-popover data-container="body" data-toggle="popover"
+                               data-placement="bottom"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on
+                        bottom
+                    </md-button>
+                    <md-button class="md-raised md-warn" bs-popover data-container="body" data-toggle="popover"
+                               data-placement="right"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on right
+                    </md-button>
+                    <md-button class="md-raised md-accent" bs-popover data-container="body" data-toggle="popover"
+                               data-placement="left"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on left
+                    </md-button>
+                </div>
+                <br>
+                <br>
+                <br>
+                <b>Dismiss on next click</b>
+                <p class="small">Use the <code>focus</code> trigger to dismiss popovers on the next click that the user
+                    makes.</p>
+                <div>
+                    <md-button class="md-raised md-primary md-hue-1" bs-popover data-trigger="focus"
+                               data-container="body" data-toggle="popover"
+                               data-placement="top"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top
+                    </md-button>
+                    <md-button class="md-raised md-primary md-hue-2" bs-popover data-trigger="focus"
+                               data-container="body" data-toggle="popover"
+                               data-placement="top"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top
+                    </md-button>
+                    <md-button class="md-raised md-primary md-hue-3" bs-popover data-trigger="focus"
+                               data-container="body" data-toggle="popover"
+                               data-placement="top"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top
+                    </md-button>
+                    <md-button class="md-raised md-accent" bs-popover data-trigger="focus" data-container="body"
+                               data-toggle="popover"
+                               data-placement="top"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top
+                    </md-button>
+                    <md-button class="md-raised md-warn" bs-popover data-trigger="focus" data-container="body"
+                               data-toggle="popover"
+                               data-placement="top"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top
+                    </md-button>
+                </div>
+                <br>
+                <br>
+                <br>
+                <b>Popover trigger on Mouse Hover</b>
+                <p class="small">
+                    &lt;md-button class=&quot;md-raised md-primary&quot; bs-popover data-trigger=&quot;hover&quot;
+                    data-container=&quot;body&quot; data-toggle=&quot;popover&quot;
+                    data-placement=&quot;top&quot;
+                    data-content=&quot;Vivamus sagittis lacus vel augue laoreet rutrum faucibus.&quot;&gt;Popover on top&lt;/md-button&gt;
+                </p>
+                <div>
+                    <md-button class="md-raised  " bs-popover data-trigger="hover" data-container="body"
+                               data-toggle="popover"
+                               data-placement="top"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top
+                    </md-button>
+                    <md-button class="md-raised  " bs-popover data-trigger="hover" data-container="body"
+                               data-toggle="popover"
+                               data-placement="top"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top
+                    </md-button>
+                    <md-button class="md-raised  " bs-popover data-trigger="hover" data-container="body"
+                               data-toggle="popover"
+                               data-placement="top"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top
+                    </md-button>
+                    <md-button class="md-raised " bs-popover data-trigger="hover" data-container="body"
+                               data-toggle="popover"
+                               data-placement="top"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top
+                    </md-button>
+                    <md-button class="md-raised " bs-popover data-trigger="hover" data-container="body"
+                               data-toggle="popover"
+                               data-placement="top"
+                               data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Popover on top
+                    </md-button>
+                </div>
+                <br>
+                <br>
+                <hr>
+                <br>
+                <div class="md-title">Media object</div>
+                <p class="small">
+                    Abstract object styles for building various types of components (like blog comments, Tweets, etc)
+                    that feature a left- or right-aligned image alongside textual content.
+                </p>
+                <br>
+                <div class="row">
+                    <div class="col-md-12 col-sm-6 ">
+                        <div md-whiteframe="1" class="p-20 m-b-30">
+                            <b>Default media</b>
+                            <p class="small">
+                                The default media displays a media object (images, video, audio) to the left or right of
+                                a content block.
+                            </p>
+                            <br>
+                            <div class="media">
+                                <div class="media-left"><a href="#"> <img class="media-object"
+                                                                          data-src="holder.js/64x64" alt="64x64"
+                                                                          style="width: 64px; height: 64px;"
+                                                                          src="dist/material/avatar2.png"
+                                                                          data-holder-rendered="true"> </a></div>
+                                <div class="media-body"><h4 class="media-heading">Media heading</h4> Cras sit amet nibh
+                                    libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
+                                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
+                                    faucibus.
+                                </div>
+                            </div>
+                            <div class="media">
+                                <div class="media-left"><a href="#"> <img class="media-object"
+                                                                          data-src="holder.js/64x64" alt="64x64"
+                                                                          style="width: 64px; height: 64px;"
+                                                                          src="dist/material/avatar2.png"
+                                                                          data-holder-rendered="true"> </a></div>
+                                <div class="media-body"><h4 class="media-heading">Media heading</h4> Cras sit amet nibh
+                                    libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
+                                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce
+                                    condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in
+                                    faucibus.
+                                    <div class="media">
+                                        <div class="media-left"><a href="#"> <img class="media-object"
+                                                                                  data-src="holder.js/64x64" alt="64x64"
+                                                                                  style="width: 64px; height: 64px;"
+                                                                                  src="dist/material/avatar2.png"
+                                                                                  data-holder-rendered="true"> </a>
+                                        </div>
+                                        <div class="media-body"><h4 class="media-heading">Nested media heading</h4> Cras
+                                            sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                            sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus
+                                            viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+                                            lacinia congue felis in faucibus.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <div class="media-body"><h4 class="media-heading">Media heading</h4> Cras sit amet nibh
+                                    libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
+                                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                </div>
+                                <div class="media-right"><a href="#"> <img class="media-object"
+                                                                           data-src="holder.js/64x64" alt="64x64"
+                                                                           style="width: 64px; height: 64px;"
+                                                                           src="dist/material/avatar2.png"
+                                                                           data-holder-rendered="true"> </a></div>
+                            </div>
+                            <div class="media">
+                                <div class="media-left"><a href="#"> <img class="media-object"
+                                                                          data-src="holder.js/64x64" alt="64x64"
+                                                                          style="width: 64px; height: 64px;"
+                                                                          src="dist/material/avatar2.png"
+                                                                          data-holder-rendered="true"> </a></div>
+                                <div class="media-body"><h4 class="media-heading">Media heading</h4> Cras sit amet nibh
+                                    libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo.
+                                    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+                                </div>
+                                <div class="media-right"><a href="#"> <img class="media-object"
+                                                                           data-src="holder.js/64x64" alt="64x64"
+                                                                           style="width: 64px; height: 64px;"
+                                                                           src="dist/material/avatar2.png"
+                                                                           data-holder-rendered="true"> </a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-6">
+                        <div md-whiteframe="1" class="p-20 m-b-30">
+                            <b>Media alignment</b>
+                            <p class="small">
+                                The images or other media can be aligned top, middle, or bottom. The default is top
+                                aligned.
+                            </p>
+                            <br>
+                            <div class="media">
+                                <div class="media-left"><a href="#"> <img class="media-object"
+                                                                          data-src="holder.js/64x64" alt="64x64"
+                                                                          style="width: 64px; height: 64px;"
+                                                                          src="dist/material/avatar2.png"> </a></div>
+                                <div class="media-body"><h4 class="media-heading">Top aligned media</h4>
+                                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                        sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus
+                                        viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+                                        lacinia congue felis in faucibus.</p>
+                                    <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
+                                        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+                                        mus.</p></div>
+                            </div>
+                            <div class="media">
+                                <div class="media-left media-middle"><a href="#"> <img class="media-object"
+                                                                                       data-src="holder.js/64x64"
+                                                                                       alt="64x64"
+                                                                                       style="width: 64px; height: 64px;"
+                                                                                       src="dist/material/avatar2.png">
+                                </a></div>
+                                <div class="media-body"><h4 class="media-heading">Middle aligned media</h4>
+                                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                        sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus
+                                        viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+                                        lacinia congue felis in faucibus.</p>
+                                    <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
+                                        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+                                        mus.</p></div>
+                            </div>
+                            <div class="media">
+                                <div class="media-left media-bottom"><a href="#"> <img class="media-object"
+                                                                                       data-src="holder.js/64x64"
+                                                                                       alt="64x64"
+                                                                                       style="width: 64px; height: 64px;"
+                                                                                       src="dist/material/avatar2.png">
+                                </a></div>
+                                <div class="media-body"><h4 class="media-heading">Bottom aligned media</h4>
+                                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                        sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus
+                                        viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec
+                                        lacinia congue felis in faucibus.</p>
+                                    <p>Donec sed odio dui. Nullam quis risus eget urna mollis ornare vel eu leo. Cum
+                                        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+                                        mus.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-6">
+                        <div md-whiteframe="1" class="p-20 m-b-30">
+                            <b>Media list</b>
+                            <p class="small">
+                                With a bit of extra markup, you can use media inside list (useful for comment threads or
+                                articles lists).
+                            </p>
+                            <br>
+                            <ul class="media-list">
+                                <li class="media">
+                                    <div class="media-left"><a href="#"> <img class="media-object"
+                                                                              data-src="holder.js/64x64" alt="64x64"
+                                                                              style="width: 64px; height: 64px;"
+                                                                              src="dist/material/avatar2.png"
+                                                                              data-holder-rendered="true"> </a></div>
+                                    <div class="media-body"><h4 class="media-heading">Media heading</h4>
+                                        <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante
+                                            sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus
+                                            viverra turpis.</p>
+                                        <div class="media">
+                                            <div class="media-left"><a href="#"> <img class="media-object"
+                                                                                      data-src="holder.js/64x64"
+                                                                                      alt="64x64"
+                                                                                      style="width: 64px; height: 64px;"
+                                                                                      src="dist/material/avatar2.png"
+                                                                                      data-holder-rendered="true"> </a>
+                                            </div>
+                                            <div class="media-body"><h4 class="media-heading">Nested media heading</h4>
+                                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                                ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
+                                                tempus viverra turpis.
+                                                <div class="media">
+                                                    <div class="media-left"><a href="#"> <img class="media-object"
+                                                                                              data-src="holder.js/64x64"
+                                                                                              alt="64x64"
+                                                                                              style="width: 64px; height: 64px;"
+                                                                                              src="dist/material/avatar2.png"
+                                                                                              data-holder-rendered="true">
+                                                    </a></div>
+                                                    <div class="media-body"><h4 class="media-heading">Nested media
+                                                        heading</h4> Cras sit amet nibh libero, in gravida nulla. Nulla
+                                                        vel metus scelerisque ante sollicitudin commodo. Cras purus
+                                                        odio, vestibulum in vulputate at, tempus viverra turpis.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="media">
+                                            <div class="media-left"><a href="#"> <img class="media-object"
+                                                                                      data-src="holder.js/64x64"
+                                                                                      alt="64x64"
+                                                                                      style="width: 64px; height: 64px;"
+                                                                                      src="dist/material/avatar2.png"
+                                                                                      data-holder-rendered="true"> </a>
+                                            </div>
+                                            <div class="media-body"><h4 class="media-heading">Nested media heading</h4>
+                                                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque
+                                                ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at,
+                                                tempus viverra turpis.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <div class="md-title">Thumbnails</div>
+                <p class="small">
+                    Extend Bootstrap's grid system with the thumbnail component to easily display grids of images,
+                    videos, text, and more.
+                </p>
+                <br>
+                <b>Default example</b>
+                <p class="small">
+                    By default, Bootstrap's thumbnails are designed to showcase linked images with minimal required
+                    markup.
+                </p>
+                <div class="row">
+                    <div class="col-xs-6 col-md-3"><a href="#" class="thumbnail"> <img data-src="holder.js/100%x180"
+                                                                                       alt="100%x180"
+                                                                                       style="height: 180px; width: 100%; display: block;"
+                                                                                       src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUzMWJiZDQyZGYgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTMxYmJkNDJkZiI+PHJlY3Qgd2lkdGg9IjE3MSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI1OS41NTQ2ODc1IiB5PSI5NC41Ij4xNzF4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+"
+                                                                                       data-holder-rendered="true"> </a>
+                    </div>
+                    <div class="col-xs-6 col-md-3"><a href="#" class="thumbnail"> <img data-src="holder.js/100%x180"
+                                                                                       alt="100%x180"
+                                                                                       style="height: 180px; width: 100%; display: block;"
+                                                                                       src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUzMWJiZGFkNmIgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTMxYmJkYWQ2YiI+PHJlY3Qgd2lkdGg9IjE3MSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI1OS41NTQ2ODc1IiB5PSI5NC41Ij4xNzF4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+"
+                                                                                       data-holder-rendered="true"> </a>
+                    </div>
+                    <div class="col-xs-6 col-md-3"><a href="#" class="thumbnail"> <img data-src="holder.js/100%x180"
+                                                                                       alt="100%x180"
+                                                                                       style="height: 180px; width: 100%; display: block;"
+                                                                                       src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUzMWJiZDU1OWUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTMxYmJkNTU5ZSI+PHJlY3Qgd2lkdGg9IjE3MSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI1OS41NTQ2ODc1IiB5PSI5NC41Ij4xNzF4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+"
+                                                                                       data-holder-rendered="true"> </a>
+                    </div>
+                    <div class="col-xs-6 col-md-3"><a href="#" class="thumbnail"> <img data-src="holder.js/100%x180"
+                                                                                       alt="100%x180"
+                                                                                       style="height: 180px; width: 100%; display: block;"
+                                                                                       src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTcxIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDE3MSAxODAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MTgwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUzMWJiZDQzNjcgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMHB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTMxYmJkNDM2NyI+PHJlY3Qgd2lkdGg9IjE3MSIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI1OS41NTQ2ODc1IiB5PSI5NC41Ij4xNzF4MTgwPC90ZXh0PjwvZz48L2c+PC9zdmc+"
+                                                                                       data-holder-rendered="true"> </a>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <b>Custom content</b>
+                <p class="small">
+                    With a bit of extra markup, it's possible to add any kind of HTML content like headings, paragraphs,
+                    or buttons into thumbnails.
+                </p>
+                <div class="row">
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail"><img data-src="holder.js/100%x200" alt="100%x200"
+                                                    style="height: 200px; width: 100%; display: block;"
+                                                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUzMWJiZDg4YzkgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTMxYmJkODhjOSI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+"
+                                                    data-holder-rendered="true">
+                            <div class="caption"><h3>Thumbnail label</h3>
+                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi
+                                    porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id
+                                    elit.</p>
+                                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
+                                                                                                   class="btn btn-default"
+                                                                                                   role="button">Button</a>
+                                </p></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail"><img data-src="holder.js/100%x200" alt="100%x200"
+                                                    style="height: 200px; width: 100%; display: block;"
+                                                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUzMWJiZGI1YWUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTMxYmJkYjVhZSI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+"
+                                                    data-holder-rendered="true">
+                            <div class="caption"><h3>Thumbnail label</h3>
+                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi
+                                    porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id
+                                    elit.</p>
+                                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
+                                                                                                   class="btn btn-default"
+                                                                                                   role="button">Button</a>
+                                </p></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail"><img data-src="holder.js/100%x200" alt="100%x200"
+                                                    style="height: 200px; width: 100%; display: block;"
+                                                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUzMWJiZDk0MmUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTMxYmJkOTQyZSI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+"
+                                                    data-holder-rendered="true">
+                            <div class="caption"><h3>Thumbnail label</h3>
+                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi
+                                    porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id
+                                    elit.</p>
+                                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
+                                                                                                   class="btn btn-default"
+                                                                                                   role="button">Button</a>
+                                </p></div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="thumbnail"><img data-src="holder.js/100%x200" alt="100%x200"
+                                                    style="height: 200px; width: 100%; display: block;"
+                                                    src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMjQyIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDI0MiAyMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjwhLS0KU291cmNlIFVSTDogaG9sZGVyLmpzLzEwMCV4MjAwCkNyZWF0ZWQgd2l0aCBIb2xkZXIuanMgMi42LjAuCkxlYXJuIG1vcmUgYXQgaHR0cDovL2hvbGRlcmpzLmNvbQooYykgMjAxMi0yMDE1IEl2YW4gTWFsb3BpbnNreSAtIGh0dHA6Ly9pbXNreS5jbwotLT48ZGVmcz48c3R5bGUgdHlwZT0idGV4dC9jc3MiPjwhW0NEQVRBWyNob2xkZXJfMTUzMWJiZDk0MmUgdGV4dCB7IGZpbGw6I0FBQUFBQTtmb250LXdlaWdodDpib2xkO2ZvbnQtZmFtaWx5OkFyaWFsLCBIZWx2ZXRpY2EsIE9wZW4gU2Fucywgc2Fucy1zZXJpZiwgbW9ub3NwYWNlO2ZvbnQtc2l6ZToxMnB0IH0gXV0+PC9zdHlsZT48L2RlZnM+PGcgaWQ9ImhvbGRlcl8xNTMxYmJkOTQyZSI+PHJlY3Qgd2lkdGg9IjI0MiIgaGVpZ2h0PSIyMDAiIGZpbGw9IiNFRUVFRUUiLz48Zz48dGV4dCB4PSI4OS44NTkzNzUiIHk9IjEwNS4xIj4yNDJ4MjAwPC90ZXh0PjwvZz48L2c+PC9zdmc+"
+                                                    data-holder-rendered="true">
+                            <div class="caption"><h3>Thumbnail label</h3>
+                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi
+                                    porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id
+                                    elit.</p>
+                                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#"
+                                                                                                   class="btn btn-default"
+                                                                                                   role="button">Button</a>
+                                </p></div>
+                        </div>
+                    </div>
+                </div>
+            </md-card-content>
+        </md-card>
+
+
+    </div>
+</div>

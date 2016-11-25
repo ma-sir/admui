@@ -1,0 +1,281 @@
+<div oc-lazy-load="['app/modules/menu.js']">
+    <div class="container menu-usage" data-ng-controller="MenuCtrl as ctrl">
+
+        <div class="block-header">
+            <h2>Menu
+            </h2>
+
+        </div>
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Context & Dropdown Menu</span>
+                    <span class="md-subhead">
+                        Menus are elements that open when clicked. They are useful for displaying additional options within the context of an action.
+                    </span>
+
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                <b>Simple dropdown menu</b>
+                <p class="small c-grey">Applying the <code>md-menu-origin</code> and <code>md-menu-align-target</code>
+                    attributes ensure that the menu elements align.
+                    Note: If you select the Redial menu option, then a modal dialog will zoom out of the phone icon
+                    button.</p>
+
+                <div>
+                    <md-menu>
+                        <md-button aria-label="Open phone interactions menu" class="md-icon-button"
+                                   ng-click="$mdOpenMenu($event)">
+                            <md-icon>
+                                <i class="zmdi zmdi-phone f-20"></i>
+                            </md-icon>
+                        </md-button>
+                        <md-menu-content width="4">
+                            <md-menu-item>
+                                <md-button>
+                                    <md-icon><i class="zmdi zmdi-phone f-20"></i></md-icon>
+                                    Redial
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button disabled="disabled">
+                                    <md-icon><i class="zmdi zmdi-voicemail f-20"></i></md-icon>
+                                    Check voicemail
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-divider></md-menu-divider>
+                            <md-menu-item>
+                                <md-button>
+                                    <md-icon><i class="zmdi zmdi-notifications f-20"></i></md-icon>
+                                    notifications
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                    <md-menu class="m-l-30">
+                        <md-button ng-click="$mdOpenMenu($event)" class="md-raised">
+                            OpenMenu
+                        </md-button>
+                        <md-menu-content width="4">
+                            <md-menu-item>
+                                <md-button>
+                                    <md-icon><i class="zmdi zmdi-phone f-20"></i></md-icon>
+                                    Redial
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button disabled="disabled">
+                                    <md-icon><i class="zmdi zmdi-voicemail f-20"></i></md-icon>
+                                    Check voicemail
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-divider></md-menu-divider>
+                            <md-menu-item>
+                                <md-button>
+                                    <md-icon><i class="zmdi zmdi-notifications f-20"></i></md-icon>
+                                    notifications
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                    <md-menu class="m-l-30">
+                        <md-button ng-click="$mdOpenMenu($event)">
+                            OpenMenu
+                        </md-button>
+                        <md-menu-content width="4">
+                            <md-menu-item>
+                                <md-button>
+                                    <md-icon><i class="zmdi zmdi-phone f-20"></i></md-icon>
+                                    Redial
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button disabled="disabled">
+                                    <md-icon><i class="zmdi zmdi-voicemail f-20"></i></md-icon>
+                                    Check voicemail
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-divider></md-menu-divider>
+                            <md-menu-item>
+                                <md-button>
+                                    <md-icon><i class="zmdi zmdi-notifications f-20"></i></md-icon>
+                                    notifications
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                    <md-menu class="m-l-30">
+                        <md-button ng-click="$mdOpenMenu($event)" class="md-raised md-accent">
+                            OpenMenu
+                        </md-button>
+                        <md-menu-content width="4">
+                            <md-menu-item>
+                                <md-button>
+                                    <md-icon><i class="zmdi zmdi-phone f-20"></i></md-icon>
+                                    Redial
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button disabled="disabled">
+                                    <md-icon><i class="zmdi zmdi-voicemail f-20"></i></md-icon>
+                                    Check voicemail
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-divider></md-menu-divider>
+                            <md-menu-item>
+                                <md-button>
+                                    <md-icon><i class="zmdi zmdi-notifications f-20"></i></md-icon>
+                                    notifications
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                    <md-menu class="m-l-30">
+                        <md-button ng-click="$mdOpenMenu($event)" class="md-fab">
+                            <md-icon><i class="zmdi zmdi-phone f-20"></i></md-icon>
+                        </md-button>
+                        <md-menu-content width="4">
+                            <md-menu-item>
+                                <md-button>
+                                    <md-icon><i class="zmdi zmdi-phone f-20"></i></md-icon>
+                                    Redial
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item>
+                                <md-button disabled="disabled">
+                                    <md-icon><i class="zmdi zmdi-voicemail f-20"></i></md-icon>
+                                    Check voicemail
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-divider></md-menu-divider>
+                            <md-menu-item>
+                                <md-button>
+                                    <md-icon><i class="zmdi zmdi-notifications f-20"></i></md-icon>
+                                    notifications
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </div>
+                <br>
+                <hr>
+                <br>
+
+                <b>Position Mode Demos</b>
+                <p class="small c-grey">The <code>md-position-mode</code> attribute can be used to specify the
+                    positioning along the
+                    <code>x</code> and <code>y</code> axis.</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>Target Mode Positioning (default)</p>
+                        <md-menu>
+                            <md-button class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-menu-origin>
+                                    <i class="zmdi zmdi-local-airport f-20"></i>
+                                </md-icon>
+                            </md-button>
+                            <md-menu-content width="6">
+                                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                    <md-button>
+                                        <md-icon md-menu-align-target>
+                                            <i class="zmdi zmdi-card-sim f-20"></i>
+                                        </md-icon>
+                                        Option {{item}}
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="small c-grey">Target mode with <code>md-offset</code>, x:-10, y:-15</p>
+                        <md-menu md-offset="-10 -15">
+                            <md-button aria-label="Open demo menu" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-menu-origin><i class="zmdi zmdi-phone f-20"></i></md-icon>
+                            </md-button>
+                            <md-menu-content width="4">
+                                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                    <md-button><span md-menu-align-target>Option</span> {{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+                    <div class="col-md-4">
+                        <p><code>md-position-mode="target-right target"</code></p>
+                        <md-menu md-position-mode="target-right target">
+                            <md-button aria-label="Open demo menu" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-menu-origin><i class="zmdi zmdi-wifi f-20"></i></md-icon>
+                            </md-button>
+                            <md-menu-content width="4">
+                                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                    <md-button>
+                                        <div layout="row">
+                                            <p flex>Option {{item}}</p>
+                                            <md-icon md-menu-align-target style="margin: auto 3px auto 0;">
+                                                <i class="zmdi zmdi-wifi f-20"></i>
+                                            </md-icon>
+                                        </div>
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+                </div>
+                <br>
+                <hr>
+                <br>
+                <b>Different Widths</b>
+                <p class="small c-grey"><code>md-menu-content</code> may specify a <code>width</code> attribute which
+                    will follow .</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>Wide menu (<code>width=6</code>)</p>
+                        <md-menu md-offset="0 -7">
+                            <md-button aria-label="Open demo menu" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-menu-origin><i class="zmdi zmdi-wifi f-20"></i></md-icon>
+                            </md-button>
+                            <md-menu-content width="6">
+                                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                    <md-button><span md-menu-align-target>Option</span> {{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Medium menu (<code>width=4</code>)</p>
+                        <md-menu md-offset="0 -7">
+                            <md-button aria-label="Open demo menu" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-menu-origin><i class="zmdi zmdi-face f-20"></i></md-icon>
+                            </md-button>
+                            <md-menu-content width="4">
+                                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                    <md-button><span md-menu-align-target>Option</span> {{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Small menu (<code>width=3</code>)</p>
+                        <md-menu md-offset="0 -7">
+                            <md-button aria-label="Open demo menu" class="md-icon-button"
+                                       ng-click="$mdOpenMenu($event)">
+                                <md-icon md-menu-origin><i class="zmdi zmdi-phone f-20"></i></md-icon>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                                    <md-button><span md-menu-align-target>Option</span> {{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </div>
+                </div>
+            </md-card-content>
+        </md-card>
+    </div>
+</div>

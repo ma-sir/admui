@@ -1,0 +1,923 @@
+<div oc-lazy-load="['app/modules/mdcomponents.js','app/addons/bower_components/summernote/dist/summernote.min.js','app/addons/bower_components/angular-summernote/dist/angular-summernote.min.js', 'app/addons/bower_components/summernote/dist/summernote.css']">
+    <div class="container mdcomponents-usage" data-ng-controller="MDComponentsCtrl_base">
+
+        <div class="block-header">
+            <h2>Form Components</h2>
+        </div>
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Input</span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                <div data-ng-controller="MDComponentsCtrl_others">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <md-input-container class="md-block">
+                                <label>First name</label>
+                                <input ng-model="user.firstName">
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-6">
+                            <md-input-container class="md-block">
+                                <label>Last Name</label>
+                                <input ng-model="user.lastName">
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <md-input-container class="md-block">
+                                <label>Input1</label>
+                                <input>
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-4">
+                            <md-input-container class="md-block">
+                                <label>Input2</label>
+                                <input>
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-4">
+                            <md-input-container class="md-block">
+                                <label>Input3</label>
+                                <input>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <br>
+                    <b>Errors</b>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <form name="projectForm">
+                            <div class="col-md-6">
+                                <md-input-container class="md-block">
+                                    <label>Client Name</label>
+                                    <input required name="clientName" ng-model="project.clientName">
+                                    <div ng-messages="projectForm.clientName.$error">
+                                        <div ng-message="required">This is required.</div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-6">
+                                <md-input-container class="md-block">
+                                    <label>Client Email</label>
+                                    <input required type="email" name="clientEmail"
+                                           ng-model="project.clientEmail"
+                                           minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/"/>
+                                    <div ng-messages="projectForm.clientEmail.$error" role="alert">
+                                        <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                            Your email must be between 10 and 100 characters long and look like
+                                            an e-mail address.
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+
+                        </form>
+                    </div>
+                    <br>
+
+                    <b>input mask</b>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <form name="userForm">
+                            <div class="col-md-6">
+                                <md-input-container class="md-block">
+                                    <label>Social Security Number</label>
+                                    <input name="social" ng-model="user.social"
+                                           ng-pattern="/^[0-9]{3}-[0-9]{2}-[0-9]{4}$/"/>
+                                    <div class="hint" ng-if="showHints">###-##-####</div>
+                                    <div ng-messages="userForm.social.$error" ng-if="!showHints">
+                                        <div ng-message="pattern">###-##-#### - Please enter a valid SSN.</div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                            <div class="col-md-6">
+                                <md-input-container class="md-block">
+                                    <label>Phone Number</label>
+                                    <input name="phone" ng-model="user.phone"
+                                           ng-pattern="/^([0-9]{3}) [0-9]{3}-[0-9]{4}$/"/>
+                                    <div class="hint" ng-show="showHints">(###) ###-####</div>
+                                    <div ng-messages="userForm.phone.$error" ng-hide="showHints">
+                                        <div ng-message="pattern">(###) ###-#### - Please enter a valid phone
+                                            number.
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <br>
+                    <b>input icon label</b>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <md-input-container class="md-icon-float md-block">
+                                <label>User</label>
+                                <md-icon><i class="zmdi zmdi-face f-20"></i></md-icon>
+                                <input>
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-6">
+                            <md-input-container class="md-icon-float md-block">
+                                <label>Phone</label>
+                                <md-icon><i class="zmdi zmdi-phone f-20"></i></md-icon>
+                                <input>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <md-input-container class="md-icon-float md-block">
+                                <label>Address</label>
+                                <md-icon><i class="zmdi zmdi-my-location f-20"></i></md-icon>
+                                <input>
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-6">
+                            <md-input-container class="md-icon-float md-block">
+                                <label>Fav</label>
+                                <md-icon><i class="zmdi zmdi-star f-20"></i></md-icon>
+                                <input>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <md-input-container class="md-icon-float md-block">
+                                <label>Photo</label>
+                                <md-icon><i class="zmdi zmdi-image f-20"></i></md-icon>
+                                <input>
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-6">
+                            <md-input-container class="md-icon-float md-block">
+                                <label>Sms</label>
+                                <md-icon><i class="zmdi zmdi-phone-msg f-20"></i></md-icon>
+                                <input>
+                            </md-input-container>
+                        </div>
+                    </div>
+
+                    <br>
+                    <b>input label</b>
+                    <br>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4 p-t-10 text-right">
+                                    <label>Fitst Name</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <md-input-container class="md-block" md-no-float>
+                                        <input ng-model="user.name" type="text" placeholder="Fitst Name">
+                                    </md-input-container>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4  p-t-10 text-right">
+                                    <label>Phone Number</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <md-input-container class="md-block" md-no-float>
+                                        <input ng-model="user.phone" type="text" placeholder="Phone Number">
+                                    </md-input-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4 p-t-10 text-right">
+                                    <label>Photo</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <md-input-container class="md-block" md-no-float>
+                                        <input>
+                                    </md-input-container>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4  p-t-10 text-right">
+                                    <label>Sms</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <md-input-container class="md-block" md-no-float>
+                                        <input>
+                                    </md-input-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4 p-t-10 text-right">
+                                    <label>Address</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <md-input-container class="md-block" md-no-float>
+                                        <input>
+                                    </md-input-container>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-4  p-t-10 text-right">
+                                    <label>Fav</label>
+                                </div>
+                                <div class="col-md-8">
+                                    <md-input-container class="md-block" md-no-float>
+                                        <input>
+                                    </md-input-container>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </md-card-content>
+        </md-card>
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Autocomplete</span>
+                    <span class="md-subhead">
+                        Use md-autocomplete to search for matches from local or remote data sources.
+                    </span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+
+                <div data-ng-controller="MDComponentsCtrl as ctrl">
+                    <md-autocomplete
+                            ng-disabled="ctrl.isDisabled"
+                            md-no-cache="ctrl.noCache"
+                            md-selected-item="ctrl.selectedItem"
+                            md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                            md-search-text="ctrl.searchText"
+                            md-selected-item-change="ctrl.selectedItemChange(item)"
+                            md-items="item in ctrl.querySearch(ctrl.searchText)"
+                            md-item-text="item.display"
+                            md-min-length="0"
+                            placeholder="What is your favorite US state?">
+                        <md-item-template>
+                                    <span md-highlight-text="ctrl.searchText"
+                                          md-highlight-flags="^i">{{item.display}}</span>
+                        </md-item-template>
+                        <md-not-found>
+                            No states matching "{{ctrl.searchText}}" were found.
+                            <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>
+                        </md-not-found>
+                    </md-autocomplete>
+                </div>
+                <br>
+                <br>
+                <b>Floating Label</b>
+                <br>
+                <br>
+
+                <div data-ng-controller="MDComponentsCtrl as ctrl">
+                    <md-autocomplete required
+                                     md-input-name="autocompleteField"
+                                     md-input-minlength="1"
+                                     md-input-maxlength="18"
+                                     md-no-cache="ctrl.noCache"
+                                     md-selected-item="ctrl.selectedItem"
+                                     md-search-text="ctrl.searchText"
+                                     md-items="item in ctrl.querySearch(ctrl.searchText)"
+                                     md-item-text="item.display"
+                                     md-floating-label="Favorite state">
+                        <md-item-template>
+                            <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
+                        </md-item-template>
+                        <div ng-messages="searchForm.autocompleteField.$error"
+                             ng-if="searchForm.autocompleteField.$touched">
+                            <div ng-message="required">You <b>must</b> have a favorite state.</div>
+                            <div ng-message="minlength">Your entry is not long enough.</div>
+                            <div ng-message="maxlength">Your entry is too long.</div>
+                        </div>
+                    </md-autocomplete>
+                </div>
+                <br>
+                <br>
+                <b>Custom Template</b>
+                <br>
+                <br>
+
+                <div data-ng-controller="MDComponentsCtrl_autotmp as ctrl">
+                    <md-autocomplete
+                            ng-disabled="ctrl.isDisabled"
+                            md-no-cache="ctrl.noCache"
+                            md-selected-item="ctrl.selectedItem"
+                            md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                            md-search-text="ctrl.searchText"
+                            md-selected-item-change="ctrl.selectedItemChange(item)"
+                            md-items="item in ctrl.querySearch(ctrl.searchText)"
+                            md-item-text="item.name"
+                            md-min-length="0"
+                            placeholder="Pick an Angular repository"
+                            md-menu-class="autocomplete-custom-template">
+                        <md-item-template>
+          <span class="item-title ">
+            <md-icon><i class="zmdi zmdi-face"></i></md-icon>
+            <span> {{item.name}} </span>
+          </span>
+          <span class="small p-l-20">
+             <strong>{{item.watchers}}</strong> watchers
+              <strong>{{item.forks}}</strong> forks
+          </span>
+                        </md-item-template>
+                    </md-autocomplete>
+                </div>
+                <br>
+                <br>
+                <br>
+                <b>Multi Select</b>
+                <br>
+                <br>
+                <div data-ng-controller="MDComponentsCtrl_chips as ctrl">
+                    <md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
+                              md-transform-chip="ctrl.transformChip($chip)"
+                              md-require-match="ctrl.autocompleteDemoRequireMatch">
+                        <md-autocomplete
+                                md-selected-item="ctrl.selectedItem"
+                                md-search-text="ctrl.searchText"
+                                md-min-length="0"
+                                md-items="item in ctrl.querySearch(ctrl.searchText)"
+                                md-item-text="item.name"
+                                placeholder="Search for a vegetable">
+                            <span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
+                        </md-autocomplete>
+                        <md-chip-template>
+        <span>
+          <strong>{{$chip.name}}</strong>
+          <em>({{$chip.type}})</em>
+        </span>
+                        </md-chip-template>
+                    </md-chips>
+                    <code>selectedItems: {{ctrl.selectedVegetables}}</code>
+                </div>
+
+            </md-card-content>
+        </md-card>
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Datepicker</span>
+                    <span class="md-subhead">
+                         <code>&lt;md-datepicker&gt;</code> is a component used to select a single date.
+                    </span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+
+                <div data-ng-controller="MDComponentsCtrl_datepicker as ctrl">
+                    <label>Standard date-picker</label>
+                    <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+                    <br><br>
+                    <label>Disabled date-picker</label>
+                    <md-datepicker ng-model="myDate" md-placeholder="Enter date" disabled></md-datepicker>
+                    <br><br>
+                    <label>Date-picker with min date and max date</label>
+                    <md-datepicker ng-model="myDate" md-placeholder="Enter date"
+                                   md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                    <br><br>
+                    <label>Only weekends are selectable</label>
+                    <md-datepicker ng-model="myDate" md-placeholder="Enter date"
+                                   md-date-filter="onlyWeekendsPredicate"></md-datepicker>
+                    <br><br>
+                    <label>Only weekends within given range are selectable</label>
+                    <md-datepicker ng-model="myDate" md-placeholder="Enter date"
+                                   md-min-date="minDate" md-max-date="maxDate"
+                                   md-date-filter="onlyWeekendsPredicate"></md-datepicker>
+                    <br><br>
+                    <form name="myForm">
+                        <label>With ngMessages</label>
+                        <md-datepicker name="dateField" ng-model="myDate" md-placeholder="Enter date"
+                                       required md-min-date="minDate" md-max-date="maxDate"
+                                       md-date-filter="onlyWeekendsPredicate"></md-datepicker>
+                        <div class="validation-messages c-red di-block" ng-messages="myForm.dateField.$error">
+                            <div ng-message="valid">The entered value is not a date!</div>
+                            <div ng-message="required">This date is required!</div>
+                            <div ng-message="mindate">Date is too early!</div>
+                            <div ng-message="maxdate">Date is too late!</div>
+                            <div ng-message="filtered">Only weekends are allowed!</div>
+                        </div>
+                    </form>
+                </div>
+
+            </md-card-content>
+        </md-card>
+
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Radio Button & Checkbox</span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                <div class="row">
+                    <div class="col-md-4">
+                        <p>Selected Value: <span class="radioValue">{{ data.radiogroup1 }}</span></p>
+                        <md-radio-group ng-model="data.radiogroup1">
+                            <md-radio-button value="Apple" class="md-primary">Apple</md-radio-button>
+                            <md-radio-button value="Banana" class="md-primary"> Banana</md-radio-button>
+                            <md-radio-button value="Mango" class="md-primary">Mango</md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Selected Value: <span class="radioValue">{{ data.radiogroup1 }}</span></p>
+                        <md-radio-group ng-model="data.radiogroup1">
+                            <md-radio-button value="Apple">Apple</md-radio-button>
+                            <md-radio-button value="Banana"> Banana</md-radio-button>
+                            <md-radio-button value="Mango">Mango</md-radio-button>
+                        </md-radio-group>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Selected Value: <span class="radioValue">{{ data.radiogroup1 }}</span></p>
+                        <md-radio-group ng-model="data.radiogroup1">
+                            <md-radio-button value="Apple">
+                                <md-icon><i class="zmdi zmdi-face"></i></md-icon>
+                                Apple
+                            </md-radio-button>
+                            <md-radio-button value="Banana">
+                                <md-icon><i class="zmdi zmdi-face"></i></md-icon>
+                                Banana
+                            </md-radio-button>
+                            <md-radio-button value="Mango">
+                                <md-icon><i class="zmdi zmdi-face"></i></md-icon>
+                                Mango
+                            </md-radio-button>
+                        </md-radio-group>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+
+                <div data-ng-controller="MDComponentsCtrl_others">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+                                Checkbox 1: {{ data.cb1 }}
+                            </md-checkbox>
+                            <br>
+                            <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2">
+                                Checkbox 2: {{ data.cb2 }}
+                            </md-checkbox>
+                            <br>
+                            <md-checkbox ng-model="data.cb3" aria-label="Checkbox 3">
+                                Checkbox 3: {{ data.cb3 }}
+                            </md-checkbox>
+                        </div>
+                        <div class="col-md-4">
+                            <md-checkbox class="md-primary" ng-model="data.cb1" aria-label="Checkbox 1">
+                                Checkbox 1: {{ data.cb1 }}
+                            </md-checkbox>
+                            <br>
+                            <md-checkbox class="md-primary" ng-model="data.cb2" aria-label="Checkbox 2">
+                                Checkbox 2: {{ data.cb2 }}
+                            </md-checkbox>
+                            <br>
+                            <md-checkbox class="md-primary" ng-model="data.cb3" aria-label="Checkbox 3">
+                                Checkbox 3: {{ data.cb3 }}
+                            </md-checkbox>
+                        </div>
+                        <div class="col-md-4">
+                            <div ng-repeat="item in items">
+                                <md-checkbox ng-checked="exists(item, selected)"
+                                             ng-click="toggle(item, selected)">
+                                    {{ item }} <span ng-if="exists(item, selected)">selected</span>
+                                </md-checkbox>
+                            </div>
+
+                            <code>{{selected | json}}</code>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+            </md-card-content>
+        </md-card>
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Select</span>
+                    <span class="md-subhead">
+                        Displays a select box, bound to an ng-model.
+                    </span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                <div data-ng-controller="MDComponentsCtrl_others">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <md-input-container class="d-block">
+                                <label>select1</label>
+                                <input ng-model="select1">
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-4">
+                            <md-input-container class="d-block">
+                                <label>select2</label>
+                                <input ng-model="select2">
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-4">
+                            <md-input-container class="d-block">
+                                <label>select3</label>
+                                <input ng-model="select3">
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <md-input-container class="d-block">
+                                <label>State</label>
+                                <md-select ng-model="select1">
+                                    <md-option ng-repeat="item in [1,2,3,4,5]" value="option{{item}}">
+                                        option {{item}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-4">
+                            <md-input-container class="d-block">
+                                <label>State</label>
+                                <md-select ng-model="select2">
+                                    <md-option ng-repeat="item in [1,2,3,4,5]" value="option{{item}}">
+                                        option {{item}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-4">
+                            <md-input-container class="d-block">
+                                <label>State</label>
+                                <md-select ng-model="select3">
+                                    <md-option ng-repeat="item in [1,2,3,4,5]" value="option{{item}}">
+                                        option {{item}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <br><br><br>
+                    <b class="d-block">Pick your pizza below</b>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <md-input-container class="md-block">
+                                <label>Size</label>
+                                <md-select ng-model="size">
+                                    <md-option ng-repeat="size in sizes" value="{{size}}">{{size}}</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-6">
+                            <md-input-container class="md-block">
+                                <label>Topping</label>
+                                <md-select ng-model="topping">
+                                    <md-optgroup label="Meats">
+                                        <md-option ng-value="topping.name"
+                                                   ng-repeat="topping in toppings | filter: {category: 'meat' }">
+                                            {{topping.name}}
+                                        </md-option>
+                                    </md-optgroup>
+                                    <md-optgroup label="Veggies">
+                                        <md-option ng-value="topping.name"
+                                                   ng-repeat="topping in toppings | filter: {category: 'veg' }">
+                                            {{topping.name}}
+                                        </md-option>
+                                    </md-optgroup>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <code ng-if="topping">You ordered a {{size.toLowerCase()}} pizza with
+                        {{topping.toLowerCase()}}.</code>
+                    <br>
+                    <br>
+                    <b>Multi Select</b>
+                    <br>
+                    <br>
+                    <div data-ng-controller="MDComponentsCtrl_chips as ctrl">
+                        <md-chips ng-model="ctrl.selectedVegetables" md-autocomplete-snap
+                                  md-transform-chip="ctrl.transformChip($chip)"
+                                  md-require-match="ctrl.autocompleteDemoRequireMatch">
+                            <md-autocomplete
+                                    md-selected-item="ctrl.selectedItem"
+                                    md-search-text="ctrl.searchText"
+                                    md-min-length="0"
+                                    md-items="item in ctrl.querySearch(ctrl.searchText)"
+                                    md-item-text="item.name"
+                                    placeholder="Search for a vegetable">
+                                <span md-highlight-text="ctrl.searchText">{{item.name}} :: {{item.type}}</span>
+                            </md-autocomplete>
+                            <md-chip-template>
+        <span>
+          <strong>{{$chip.name}}</strong>
+          <em>({{$chip.type}})</em>
+        </span>
+                            </md-chip-template>
+                        </md-chips>
+                        <code>selectedItems: {{ctrl.selectedVegetables}}</code>
+                    </div>
+
+                </div>
+            </md-card-content>
+        </md-card>
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Slider</span>
+                    <span class="md-subhead">
+                        The <code>&lt;md-slider&gt;</code> component allows the user to choose from a range of values.
+                    </span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                <div data-ng-controller="MDComponentsCtrl_others">
+                    <b class="d-block">Rating: {{rating}}/5 - demo of theming classes</b>
+                    <br><br>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="md-body-1">default</span>
+                        </div>
+                        <div class="col-md-8">
+                            <md-slider ng-model="rating00" min="0" max="100" aria-label="rating">
+                            </md-slider>
+                        </div>
+                        <div class="col-md-2">
+                            {{rating00}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="md-body-1">md-warn</span>
+                        </div>
+                        <div class="col-md-8">
+                            <md-slider class="md-warn" ng-model="rating01" min="0" max="100"
+                                       aria-label="rating">
+                            </md-slider>
+                        </div>
+                        <div class="col-md-2">
+                            {{rating01}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="md-body-1">md-primary</span>
+                        </div>
+                        <div class="col-md-8">
+                            <md-slider class="md-primary" ng-model="rating02" min="0" max="100"
+                                       aria-label="rating">
+                            </md-slider>
+                        </div>
+                        <div class="col-md-2">
+                            {{rating02}}
+                        </div>
+                    </div>
+                    <b class="d-block">discrete</b>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="md-body-1">default </span>
+                        </div>
+                        <div class="col-md-8">
+                            <md-slider md-discrete ng-model="rating1" step="1" min="1" max="5"
+                                       aria-label="rating">
+                            </md-slider>
+                        </div>
+                        <div class="col-md-2">
+                            {{rating1}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="md-body-1">md-warn</span>
+                        </div>
+                        <div class="col-md-8">
+                            <md-slider class="md-warn" md-discrete ng-model="rating2" step="1" min="1" max="5"
+                                       aria-label="rating">
+                            </md-slider>
+                        </div>
+                        <div class="col-md-2">
+                            {{rating2}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span class="md-body-1">md-primary</span>
+                        </div>
+                        <div class="col-md-8">
+                            <md-slider class="md-primary" md-discrete ng-model="rating3" step="1" min="1"
+                                       max="5" aria-label="rating">
+                            </md-slider>
+                        </div>
+                        <div class="col-md-2">
+                            {{rating3}}
+                        </div>
+                    </div>
+                    <b class="d-block">disabled</b>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <md-slider ng-model="disabled1" ng-disabled="true"
+                                       aria-label="Disabled 1"></md-slider>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <md-slider ng-model="disabled2" ng-disabled="true"
+                                       aria-label="Disabled 2"></md-slider>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </div>
+                </div>
+            </md-card-content>
+        </md-card>
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Switch</span>
+                    <span class="md-subhead">
+                        Toggle Switches.
+                    </span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                <div data-ng-controller="MDComponentsCtrl_others">
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <md-switch ng-model="data.cb1" aria-label="Switch 1">
+                                Switch 1: {{ data.cb1 }}
+                            </md-switch>
+                            <br><br>
+                            <md-switch ng-model="data.cb2" aria-label="Switch 2" ng-true-value="'yup'"
+                                       ng-false-value="'nope'" class="md-warn">
+                                Switch 2 (md-warn): {{ data.cb2 }}
+                            </md-switch>
+                        </div>
+                        <div class="col-md-4">
+                            <md-switch ng-disabled="true" aria-label="Disabled switch" ng-model="disabledModel">
+                                Switch (Disabled)
+                            </md-switch>
+                            <br><br>
+                            <md-switch ng-disabled="true" aria-label="Disabled active switch"
+                                       ng-model="data.cb4">
+                                Switch (Disabled, Active)
+                            </md-switch>
+                        </div>
+                        <div class="col-md-4">
+                            <md-switch class="md-primary" md-no-ink aria-label="Switch No Ink"
+                                       ng-model="data.cb5">
+                                Switch (md-primary): No Ink
+                            </md-switch>
+                            <br><br>
+                            <md-switch class="md-primary" ng-model="data.cb6" aria-label="Switch 6"
+                                       ng-change="onChange(data.cb6)">
+                                Switch 6 message: {{ message }}
+                            </md-switch>
+                        </div>
+
+                    </div>
+
+                </div>
+            </md-card-content>
+        </md-card>
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Tooltip</span>
+                    <span class="md-subhead">
+                        Tooltips are used to describe elements that are interactive and primarily graphical (not textual).
+                    </span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                <div>
+                    <md-button class="md-raised ">
+                        <md-tooltip>
+                            tooltip
+                        </md-tooltip>
+                        tooltip
+                    </md-button>
+                    <md-button>
+                        <md-tooltip>
+                            tooltip
+                        </md-tooltip>
+                        tooltip
+                    </md-button>
+                    <md-button class="md-fab md-accent">
+                        <md-tooltip>
+                            Refresh
+                        </md-tooltip>
+                        <i class="zmdi zmdi-face f-22"></i>
+                    </md-button>
+                    <md-button class="md-raised md-primary">
+                        <md-tooltip>
+                            tooltip
+                        </md-tooltip>
+                        tooltip
+                    </md-button>
+                    <md-button class="md-raised md-warn">
+                        <md-tooltip>
+                            tooltip
+                        </md-tooltip>
+                        tooltip
+                    </md-button>
+                </div>
+                <br>
+                <br>
+                <b>Position</b>
+                <br>
+                <br>
+                <div>
+                    <md-button class="md-raised md-accent" aria-label="refresh">
+                        <md-tooltip>
+                            tooltip auto
+                        </md-tooltip>
+                        <i class="zmdi zmdi-face"></i>
+                        tooltip auto
+                    </md-button>
+                    <md-button class="md-raised md-accent" aria-label="refresh">
+                        <md-tooltip md-direction="left">
+                            tooltip on left
+                        </md-tooltip>
+                        <i class="zmdi zmdi-face"></i>
+                        tooltip on left
+                    </md-button>
+                    <md-button class="md-raised md-accent" aria-label="refresh">
+                        <md-tooltip md-direction="right">
+                            tooltip on right
+                        </md-tooltip>
+                        <i class="zmdi zmdi-face"></i>
+                        tooltip on right
+                    </md-button>
+                    <md-button class="md-raised md-accent" aria-label="refresh">
+                        <md-tooltip md-direction="top">
+                            tooltip on top
+                        </md-tooltip>
+                        <i class="zmdi zmdi-face"></i>
+                        tooltip on top
+                    </md-button>
+                    <md-button class="md-raised md-accent" aria-label="refresh">
+                        <md-tooltip md-direction="bottom">
+                            tooltip on bottom
+                        </md-tooltip>
+                        <i class="zmdi zmdi-face"></i>
+                        tooltip on bottom
+                    </md-button>
+                </div>
+            </md-card-content>
+        </md-card>
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Editor</span>
+                    <span class="md-subhead">
+                        Super Simple WYSIWYG Editor on Bootstrap
+                    </span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                <div summernote ng-model="summernoteEditor" height="300"></div>
+                <br>
+                <b>airMode</b>
+                <div summernote ng-model="summernoteEditor" airMode height="300"></div>
+            </md-card-content>
+        </md-card>
+
+
+    </div>
+</div>

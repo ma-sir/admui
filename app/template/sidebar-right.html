@@ -1,0 +1,86 @@
+<md-sidenav  id="sidenav-right" class="md-sidenav-right md-whiteframe-z2 mini-scroll" md-component-id="right">
+    <div class="header">
+        <div class="avatar"></div>
+        <div class="title">Welcome, Administrator</div>
+        <div class="skin-switch dropdown hidden-xs">
+            <md-button class="md-fab md-mini md-primary" data-toggle="dropdown"><i class="zmdi zmdi-palette"></i>
+              <md-tooltip>Default Theme Palette</md-tooltip>
+            </md-button>
+            <div class="dropdown-menu">
+        <span ng-repeat="w in appCfg.themeList" class="t-color bgc-{{ w }}" data-ng-click="appCfg.switchTheme(w)">
+            <md-tooltip>
+                {{w}}
+            </md-tooltip>
+        </span>
+            </div>
+        </div>
+    </div>
+    <md-content>
+        <md-list  ng-cloak>
+            <md-list-item ng-click="gotoUrl('/#/?url=app%2Fmodules%2Fprofile&theme=red&title=profile')">
+                <md-icon>
+                    <i class="zmdi zmdi-face"></i>
+                </md-icon>
+                <p>Profile</p>
+            </md-list-item>
+            <md-list-item ng-click="navigateTo('settings', $event)">
+                <md-icon>
+                    <i class="zmdi zmdi-settings"></i>
+                </md-icon>
+                <p>Settings</p>
+            </md-list-item>
+            <md-list-item ng-click="gotoUrl('/lockscreen.html')">
+                <md-icon>
+                    <i class="zmdi zmdi-lock-outline"></i>
+                </md-icon>
+                <p>Lock Screen</p>
+            </md-list-item>
+            <md-list-item ng-click="gotoUrl('/login.html')">
+                <md-icon>
+                    <i class="zmdi zmdi-time-restore"></i>
+                </md-icon>
+                <p>Logout</p>
+            </md-list-item>
+            <md-list-item >
+                <md-icon>
+                    <i class="zmdi zmdi-view-carousel"></i>
+                </md-icon>
+                <p> Boxed Layout </p>
+                <!---->
+                <md-switch class="md-secondary"  ng-true-value="'1'" ng-false-value="'0'" ng-model="appCfg.currentLayout"></md-switch>
+            </md-list-item>
+            <md-list-item >
+                <md-icon>
+                    <i class="zmdi zmdi-tab-unselected"></i>
+                </md-icon>
+                <p> Tab Wrapper</p>
+                <!---->
+                <md-switch  class="md-secondary" ng-disabled="appCfg.isFullScreen == '1'"  ng-true-value="'1'" ng-false-value="'0'" ng-model="appCfg.openInsetTab"></md-switch>
+            </md-list-item>
+            <md-list-item >
+                <md-icon>
+                    <i class="zmdi zmdi-view-day"></i>
+                </md-icon>
+                <p> Show Footer </p>
+                <!---->
+                <md-switch class="md-secondary"  ng-true-value="'1'" ng-false-value="'0'"  ng-model="appCfg.footerEnabled"></md-switch>
+            </md-list-item>
+            <md-divider></md-divider>
+
+            <md-subheader class="md-no-sticky">Todos Action Checkboxes</md-subheader>
+            <md-list-item ng-repeat="topping in toppings">
+                <p> {{ topping.name }} </p>
+                <md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-subheader class="md-no-sticky">Messages with Avatar  </md-subheader>
+            <md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)">
+                <div class="md-avatar avatar{{$index}}"></div>
+                <p>{{ person.name }}</p>
+                <md-icon  class="md-secondary md-hue-3" ng-class="{'md-primary': person.newMessage}">
+                    <i class="zmdi zmdi-comment-alt-text"></i>
+                </md-icon>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</md-sidenav>

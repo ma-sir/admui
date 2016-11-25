@@ -1,0 +1,448 @@
+<div oc-lazy-load="['app/modules/form.js','app/addons/bower_components/summernote/dist/summernote.min.js','app/addons/bower_components/angular-summernote/dist/angular-summernote.min.js', 'app/addons/bower_components/summernote/dist/summernote.css']">
+    <div class="container form" data-ng-controller="FormCtrl as ctrl">
+
+        <div class="block-header">
+            <h2>Form</h2>
+        </div>
+
+        <md-card class="m-b-30">
+            <md-card-header class="bgc-lightgrey">
+                <md-card-header-text>
+                    <span class="md-title">Form Elements</span>
+                    <span class="md-subhead">Basic Text Feilds, Floating Label , Checkbox and Radio and More</span>
+                </md-card-header-text>
+                <md-menu>
+                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                        <i class="zmdi zmdi-more-vert f-20"></i>
+                    </md-button>
+                    <md-menu-content width="3">
+                        <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                            <md-button>{{item}}</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </md-card-header>
+            <md-card-content>
+                <form name="userForm">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <md-input-container class="md-block">
+                                <label>Input1</label>
+                                <input>
+                            </md-input-container>
+                        </div>
+                        <div class="col-sm-3">
+                            <md-input-container class="md-block">
+                                <label>Input2</label>
+                                <input>
+                            </md-input-container>
+                        </div>
+                        <div class="col-sm-3">
+                            <md-input-container class="md-block">
+                                <label>Input3</label>
+                                <input>
+                            </md-input-container>
+                        </div>
+                        <div class="col-sm-3">
+                            <md-input-container class="md-block">
+                                <label>Input4</label>
+                                <input>
+                            </md-input-container>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-sm-6">
+                            <md-input-container class="md-block">
+                                <label>First name</label>
+                                <input ng-model="user.firstName" required name="firstName">
+                                <div ng-messages="userForm.firstName.$error">
+                                    <div ng-message="required">This is required.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div class="col-sm-6">
+                            <md-input-container class="md-block">
+                                <label>Last name</label>
+                                <input ng-model="user.lastName" required name="lastName">
+                                <div ng-messages="userForm.lastName.$error">
+                                    <div ng-message="required">This is required.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-sm-4">
+                            <md-input-container class="md-block">
+                                <label>Input7</label>
+                                <input>
+                            </md-input-container>
+                        </div>
+                        <div class="col-sm-4">
+                            <md-input-container class="md-block">
+                                <label>Input8</label>
+                                <input>
+                            </md-input-container>
+                        </div>
+                        <div class="col-sm-4">
+                            <md-input-container class="md-block">
+                                <label>Input9</label>
+                                <input>
+                            </md-input-container>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-12">
+                            <md-input-container class="md-block">
+                                <label>Address</label>
+                                <input ng-model="user.address" required name="address">
+                                <div ng-messages="userForm.address.$error">
+                                    <div ng-message="required">This is required.</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div class="col-sm-9">
+                            <md-input-container class="md-block">
+                                <label>Company (Disabled)</label>
+                                <input ng-model="user.company" disabled>
+                            </md-input-container>
+                        </div>
+                        <div class="col-sm-3 p-b-20">
+                            <md-datepicker ng-required="true" ng-model="user.submissionDate"
+                                           md-placeholder="Enter date">
+                            </md-datepicker>
+                        </div>
+                        <div class="clearfix"></div>
+
+                        <div class="col-md-4">
+                            <md-input-container class="md-block">
+                                <label>City</label>
+                                <input ng-model="user.city">
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-4  p-b-20">
+                            <md-input-container class="md-block">
+                                <label>State</label>
+                                <md-select ng-model="user.state">
+                                    <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                                        {{state.abbrev}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-4">
+                            <md-input-container class="md-block">
+                                <label>Postal Code</label>
+                                <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
+                                       required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+                                <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+                                    <div ng-message="required" class="my-message">You must supply a postal code.</div>
+                                    <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
+                                        code.
+                                    </div>
+                                    <div ng-message="md-maxlength" class="my-message">
+                                        Don't use the long version silly...we don't need to be that specific...
+                                    </div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-12 p-t-10">
+                            <md-input-container class="md-block">
+                                <label>Biography</label>
+                                <textarea ng-model="user.biography" columns="1" md-maxlength="150" rows="5"></textarea>
+                            </md-input-container>
+                        </div>
+                        <div class="col-md-12 p-t-20 p-b-20">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>Checkbox</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+                                        Checkbox 1: {{ data.cb1 }}
+                                    </md-checkbox>
+                                    <md-checkbox class="md-primary" ng-model="data.cb2" aria-label="Checkbox 2">
+                                        Checkbox 2: {{ data.cb2 }}
+                                    </md-checkbox>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 p-t-20 p-b-20">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>Selected Value: <span>{{ data.group1 }}</span></label>
+                                </div>
+                                <div class="col-md-10">
+                                    <md-radio-group ng-model="data.group1">
+                                        <md-radio-button value="Apple" class="md-primary">Apple</md-radio-button>
+                                        <md-radio-button value="Banana"> Banana</md-radio-button>
+                                        <md-radio-button value="Mango">Mango</md-radio-button>
+                                    </md-radio-group>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 p-t-20 p-b-20">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>Autocomplete</label>
+                                </div>
+                                <div class="col-md-10">
+                                    <md-autocomplete required
+                                                     md-input-name="autocompleteField"
+                                                     md-input-minlength="1"
+                                                     md-input-maxlength="18"
+                                                     md-no-cache="ctrl.noCache"
+                                                     md-selected-item="ctrl.selectedItem"
+                                                     md-search-text="ctrl.searchText"
+                                                     md-items="item in ctrl.querySearch(ctrl.searchText)"
+                                                     md-item-text="item.display"
+                                                     md-floating-label="Favorite state">
+                                        <md-item-template>
+                                            <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
+                                        </md-item-template>
+                                        <div ng-messages="searchForm.autocompleteField.$error"
+                                             ng-if="searchForm.autocompleteField.$touched">
+                                            <div ng-message="required">You <b>must</b> have a favorite state.</div>
+                                            <div ng-message="minlength">Your entry is not long enough.</div>
+                                            <div ng-message="maxlength">Your entry is too long.</div>
+                                        </div>
+                                    </md-autocomplete>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    Fileupload
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <md-button class="md-raised md-primary btn-file">
+                                            <span class="fileinput-new">Select file</span><span
+                                                class="fileinput-exists">Change</span><input type="file" name="...">
+                                        </md-button>
+                                        <span class="fileinput-filename"></span>
+                                        <a href="#" class="close fileinput-exists" data-dismiss="fileinput"
+                                           style="float: none">&times;</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    Avatar photo
+                                </div>
+                                <div class="col-md-10">
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="fileinput-preview thumbnail" data-trigger="fileinput"
+                                             style="width: 200px; height: 150px;"></div>
+                                        <div>
+                                            <md-button class="md-raised md-primary btn-file"><span
+                                                    class="fileinput-new">Select image</span><span
+                                                    class="fileinput-exists">Change</span><input type="file" name="...">
+                                            </md-button>
+                                            <md-button class="md-raised fileinput-exists" data-dismiss="fileinput">
+                                                Remove
+                                            </md-button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    Editor
+                                </div>
+                                <div class="col-md-10">
+                                    <div summernote height="300">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 p-b-20">
+                            <div class="pull-right">
+                                <md-button class="md-raised md-warn">Submit</md-button>
+                                <md-button class="md-raised md-primary">Reset</md-button>
+                                <md-button class="md-raised">Cancel</md-button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </md-card-content>
+        </md-card>
+
+        <md-card>
+            <md-card-header class="bgc-lightgrey">
+                <md-card-header-text>
+                    <span class="md-title">Basic example</span>
+                    <span class="md-subhead">
+                        <small>
+                            Individual form controls automatically receive some global styling. All textual <code>
+                            &lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;select&gt;</code>
+                            elements with <code>.form-control</code> are set to <code>width:
+                            100%;</code> by default. Wrap labels and controls in <code>.form-group</code> for optimum
+                            spacing.
+                        </small>
+                    </span>
+                </md-card-header-text>
+                <md-menu>
+                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                        <i class="zmdi zmdi-more-vert f-20"></i>
+                    </md-button>
+                    <md-menu-content width="3">
+                        <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                            <md-button>{{item}}</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </md-card-header>
+            <md-card-content>
+
+                <form name="regForm1">
+                    <div class="form-group"><label>Email address</label>
+                        <md-input-container md-no-float class="md-block">
+                            <input ng-model="user.email" required name="email" placeholder="Email address">
+                            <div ng-messages="regForm1.email.$error">
+                                <div ng-message="required">This is required.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <md-input-container md-no-float class="md-block">
+                            <input placeholder="Password" type="password">
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <md-button class="md-raised  btn-file">
+                                <span class="fileinput-new">Select file</span><span
+                                    class="fileinput-exists">Change</span><input type="file" name="...">
+                            </md-button>
+                            <span class="fileinput-filename"></span>
+                            <a href="#" class="close fileinput-exists" data-dismiss="fileinput"
+                               style="float: none">&times;</a>
+                        </div>
+                        <p class="help-block">Example block-level help text here.</p></div>
+                    <div>
+                        <md-checkbox>Check me out</md-checkbox>
+                    </div>
+
+                    <md-button class="md-raised md-primary">Submit</md-button>
+                </form>
+
+
+            </md-card-content>
+        </md-card>
+
+
+        <md-card class="m-t-30">
+            <md-card-header class="bgc-lightgrey">
+                <md-card-header-text>
+                    <span class="md-title">Inline form</span>
+                    <span class="md-subhead">
+                        <small>
+                            Add <code>.form-inline</code> to your form (which doesn't have to be a <code>
+                            &lt;form&gt;</code>) for left-aligned and inline-block controls. This only applies to forms
+                            within viewports that are at least 768px wide.
+                        </small>
+                    </span>
+                </md-card-header-text>
+                <md-menu>
+                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                        <i class="zmdi zmdi-more-vert f-20"></i>
+                    </md-button>
+                    <md-menu-content width="3">
+                        <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                            <md-button>{{item}}</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </md-card-header>
+            <md-card-content>
+
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label>Email: </label>
+                        <md-input-container md-no-float class="">
+                            <input>
+                        </md-input-container>
+                    </div>
+                    <div class="form-group">
+                        <label>Password: </label>
+                        <md-input-container md-no-float class="">
+                            <input type="password">
+                        </md-input-container>
+                    </div>
+                    <md-checkbox>Remember me</md-checkbox>
+
+                    <md-button class="md-raised md-primary m-l-15">Sign in</md-button>
+                </form>
+
+
+            </md-card-content>
+        </md-card>
+
+        <md-card class="m-t-30">
+            <md-card-header class="bgc-lightgrey">
+                <md-card-header-text>
+                    <span class="md-title">Horizontal form</span>
+                    <span class="md-subhead">
+                        <small>
+                            Use Bootstrap's predefined grid classes to align labels and groups of form controls in a
+                            horizontal layout by adding <code>.form-horizontal</code> to the form (which doesn't have to
+                            be a <code>&lt;form&gt;</code>). Doing so changes <code>.form-group</code>s to behave as
+                            grid rows, so no need for <code>.row</code>.
+                        </small>
+                    </span>
+                </md-card-header-text>
+                <md-menu>
+                    <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                        <i class="zmdi zmdi-more-vert f-20"></i>
+                    </md-button>
+                    <md-menu-content width="3">
+                        <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                            <md-button>{{item}}</md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </md-card-header>
+            <md-card-content>
+
+                <form class="form-horizontal">
+                    <div class="form-group"><label class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <md-input-container md-no-float class="md-block">
+                                <input>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div class="form-group"><label
+                            class="col-sm-2 control-label">Password</label>
+                        <div class="col-sm-10">
+                            <md-input-container md-no-float class="md-block">
+                                <input type="password">
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <md-checkbox>Remember me</md-checkbox>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <md-button class="md-raised md-primary">Sign in</md-button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </md-card-content>
+        </md-card>
+    </div>
+</div>

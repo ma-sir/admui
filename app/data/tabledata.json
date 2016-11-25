@@ -1,0 +1,132 @@
+{
+  "list": [
+    {
+      "FILES": "43",
+      "TRANSACTIONS": "521",
+      "REQUEST": "32",
+      "INCOME": "2333",
+      "OUTCOME": "252",
+      "TOTAL": "1,548.00"
+    },
+    {
+      "FILES": "23",
+      "TRANSACTIONS": "23",
+      "REQUEST": "352",
+      "INCOME": "2333",
+      "OUTCOME": "22",
+      "TOTAL": "448.00"
+    },
+    {
+      "FILES": "12",
+      "TRANSACTIONS": "45",
+      "REQUEST": "312",
+      "INCOME": "2333",
+      "OUTCOME": "212",
+      "TOTAL": "3,848.00"
+    },
+    {
+      "FILES": "436",
+      "TRANSACTIONS": "85",
+      "REQUEST": "32",
+      "INCOME": "2333",
+      "OUTCOME": "2442",
+      "TOTAL": "2,48.00"
+    },
+    {
+      "FILES": "67",
+      "TRANSACTIONS": "65",
+      "REQUEST": "312",
+      "INCOME": "2333",
+      "OUTCOME": "2222",
+      "TOTAL": "1,8.00"
+    },
+    {
+      "FILES": "647",
+      "TRANSACTIONS": "12",
+      "REQUEST": "312",
+      "INCOME": "23233",
+      "OUTCOME": "2222",
+      "TOTAL": "948.00"
+    },
+    {
+      "FILES": "467",
+      "TRANSACTIONS": "54",
+      "REQUEST": "312",
+      "INCOME": "2333",
+      "OUTCOME": "2222",
+      "TOTAL": "1,5.00"
+    },
+    {
+      "FILES": "367",
+      "TRANSACTIONS": "87",
+      "REQUEST": "320",
+      "INCOME": "2333",
+      "OUTCOME": "2222",
+      "TOTAL": "1,48.00"
+    },
+    {
+      "FILES": "267",
+      "TRANSACTIONS": "52",
+      "REQUEST": "382",
+      "INCOME": "2333",
+      "OUTCOME": "2222",
+      "TOTAL": "1,54.00"
+    },
+    {
+      "FILES": "167",
+      "TRANSACTIONS": "9",
+      "REQUEST": "332",
+      "INCOME": "2333",
+      "OUTCOME": "2222",
+      "TOTAL": "1,548.00"
+    },
+    {
+      "FILES": "137",
+      "TRANSACTIONS": "65",
+      "REQUEST": "312",
+      "INCOME": "2333",
+      "OUTCOME": "2222",
+      "TOTAL": "1,8.00"
+    },
+    {
+      "FILES": "347",
+      "TRANSACTIONS": "12",
+      "REQUEST": "32",
+      "INCOME": "2333",
+      "OUTCOME": "2222",
+      "TOTAL": "948.00"
+    },
+    {
+      "FILES": "67",
+      "TRANSACTIONS": "5",
+      "REQUEST": "32",
+      "INCOME": "233",
+      "OUTCOME": "222",
+      "TOTAL": "1,5.00"
+    },
+    {
+      "FILES": "36",
+      "TRANSACTIONS": "87",
+      "REQUEST": "3",
+      "INCOME": "23",
+      "OUTCOME": "22",
+      "TOTAL": "1,48"
+    },
+    {
+      "FILES": "27",
+      "TRANSACTIONS": "52",
+      "REQUEST": "32",
+      "INCOME": "233",
+      "OUTCOME": "22",
+      "TOTAL": "1,540"
+    },
+    {
+      "FILES": "17",
+      "TRANSACTIONS": "9",
+      "REQUEST": "332",
+      "INCOME": "23",
+      "OUTCOME": "2",
+      "TOTAL": "1,5.00"
+    }
+  ]
+}

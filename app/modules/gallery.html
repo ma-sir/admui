@@ -1,0 +1,83 @@
+<div oc-lazy-load="['app/modules/gallery.js','app/addons/bower_components/magnific-popup/dist/jquery.magnific-popup.min.js','app/addons/bower_components/magnific-popup/dist/magnific-popup.css']">
+    <div class="container gallery-usage" data-ng-controller="GalleryCtrl as ctrl">
+
+        <div class="block-header">
+            <h2>Gallery
+                <small>
+                    gallery description
+                </small>
+            </h2>
+
+            <div class="actions">
+
+                <md-menu md-position-mode="target-right target">
+                    <md-button aria-label="Open phone interactions menu" class="md-icon-button"
+                               ng-click="$mdOpenMenu($event)">
+                        <md-icon md-menu-origin>
+                            <i class="zmdi zmdi-more f-20"></i>
+                        </md-icon>
+                    </md-button>
+                    <md-menu-content width="3">
+                        <md-menu-item>
+                            <md-button>
+                                Reload
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>
+                                About
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <md-button>
+                                Settings
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+        </div>
+
+        <md-card>
+            <md-card-content>
+                <div class="text-right">
+                    <div class="btn-group" data-toggle="buttons">
+                        <label class="btn btn-warning active" data-ng-click="photosQ=''"
+                               md-ink-ripple="#333">
+                            <input type="radio" checked>ALL</label>
+                        <label class="btn btn-warning" data-ng-click="photosQ='grils'"
+                               md-ink-ripple="#333">
+                            <input type="radio">GRILS
+                        </label>
+                        <label class="btn btn-warning" data-ng-click="photosQ='baby'"
+                               md-ink-ripple="#333">
+                            <input type="radio">BABY
+                        </label>
+                        <label class="btn btn-warning" data-ng-click="photosQ='things'"
+                               md-ink-ripple="#333">
+                            <input type="radio">THINGS
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <b>image size :{{imgHeight}}</b>
+                    <md-slider md-discrete ng-model="imgHeight" step="20" min="50" max="250" aria-label="rating">
+                    </md-slider>
+                </div>
+                <div class="gallery-group">
+                    <div class="img-frame animate-repeat" md-ink-ripple="#ff0000"
+                         data-ng-repeat="p in photos | filter:photosQ">
+                        <a ng-href="dist/photos/{{p.img}}.jpg"><img style="width:auto;height: {{imgHeight}}px"
+                                                                    ng-src="dist/photos/{{p.img}}.jpg"></a>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="text-center p-20">
+                    <md-button class=" md-accent" style="width: 100%">Load More</md-button>
+                </div>
+            </md-card-content>
+        </md-card>
+
+    </div>
+</div>

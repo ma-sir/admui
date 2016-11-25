@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="dist/css/libs.css">
+    <link rel="stylesheet" href="dist/css/UMaterial.min.css">
+    <link rel="stylesheet" href="app/css/demo.css">
+    <title>Login Template</title>
+</head>
+<body class="login-page">
+<div class="header-bg">
+    <div class="bg-left"></div>
+    <div class="bg-right"></div>
+</div>
+<div  ng-cloak class="container-fluid simple-page">
+    <div class="row">
+        <div class="animated fadeIn page-content" md-whiteframe="10" style="position: relative;">
+            <div class="animated fadeInDown user-avatar">
+                <i class="zmdi zmdi-account"></i>
+            </div>
+            <md-content md-theme="orange" layout-padding style="background: transparent" class="animated fadeInUp">
+                <div class="p-b-0 p-l-20 p-r-20">
+                    <md-input-container class="md-block">
+                        <label>Username</label>
+                        <md-icon>
+                            <i class="zmdi zmdi-face f-20"></i>
+                        </md-icon>
+                        <input ng-model="user.name">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Password</label>
+                        <md-icon>
+                            <i class="zmdi zmdi-key f-20"></i>
+                        </md-icon>
+                        <input ng-model="user.passwd" type="password">
+                    </md-input-container>
+                    <md-checkbox style="margin-left:35px">
+                        Rember Me
+                    </md-checkbox>
+                </div>
+                <div class="text-center">
+                    <md-button href="index.html" class="md-raised md-accent" style="width: 200px;margin-top:20px">
+                        Login
+                    </md-button>
+                </div>
+            </md-content>
+        </div>
+    </div>
+</div>
+<script src="dist/js/libs.js"></script>
+<script src="dist/js/angular.js"></script>
+<script src="app/js/app.js"></script>
+</body>
+</html>

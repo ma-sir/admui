@@ -1,0 +1,547 @@
+<div oc-lazy-load="['app/modules/table.js']">
+    <div class="container form" data-ng-controller="TableCtrl as ctrl">
+
+        <div class="block-header">
+            <h2>Table</h2>
+
+            <div class="actions">
+
+                <md-menu>
+                    <md-button aria-label="Open phone interactions menu" class="md-icon-button"
+                               ng-click="$mdOpenMenu($event)">
+                        <md-icon md-menu-origin>
+                            <i class="zmdi zmdi-more f-20"></i>
+                        </md-icon>
+                    </md-button>
+                    <md-menu-content>
+                        <md-menu-item>
+                            <md-button>
+                                Reload
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>
+                                About
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-divider></md-menu-divider>
+                        <md-menu-item>
+                            <md-button>
+                                Settings
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12  m-b-20">
+                <md-card>
+                    <md-card-header data-theme={{appCfg.currentTheme}} class="">
+                        <md-card-header-text>
+                            <span class="md-title c-white">Basic example</span>
+                            <span class="md-subhead">For basic styling—light padding and only horizontal dividers—add the base class .table to any &lt;table&gt;. It may seem super redundant, but given the widespread use of tables for other plugins like calendars and date pickers, we've opted to isolate our custom table styles.</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20 c-white"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-toolbar class="bgc-lightgrey c-grey">
+                        <div class="md-toolbar-tools">
+                            <i class="zmdi zmdi-menu m-r-10"></i>
+                            <span>Toolbar with Icon Buttons</span>
+                            <span flex></span>
+                            <md-button class="md-icon-button md-primary">
+                                <md-icon><i class="zmdi zmdi-plus c-grey f-20"></i></md-icon>
+                                <md-tooltip>Add</md-tooltip>
+                            </md-button>
+                            <md-button class="md-icon-button md-primary">
+                                <md-icon><i class="zmdi zmdi-delete c-grey f-20"></i></md-icon>
+                                <md-tooltip>Delete</md-tooltip>
+                            </md-button>
+                        </div>
+                    </md-toolbar>
+                    <md-card-content class="p-0">
+                        <div class="table-responsive">
+                            <table class="table  text-center table-vmiddle table-hover">
+                                <thead>
+                                <tr>
+                                    <th class="text-center" width="100">
+                                        <md-checkbox ng-model="itemsSwitch" ng-change="onChange()"
+                                                     class="m-0 md-primary"></md-checkbox>
+                                    </th>
+                                    <th class="text-center" width="100">@</th>
+                                    <th class="text-center" width="100">Code</th>
+                                    <th class="text-center" width="100">Files</th>
+                                    <th class="text-center" width="100">Trans</th>
+                                    <th class="text-center">Req</th>
+                                    <th class="text-center">Income</th>
+                                    <th class="text-center">Outcome</th>
+                                    <th class="text-center">Total</th>
+                                    <th class="text-center p-l-20" width="100">
+                                        <md-switch ng-model="itemsSwitch" ng-change="onChange()"
+                                                   class="m-0 md-primary"></md-switch>
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr data-ng-repeat="item in tableData | limitTo:5:(currentPage-1)*5"
+                                    class="animate-repeat" data-ng-class="{selected:item.selected}">
+                                    <td>
+                                        <md-checkbox ng-model="item.selected" class="m-0"></md-checkbox>
+                                    </td>
+                                    <td>
+                                        <img ng-src="dist/material/avatar2.png" class="md-avatar">
+                                    </td>
+                                    <td>#{{$index}}</td>
+                                    <td>{{item.FILES}}</td>
+                                    <td>{{item.TRANSACTIONS}}</td>
+                                    <td>{{item.REQUEST}}</td>
+                                    <td>
+                                        <div class="label label-success">
+                                            +{{item.INCOME}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="label label-danger">
+                                            -{{item.OUTCOME}}
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <md-progress-linear class="md-accent" md-mode="determinate"
+                                                            value="{{item.FILES/10}}"></md-progress-linear>
+                                        $ {{item.TOTAL}}
+                                    </td>
+                                    <td class="p-l-20">
+                                        <md-switch ng-model="item.selected" class="m-0"></md-switch>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="pagination-container text-right">
+                                <uib-pagination ng-show="totalItems>0" total-items="totalItems" ng-model="currentPage"
+                                                max-size="maxSize" class="pagination-sm" boundary-links="true"
+                                                force-ellipses="true" template-url="app/template/uib/pagination.html"
+                                                ng-change="pageChanged()"></uib-pagination>
+                            </div>
+                        </div>
+                    </md-card-content>
+                </md-card>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4 m-b-20">
+                <md-card>
+                    <md-card-header class="bgc-lightgrey">
+                        <md-card-header-text>
+                            <span class="md-title">Table</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content class="fab-right-top">
+                        <md-fab-speed-dial md-direction="left" class="md-scale" md-open="false">
+                            <md-fab-trigger>
+                                <md-button aria-label="menu" class="md-fab md-warn">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-plus f-20"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions>
+                                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey f-20"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey f-20"></i>
+                                    </md-icon>
+                                </md-button>
+                                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                                    <md-icon>
+                                        <i class="zmdi zmdi-star-outline c-bluegrey f-20"></i>
+                                    </md-icon>
+                                </md-button>
+                            </md-fab-actions>
+                        </md-fab-speed-dial>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+            <div class="col-md-4 m-b-20">
+                <md-card>
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Striped rows</span>
+                            <span class="md-subhead">Use <code>.table-striped</code> to add zebra-striping to any table row within the <code>
+                                &lt;tbody&gt;</code>.</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content>
+
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+            <div class="col-md-4 m-b-20">
+                <md-card>
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Bordered table</span>
+                            <span class="md-subhead">Add <code>.table-bordered</code> for borders on all sides of the table and cells.</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content>
+
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6 m-b-20">
+                <md-card>
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Hover rows</span>
+                            <span class="md-subhead">Add <code>.table-hover</code> to enable a hover state on table rows within a <code>
+                                &lt;tbody&gt;</code>.</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content>
+
+                        <table class="table table-hover">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+
+            <div class="col-md-6 m-b-20">
+                <md-card>
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Condensed table</span>
+                            <span class="md-subhead">Add <code>.table-condensed</code> to make tables more compact by cutting cell padding in half.</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content>
+
+                        <table class="table table-condensed">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Username</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Larry</td>
+                                <td>the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+        </div>
+        <div class="row">
+
+            <div class="col-md-12 m-b-20">
+                <md-card>
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Contextual classes</span>
+                            <span class="md-subhead">Use contextual classes to color table rows or individual cells.</span>
+                        </md-card-header-text>
+                        <md-menu>
+                            <md-button class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                                <i class="zmdi zmdi-more-vert f-20"></i>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item ng-repeat="item in ['Refresh','Config','Manager']">
+                                    <md-button>{{item}}</md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
+                    </md-card-header>
+                    <md-card-content>
+
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Column heading</th>
+                                <th>Column heading</th>
+                                <th>Column heading</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="active">
+                                <th scope="row">1</th>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                            </tr>
+                            <tr class="success">
+                                <th scope="row">3</th>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                            </tr>
+                            <tr class="info">
+                                <th scope="row">5</th>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                            </tr>
+                            <tr class="warning">
+                                <th scope="row">7</th>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                            </tr>
+                            <tr class="danger">
+                                <th scope="row">9</th>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                                <td>Column content</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </md-card-content>
+                </md-card>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

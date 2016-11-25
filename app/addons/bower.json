@@ -1,0 +1,13 @@
+{
+  "name":"plugins",
+  "dependencies": {
+
+    "angular-summernote":"",
+    "magnific-popup":"",
+
+    "sparklines": "http://omnipotent.net/jquery.sparkline/2.1.2/jquery.sparkline.min.js",
+    "fullcalendar": "~2.4.0",
+    "flot": "~0.8.3"
+
+  }
+}

@@ -1,0 +1,356 @@
+<div oc-lazy-load="['app/modules/dialog.js']">
+    <div class="container dialog-usage" data-ng-controller="DialogCtrl as ctrl">
+
+        <div class="block-header">
+            <h2>Dialog</h2>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+                <md-card class="m-b-30">
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Material Color Palette</span>
+                    <span class="md-subhead">
+                        Markup: &lt;any class=&quot;bgc-red c-white&quot;&gt;Material Color Palette&lt;/any&gt;
+                    </span>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <md-card-content>
+                        <div id="popupContainer">
+                            <p class="inset">
+                                Open a dialog over the app's content. Press escape or click outside to close the dialog
+                                and
+                                send focus back to the triggering button.
+                            </p>
+
+                            <md-button style="width: 100%" class="md-primary md-raised" ng-click="showAlert($event)">
+                                Alert Dialog
+                            </md-button>
+                            <md-button style="width: 100%" class="md-primary md-raised" ng-click="showConfirm($event)"
+                            >
+                                Confirm Dialog
+                            </md-button>
+                            <md-button style="width: 100%" class="md-primary md-raised" ng-click="showAdvanced($event)"
+                            >
+                                Custom Dialog
+                            </md-button>
+                            <div layout-align="center center">
+                                <md-checkbox hide-gt-sm ng-model="customFullscreen"
+                                             aria-label="Fullscreen Custom Dialog">
+                                    Custom Dialog
+                                    Fullscreen
+                                </md-checkbox>
+                            </div>
+                            <md-button style="width: 100%" class="md-primary md-raised" ng-click="showTabDialog($event)"
+                            >
+                                Tab Dialog
+                            </md-button>
+
+                            <p class="footer">Note: The <b>Confirm</b> dialog does not use
+                                <code>$mdDialog.clickOutsideToClose(true)</code>.</p>
+                            <div ng-if="status">
+                                <br/>
+                                <b layout-align="center center" class="md-padding">
+                                    {{status}}
+                                </b>
+                            </div>
+                        </div>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <div class="col-md-12">
+                <md-card class="m-b-30">
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Material Color Palette</span>
+                    <span class="md-subhead">
+                        Markup: &lt;any class=&quot;bgc-red c-white&quot;&gt;Material Color Palette&lt;/any&gt;
+                    </span>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <md-card-content>
+                        <md-button style="width: 100%" class="md-primary md-raised"
+                                   ng-click="showTypeDialog($event, 'info')"
+                        >
+                            Info Dialog
+                        </md-button>
+                        <md-button style="width: 100%" class="md-primary md-raised"
+                                   ng-click="showTypeDialog($event, 'error')"
+                        >
+                            Error Dialog
+                        </md-button>
+                        <md-button style="width: 100%" class="md-primary md-raised"
+                                   ng-click="showTypeDialog($event, 'warning')"
+                        >
+                            Warning Dialog
+                        </md-button>
+                        <md-button style="width: 100%" class="md-primary md-raised"
+                                   ng-click="showTypeDialog($event, 'success')"
+                        >
+                            Success Dialog
+                        </md-button>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <div class="col-md-12">
+                <md-card class="m-b-30">
+                    <md-card-header>
+                        <md-card-header-text>
+                            <span class="md-title">Material Color Palette</span>
+                    <span class="md-subhead">
+                        Markup: &lt;any class=&quot;bgc-red c-white&quot;&gt;Material Color Palette&lt;/any&gt;
+                    </span>
+                        </md-card-header-text>
+                    </md-card-header>
+                    <md-card-content>
+                        <div class="row">
+                            <div class="col-md-1" id="leftarea">Left</div>
+                            <div class="col-md-10">
+                                <p class="inset">
+                                    A dialog can specify its origin and target with <code>openFrom</code> and
+                                    <code>closeTo</code> properties.
+                                    The options showFrom and closeTo can be specified as a string [where internally
+                                    querySelector( ) is used to perform the DOM element lookup],
+                                    element or an Rect object [with top, left, width, height fields].
+                                </p>
+                                <div class="dialog-demo-content" layout="column" layout-align="center center"
+                                     style="width:100%">
+                                    <md-button style="width: 100%" class="md-primary md-raised edgePadding"
+                                               ng-click="openFromLeft()">
+                                        Open From Left - Close To Right
+                                    </md-button>
+                                    <md-button style="width: 100%" class="md-primary md-raised edgePadding"
+                                               ng-click="openOffscreen()">
+                                        Open From Top Left - Close Slide Down
+                                    </md-button>
+                                </div>
+                            </div>
+                            <div class="col-md-1" id="rightarea">Right</div>
+                        </div>
+                    </md-card-content>
+                </md-card>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script id="dialog1.tmpl.html" type="text/ng-template">
+    <md-dialog aria-label="Mango (Fruit)" ng-cloak>
+        <form>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Mango (Fruit)</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="cancel()">
+                        <md-icon><i class="zmdi zmdi-close"></i></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <md-dialog-content>
+                <div class="md-dialog-content">
+                    <h2>Using .md-dialog-content class that sets the padding as the spec</h2>
+                    <p>
+                        The mango is a juicy stone fruit belonging to the genus Mangifera, consisting of numerous
+                        tropical fruiting trees, cultivated mostly for edible fruit. The majority of these species are
+                        found in nature as wild mangoes. They all belong to the flowering plant family Anacardiaceae.
+                        The mango is native to South and Southeast Asia, from where it has been distributed worldwide to
+                        become one of the most cultivated fruits in the tropics.
+                    </p>
+                    <img style="margin: auto; max-width: 100%;" alt="Lush mango tree" ng-src="dist/material/mbg-1.png">
+                    <p>
+                        The highest concentration of Mangifera genus is in the western part of Malesia (Sumatra, Java
+                        and Borneo) and in Burma and India. While other Mangifera species (e.g. horse mango, M. foetida)
+                        are also grown on a more localized basis, Mangifera indica&mdash;the "common mango" or "Indian
+                        mango"&mdash;is the only mango tree commonly cultivated in many tropical and subtropical
+                        regions.
+                    </p>
+                    <p>
+                        It originated in Indian subcontinent (present day India and Pakistan) and Burma. It is the
+                        national fruit of India, Pakistan, and the Philippines, and the national tree of Bangladesh. In
+                        several cultures, its fruit and leaves are ritually used as floral decorations at weddings,
+                        public celebrations, and religious ceremonies.
+                    </p>
+                </div>
+            </md-dialog-content>
+            <md-dialog-actions>
+                <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" md-autofocus>
+                    More on Wikipedia
+                </md-button>
+                <span flex></span>
+                <md-button ng-click="answer('not useful')">
+                    Not Useful
+                </md-button>
+                <md-button ng-click="answer('useful')" style="margin-right:20px;">
+                    Useful
+                </md-button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>
+
+<script id="tabDialog.tmpl.html" type="text/ng-template">
+    <md-dialog aria-label="Mango (Fruit)">
+        <form>
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2>Mango (Fruit)</h2>
+                    <span flex></span>
+                    <md-button class="md-icon-button" ng-click="cancel()">
+                        <md-icon><i class="zmdi zmdi-close"></i></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <md-dialog-content style="max-width:800px;max-height:810px; ">
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="one">
+                        <md-content class="md-padding">
+                            <h1 class="md-display-2">Tab One</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                                Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In
+                                sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                                feugiat ultricies mi.</p>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="two">
+                        <md-content class="md-padding">
+                            <h1 class="md-display-2">Tab Two</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue.
+                                Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In
+                                sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec,
+                                feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor,
+                                orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante
+                                varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam
+                                malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae
+                                posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis,
+                                vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec
+                                ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor
+                                purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris
+                                semper.</p>
+                            <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci
+                                nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum
+                                facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam
+                                pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet
+                                nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam
+                                vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
+                            <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur
+                                posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae
+                                hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo
+                                volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo
+                                lectus.</p>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="three">
+                        <md-content class="md-padding">
+                            <h1 class="md-display-2">Tab Three</h1>
+                            <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur
+                                posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae
+                                hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo
+                                volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo
+                                lectus.</p>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </md-dialog-content>
+            <md-dialog-actions>
+                <md-button href="http://en.wikipedia.org/wiki/Mango" target="_blank" md-autofocus>
+                    More on Wikipedia
+                </md-button>
+                <span flex></span>
+                <md-button ng-click="answer('not useful')">
+                    Not Useful
+                </md-button>
+                <md-button ng-click="answer('useful')" style="margin-right:20px;">
+                    Useful
+                </md-button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>
+
+
+<script id="infoDialog.tmpl.html" type="text/ng-template">
+    <md-dialog>
+        <form>
+            <md-dialog-content style="min-width:400px; " class="p-20 text-center">
+                <div class="sweet-alert  ">
+                    <div class="sa-icon sa-info"></div>
+                </div>
+                <h2>Ajax request example</h2>
+                <p>Submit to run ajax request</p>
+            </md-dialog-content>
+            <md-dialog-actions class="md-center">
+                <md-button ng-click="cancel()">Close</md-button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>
+<script id="errorDialog.tmpl.html" type="text/ng-template">
+    <md-dialog>
+        <form>
+            <md-dialog-content style="min-width:400px; " class="p-20 text-center">
+                <div class="sweet-alert  ">
+                    <div class="sa-icon sa-error animateErrorIcon">
+      <span class="sa-x-mark animateXMark">
+        <span class="sa-line sa-left"></span>
+        <span class="sa-line sa-right"></span>
+      </span>
+                    </div>
+                </div>
+                <h2>Oops...</h2>
+                <p>Something went wrong!</p>
+            </md-dialog-content>
+            <md-dialog-actions class="md-center">
+                <md-button ng-click="cancel()">
+                    Close
+                </md-button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>
+<script id="warningDialog.tmpl.html" type="text/ng-template">
+    <md-dialog>
+        <form>
+            <md-dialog-content style="min-width:400px; " class="p-20 text-center">
+                <div class="sweet-alert ">
+                    <div class="sa-icon sa-warning pulseWarning" style="display: block;">
+                        <span class="sa-body pulseWarningIns"></span>
+                        <span class="sa-dot pulseWarningIns"></span>
+                    </div>
+                </div>
+                <h2>Are you sure?</h2>
+                <p>You will not be able to recover this imaginary file!</p>
+            </md-dialog-content>
+            <md-dialog-actions class="md-center">
+                <md-button ng-click="cancel()">
+                    Close
+                </md-button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>
+<script id="successDialog.tmpl.html" type="text/ng-template">
+    <md-dialog>
+        <form>
+            <md-dialog-content style="min-width:400px; " class="p-20 text-center">
+                <div class="sweet-alert  ">
+                    <div class="sa-icon sa-success animate">
+                        <span class="sa-line sa-tip animateSuccessTip"></span>
+                        <span class="sa-line sa-long animateSuccessLong"></span>
+                        <div class="sa-placeholder"></div>
+                        <div class="sa-fix"></div>
+                    </div>
+                </div>
+                <h2>Good job!</h2>
+                <p>You clicked the button!</p>
+            </md-dialog-content>
+            <md-dialog-actions class="md-center">
+                <md-button ng-click="cancel()">
+                    Close
+                </md-button>
+            </md-dialog-actions>
+        </form>
+    </md-dialog>
+</script>

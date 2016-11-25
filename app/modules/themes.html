@@ -1,0 +1,133 @@
+<div oc-lazy-load="['app/modules/theme.js']">
+    <div class="container theme-usage" data-ng-controller="ThemeCtrl as ctrl">
+
+        <div class="block-header">
+            <h2>Theme</h2>
+        </div>
+
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Material Color Palette</span>
+      <span class="md-subhead">
+          Markup: &lt;any class=&quot;bgc-red c-white&quot;&gt;Material Color Palette&lt;/any&gt;
+      </span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                <div md-whiteframe="1" md-theme="{{appCfg.currentTheme}}" class="p-20 m-r-20 m-b-20"
+                     style="float:left;min-width:200px">
+                    <label for="">current theme</label><br>
+                    <md-button class="md-primary md-raised">I will be {{appCfg.currentTheme}}</md-button>
+                </div>
+                <div md-whiteframe="1" md-theme="{{item}}" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px"
+                     ng-repeat="item in appCfg.themeList">
+                    <label for="">{{item}}</label><br>
+                    <md-button class="md-primary md-raised">I will be {{item}}</md-button>
+                </div>
+
+
+            </md-card-content>
+        </md-card>
+
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Specifying intention group</span>
+        <span class="md-subhead">
+            Markup: &lt;any class=&quot;bgc-red c-white&quot;&gt;Material Color Palette&lt;/any&gt;
+        </span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">default</label><br>
+                    <md-button class=" md-raised">default</md-button>
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">primary</label><br>
+                    <md-button class="md-primary md-raised">md-primary</md-button>
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">accent</label><br>
+                    <md-button class="md-accent md-raised">md-accent</md-button>
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">warn</label><br>
+                    <md-button class="md-warn md-raised">cmd-warn</md-button>
+                </div>
+            </md-card-content>
+        </md-card>
+
+
+        <md-card class="m-b-30">
+            <md-card-header>
+                <md-card-header-text>
+                    <span class="md-title">Differentiating within an intention group.</span>
+        <span class="md-subhead">
+            Markup: &lt;any class=&quot;bgc-red c-white&quot;&gt;Material Color Palette&lt;/any&gt;
+        </span>
+                </md-card-header-text>
+            </md-card-header>
+            <md-card-content>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">primary default</label><br>
+                    <md-button class="md-primary md-raised">default</md-button>
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">hue-1</label><br>
+                    <md-button class="md-primary md-raised md-hue-1">md-hue-1</md-button>
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">hue-2</label><br>
+                    <md-button class="md-primary md-raised md-hue-2">md-hue-2</md-button>
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">hue-3</label><br>
+                    <md-button class="md-primary md-raised md-hue-3">cmd-hue-3</md-button>
+                </div>
+                <div class="clearfix">
+
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">accent default</label><br>
+                    <md-button class="md-accent md-raised">default</md-button>
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">hue-1</label><br>
+                    <md-button class="md-accent md-raised md-hue-1">md-hue-1</md-button>
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">hue-2</label><br>
+                    <md-button class="md-accent md-raised md-hue-2">md-hue-2</md-button>
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">hue-3</label><br>
+                    <md-button class="md-accent md-raised md-hue-3">cmd-hue-3</md-button>
+                </div>
+                <div class="clearfix">
+
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">warn default</label><br>
+                    <md-button class="md-warn md-raised">default</md-button>
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">hue-1</label><br>
+                    <md-button class="md-warn md-raised md-hue-1">md-hue-1</md-button>
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">hue-2</label><br>
+                    <md-button class="md-warn md-raised md-hue-2">md-hue-2</md-button>
+                </div>
+                <div md-whiteframe="1" class="p-20 m-r-20 m-b-20" style="float:left;min-width:200px">
+                    <label for="">hue-3</label><br>
+                    <md-button class="md-warn md-raised md-hue-3">cmd-hue-3</md-button>
+                </div>
+            </md-card-content>
+        </md-card>
+
+    </div>
+</div>
